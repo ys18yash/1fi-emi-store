@@ -4,7 +4,7 @@ A full-stack e-commerce application for purchasing flagship devices through flex
 
 ## Live Demo
 
-[Open Live Demo](<YOUR_LIVE_DEMO_URL>)
+[View the Live Demo](<YOUR_LIVE_DEMO_URL>)
 
 ## Video Walkthrough
 
@@ -61,20 +61,20 @@ The project also includes an admin catalog management dashboard for products, va
 - npm
 - PostgreSQL
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd <PROJECT_DIRECTORY>
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Configure environment variables
+### Configure Environment Variables
 
 Create `.env` in the project root:
 
@@ -91,25 +91,25 @@ A dedicated admin secret should be configured for non-development environments.
 npx prisma generate
 ```
 
-### Validate the schema
+### Validate the Schema
 
 ```bash
 npx prisma validate
 ```
 
-### Apply the database schema
+### Apply the Database Schema
 
 ```bash
 npx prisma db push
 ```
 
-### Seed the database
+### Seed the Database
 
 ```bash
 npx tsx prisma/seed.ts
 ```
 
-### Start the development server
+### Start the Development Server
 
 ```bash
 npm run dev
@@ -121,184 +121,26 @@ Application URL:
 http://localhost:3000
 ```
 
-### Production build
+### Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
-### TypeScript validation
+### TypeScript Validation
 
 ```bash
 npx tsc --noEmit
 ```
 
-### Verification suite
+### Verification Suite
 
 ```bash
 npm run verify
 ```
 
-## 4. Database Schema and Seed Data
-
-The database schema is defined in:
-
-```text
-prisma/schema.prisma
-```
-
-Seed data is defined in:
-
-```text
-prisma/seed.ts
-```
-
-The demonstration database contains:
-
-| Resource | Count |
-|---|---:|
-| Products | 4 |
-| Product Variants | 13 |
-| EMI Plans | 91 |
-| Demonstration Reviews | 10 |
-
-Seeded products:
-
-- Apple iPhone 17 Pro
-- Samsung Galaxy S25 Ultra
-- Google Pixel 10 Pro
-- Apple MacBook Pro 14 (M4)
-
-The seed data also includes multiple variant images and product specifications.
-
-## 5. Schema Used
-
-The main relational structure is:
-
-```text
-Category
-    |
-    +-- Product
-          |
-          +-- ProductVariant
-          |      |
-          |      +-- VariantImage
-          |
-          +-- ProductSpecification
-          |
-          +-- Review
-          |
-          +-- EmiPlan
-```
-
-### Product
-
-Stores core product information including:
-
-```text
-id
-name
-slug
-brand
-description
-badge
-categoryId
-createdAt
-updatedAt
-```
-
-### ProductVariant
-
-Stores individual purchasable configurations, including:
-
-```text
-id
-productId
-sku
-variantName
-colorName
-colorHex
-storage
-price
-mrp
-stock
-```
-
-A product can contain multiple color and storage variants.
-
-### VariantImage
-
-Stores images associated with product variants:
-
-```text
-image URL
-alt text
-primary image flag
-display order
-```
-
-### ProductSpecification
-
-Stores normalized product-level technical specifications:
-
-```text
-id
-productId
-category
-name
-value
-displayOrder
-createdAt
-updatedAt
-```
-
-Specification categories include:
-
-```text
-Performance
-Display
-Camera
-Battery & Power
-Connectivity
-General
-```
-
-### Review
-
-Stores:
-
-```text
-id
-productId
-variantName
-rating
-title
-comment
-reviewerName
-verifiedBuyer
-createdAt
-updatedAt
-```
-
-### EmiPlan
-
-Stores predefined financing plan information including:
-
-```text
-tenure
-interest rate
-cashback
-minimum pledge multiplier
-```
-
-The application supports 0% No-Cost EMI and reducing-balance EMI plans.
-
-### Category
-
-Stores product categories and their relationships with products.
-
-## 6. API Endpoints and Example Responses
+## 4. API Endpoints and Example Responses
 
 ### Health Check
 
@@ -485,7 +327,345 @@ GET /api/products/compare
 
 The endpoint returns the product information required for comparison, including pricing, specifications, and EMI financing information. The frontend supports up to three products.
 
-## 7. Admin API Endpoints
+## 5. Schema Used
+
+The application uses a relational PostgreSQL schema managed through Prisma ORM.
+
+### Entity Relationship Overview
+
+```text
+Category
+    |
+    +-- Product
+          |
+          +-- ProductVariant
+          |      |
+          |      +-- VariantImage
+          |
+          +-- ProductSpecification
+          |
+          +-- Review
+          |
+          +-- EmiPlan
+```
+
+### Product
+
+Stores core product information:
+
+```text
+id
+name
+slug
+brand
+description
+badge
+categoryId
+createdAt
+updatedAt
+```
+
+### ProductVariant
+
+Stores individual purchasable configurations:
+
+```text
+id
+productId
+sku
+variantName
+colorName
+colorHex
+storage
+price
+mrp
+stock
+```
+
+A product can contain multiple color and storage variants.
+
+### VariantImage
+
+Stores images associated with product variants:
+
+```text
+image URL
+alt text
+primary image flag
+display order
+```
+
+### ProductSpecification
+
+Stores normalized product-level technical specifications:
+
+```text
+id
+productId
+category
+name
+value
+displayOrder
+createdAt
+updatedAt
+```
+
+Specification categories include:
+
+```text
+Performance
+Display
+Camera
+Battery & Power
+Connectivity
+General
+```
+
+### Review
+
+Stores customer review information:
+
+```text
+id
+productId
+variantName
+rating
+title
+comment
+reviewerName
+verifiedBuyer
+createdAt
+updatedAt
+```
+
+### EmiPlan
+
+Stores predefined financing plan information:
+
+```text
+tenure
+interest rate
+cashback
+minimum pledge multiplier
+```
+
+The application supports 0% No-Cost EMI and reducing-balance EMI plans.
+
+### Category
+
+Stores product categories and their relationships with products.
+
+## 6. Database Schema and Seed Data
+
+The database schema is defined in:
+
+```text
+prisma/schema.prisma
+```
+
+Seed data is defined in:
+
+```text
+prisma/seed.ts
+```
+
+The demonstration database contains:
+
+| Resource | Count |
+|---|---:|
+| Products | 4 |
+| Product Variants | 13 |
+| EMI Plans | 91 |
+| Demonstration Reviews | 10 |
+
+Seeded products:
+
+- Apple iPhone 17 Pro
+- Samsung Galaxy S25 Ultra
+- Google Pixel 10 Pro
+- Apple MacBook Pro 14 (M4)
+
+The seed data also includes multiple variant images and product specifications.
+
+To reset the demonstration database and seed it again:
+
+```bash
+npx tsx prisma/seed.ts
+```
+
+## 7. Project Architecture
+
+The application follows a layered full-stack architecture:
+
+```text
+                    Browser / Client
+                          |
+                          v
+                Next.js React UI
+                          |
+              +-----------+-----------+
+              |                       |
+              v                       v
+        Client State              API Client
+        React Context                  |
+                                      v
+                              Next.js API Routes
+                                      |
+                          +-----------+-----------+
+                          |                       |
+                          v                       v
+                    Zod Validation          Auth Guard
+                          |                       |
+                          +-----------+-----------+
+                                      |
+                                      v
+                              Service Layer
+                                      |
+                                      v
+                                Prisma ORM
+                                      |
+                                      v
+                                PostgreSQL
+```
+
+### Frontend Layer
+
+Located primarily under:
+
+```text
+src/components/
+src/app/
+src/context/
+```
+
+Responsible for:
+
+- Catalog discovery
+- Product configuration
+- Search and filtering
+- Image galleries
+- EMI interaction
+- Reviews
+- Wishlist and comparison
+- Responsive layouts
+- Admin dashboard
+
+### API Layer
+
+Located under:
+
+```text
+src/app/api/
+```
+
+Responsible for:
+
+- Request handling
+- Query parameter parsing
+- Response formatting
+- Validation
+- Authentication for admin endpoints
+
+### Validation Layer
+
+Located in:
+
+```text
+src/lib/validators.ts
+```
+
+Zod schemas validate catalog and administrative inputs before they reach service/database operations.
+
+### Service Layer
+
+Located under:
+
+```text
+src/lib/services/
+```
+
+Database operations are isolated inside service functions rather than being performed directly from React components.
+
+### Data Layer
+
+The application uses:
+
+```text
+Prisma ORM
+PostgreSQL
+```
+
+The database contains products, variants, images, specifications, reviews, categories, and EMI plans.
+
+## 8. Core Application Flows
+
+### Product Discovery Flow
+
+```text
+User opens catalog
+      |
+      v
+Search / Filter / Sort
+      |
+      v
+GET /api/products
+      |
+      v
+Prisma database filtering
+      |
+      v
+Products + Facets
+      |
+      v
+Responsive Product Grid
+```
+
+### Product Configuration Flow
+
+```text
+Product Detail
+      |
+      +-- Select Color
+      |
+      +-- Select Storage
+      |
+      +-- View Variant Images
+      |
+      +-- View Specifications
+      |
+      +-- Select EMI Plan
+      |
+      +-- Calculate Financing
+      |
+      v
+Checkout Summary
+```
+
+### Admin Management Flow
+
+```text
+Admin Dashboard
+      |
+      v
+Authentication Guard
+      |
+      v
+Zod Validation
+      |
+      v
+Admin Service
+      |
+      v
+Prisma
+      |
+      v
+PostgreSQL
+      |
+      v
+Customer APIs reflect updated catalog data
+```
+
+## 9. Admin API Endpoints
 
 Admin endpoints are protected by the application authentication guard.
 
@@ -550,7 +730,7 @@ PUT    /api/admin/images
 DELETE /api/admin/images
 ```
 
-## 8. EMI Calculation
+## 10. EMI Calculation
 
 The centralized financial calculation engine is:
 
@@ -558,7 +738,7 @@ The centralized financial calculation engine is:
 src/lib/emi-calculator.ts
 ```
 
-Reducing-balance EMI:
+### Reducing-Balance EMI
 
 ```text
 EMI = P × r × (1+r)^n / ((1+r)^n - 1)
@@ -572,33 +752,85 @@ r = monthly interest rate
 n = tenure in months
 ```
 
-For 0% No-Cost EMI:
+### 0% No-Cost EMI
 
 ```text
 EMI = Principal / Tenure
 ```
 
-The calculator also determines total repayment, total interest, cashback impact, and effective net cost.
+The calculator also determines:
 
-## 9. Verification
+- Total repayment
+- Total interest
+- Cashback impact
+- Effective net cost
+- Down-payment-adjusted principal
 
-Run the complete verification suite:
+The financial engine is reused by the interactive calculator instead of duplicating calculation logic in UI components.
 
-```bash
-npm run verify
+## 11. Product Experience
+
+### Catalog
+
+The catalog provides:
+
+- Debounced backend search
+- Multi-attribute filtering
+- Dynamic facet counts
+- Price filtering
+- Sorting
+- Active filter chips
+- Clear-all functionality
+- URL query synchronization
+- Desktop filter sidebar
+- Mobile filter drawer
+- Loading skeletons
+- Empty states
+
+### Product Details
+
+Product pages provide:
+
+- Variant selection
+- Color selection
+- Storage selection
+- Dynamic pricing
+- Variant-aware image galleries
+- Fullscreen image lightbox
+- Keyboard navigation
+- Mobile touch gestures
+- Technical specifications
+- EMI plan selection
+- Interactive EMI calculator
+- Reviews and rating summaries
+- Wishlist support
+- Comparison support
+
+### Wishlist and Comparison
+
+Wishlist state is persisted using:
+
+```text
+localStorage
 ```
 
-Additional checks:
+Only product slugs are stored locally. Current product metadata is retrieved from the database/API.
 
-```bash
-npx prisma validate
-npx tsc --noEmit
-npm run build
-```
+Product comparison supports up to three products and compares:
 
-The verification suite covers database persistence, product and variant relationships, catalog APIs, specifications, variant images, reviews, EMI calculations, product comparison, and admin functionality.
+- Product information
+- Pricing
+- Storage
+- Display
+- Processor
+- RAM
+- Camera
+- Battery
+- Operating system
+- Warranty
+- EMI financing information
 
-## 10. Project Structure
+## 12. Project Structure
 
 ```text
 .
@@ -640,7 +872,72 @@ The verification suite covers database persistence, product and variant relation
 └── README.md
 ```
 
-## 11. Verification Status
+## 13. Security and Validation
+
+The application uses several layers of validation and access control.
+
+### Request Validation
+
+Zod schemas validate:
+
+- Product data
+- Variant data
+- Category data
+- EMI plan data
+- Image data
+- Review data
+- Product query parameters
+
+### Admin Authentication
+
+Admin API requests require an accepted admin credential through:
+
+```text
+x-admin-key
+Authorization: Bearer <key>
+1fi_admin_key cookie
+```
+
+Unauthorized requests return a standardized HTTP 401 response.
+
+### Database Access
+
+Database operations are isolated in service functions using Prisma ORM.
+
+## 14. Verification and Testing
+
+Run the complete verification suite:
+
+```bash
+npm run verify
+```
+
+Additional checks:
+
+```bash
+npx prisma validate
+npx prisma generate
+npx tsc --noEmit
+npm run build
+```
+
+The verification suite covers:
+
+- Database persistence
+- Product and variant relationships
+- Catalog APIs
+- Search
+- Filtering
+- Sorting
+- Dynamic facets
+- Product specifications
+- Variant images
+- Reviews
+- EMI calculations
+- Product comparison
+- Admin functionality
+
+### Verification Status
 
 | Area | Status |
 |---|---|
@@ -657,7 +954,35 @@ The verification suite covers database persistence, product and variant relation
 | Admin APIs | Passed |
 | Production build | Passed |
 
-## 12. Disclaimer
+## 15. Implementation Highlights
+
+### Database-Backed Catalog
+
+Filtering, sorting, search, and facet calculations are performed against the database rather than relying on a static client-side product array.
+
+### Dynamic Product Data
+
+Product variants, images, specifications, reviews, prices, inventory, and EMI plans are stored in and retrieved from the database.
+
+### Reusable Financial Engine
+
+The EMI calculation logic is centralized in:
+
+```text
+src/lib/emi-calculator.ts
+```
+
+This prevents duplicated financial formulas across the application.
+
+### Responsive UX
+
+The interface provides dedicated desktop and mobile experiences for catalog filtering, product browsing, image viewing, and checkout interactions.
+
+### Admin-to-Store Data Flow
+
+Changes made through the admin dashboard propagate through the database and are immediately reflected by the customer-facing APIs.
+
+## 16. Disclaimer
 
 This project is a demonstration e-commerce and financing application.
 
