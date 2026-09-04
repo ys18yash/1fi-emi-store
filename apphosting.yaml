@@ -1,0 +1,30 @@
+# Firebase App Hosting Configuration for 1Fi Store (Next.js 16 + Prisma)
+# Reference: https://firebase.google.com/docs/app-hosting/configure
+
+runConfig:
+  minInstances: 0
+  maxInstances: 10
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 1024
+
+env:
+  # Database connection string (PostgreSQL) stored as a secret in Google Cloud Secret Manager
+  - variable: DATABASE_URL
+    secret: DATABASE_URL
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # Administrator secret key for protecting /api/admin endpoints
+  - variable: ADMIN_SECRET_KEY
+    secret: ADMIN_SECRET_KEY
+    availability:
+      - RUNTIME
+
+  # Runtime environment
+  - variable: NODE_ENV
+    value: production
+    availability:
+      - BUILD
+      - RUNTIME

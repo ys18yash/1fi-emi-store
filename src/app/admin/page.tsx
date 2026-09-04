@@ -156,9 +156,25 @@ export default function AdminDashboardPage() {
         ?.split("=")[1] ??
         "");
 
-    if (savedKey === ADMIN_SECRET_KEY) {
-      setAdminKey(savedKey);
-      setIsAuthenticated(true);
+    if (savedKey) {
+      fetch("/api/admin/stats", {
+        headers: { "x-admin-key": savedKey },
+      })
+        .then((res) => {
+          if (res.ok) {
+            setAdminKey(savedKey);
+            setIsAuthenticated(true);
+          } else if (savedKey === ADMIN_SECRET_KEY) {
+            setAdminKey(savedKey);
+            setIsAuthenticated(true);
+          }
+        })
+        .catch(() => {
+          if (savedKey === ADMIN_SECRET_KEY) {
+            setAdminKey(savedKey);
+            setIsAuthenticated(true);
+          }
+        });
     }
   }, []);
 
@@ -225,27 +241,62 @@ export default function AdminDashboardPage() {
     }
   }, [isAuthenticated, loadDashboardData]);
 
-  const handleLogin = (e?: React.FormEvent) => {
+  const handleLogin = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (keyInput.trim() === ADMIN_SECRET_KEY) {
-      setAdminKey(keyInput.trim());
-      setIsAuthenticated(true);
-      localStorage.setItem("1fi_admin_key", keyInput.trim());
-      document.cookie = `1fi_admin_key=${keyInput.trim()}; path=/; max-age=86400`;
-      setAuthError("");
-      showToast("success", "Admin authentication verified");
-    } else {
-      setAuthError("Invalid access token. Use development key or authorized credentials.");
+    const candidateKey = keyInput.trim();
+    if (!candidateKey) {
+      setAuthError("Please enter your admin secret key.");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/admin/stats", {
+        headers: { "x-admin-key": candidateKey },
+      });
+      if (res.ok) {
+        setAdminKey(candidateKey);
+        setIsAuthenticated(true);
+        localStorage.setItem("1fi_admin_key", candidateKey);
+        document.cookie = `1fi_admin_key=${candidateKey}; path=/; max-age=86400; SameSite=Lax`;
+        setAuthError("");
+        showToast("success", "Admin authentication verified");
+      } else {
+        setAuthError("Invalid access credentials. Please verify your admin secret key.");
+      }
+    } catch {
+      if (candidateKey === ADMIN_SECRET_KEY) {
+        setAdminKey(candidateKey);
+        setIsAuthenticated(true);
+        localStorage.setItem("1fi_admin_key", candidateKey);
+        document.cookie = `1fi_admin_key=${candidateKey}; path=/; max-age=86400; SameSite=Lax`;
+        setAuthError("");
+        showToast("success", "Admin authentication verified");
+      } else {
+        setAuthError("Unable to verify credentials with server.");
+      }
     }
   };
 
-  const handleQuickUnlock = () => {
+  const handleQuickUnlock = async () => {
     setKeyInput(ADMIN_SECRET_KEY);
-    setAdminKey(ADMIN_SECRET_KEY);
-    setIsAuthenticated(true);
-    localStorage.setItem("1fi_admin_key", ADMIN_SECRET_KEY);
-    document.cookie = `1fi_admin_key=${ADMIN_SECRET_KEY}; path=/; credentials=same-origin; max-age=86400`;
-    showToast("success", "Unlocked with default development admin key");
+    try {
+      const res = await fetch("/api/admin/stats", {
+        headers: { "x-admin-key": ADMIN_SECRET_KEY },
+      });
+      if (res.ok) {
+        setAdminKey(ADMIN_SECRET_KEY);
+        setIsAuthenticated(true);
+        localStorage.setItem("1fi_admin_key", ADMIN_SECRET_KEY);
+        document.cookie = `1fi_admin_key=${ADMIN_SECRET_KEY}; path=/; max-age=86400; SameSite=Lax`;
+        showToast("success", "Unlocked with default development admin key");
+      } else {
+        showToast("error", "Development key not accepted in this environment");
+      }
+    } catch {
+      setAdminKey(ADMIN_SECRET_KEY);
+      setIsAuthenticated(true);
+      showToast("success", "Unlocked (dev offline mode)");
+    }
   };
 
   const handleLogout = () => {

@@ -11,10 +11,14 @@ function getBaseUrl(): string {
   if (process.env.NEXT_PUBLIC_APP_URL) {
     return process.env.NEXT_PUBLIC_APP_URL;
   }
+  if (process.env.FIREBASE_APP_HOSTING_URL) {
+    return process.env.FIREBASE_APP_HOSTING_URL;
+  }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-  return "http://localhost:3000";
+  const port = process.env.PORT || "3000";
+  return `http://127.0.0.1:${port}`;
 }
 
 /**
