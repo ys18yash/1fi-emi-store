@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #6C28D9;
+    --primary-hover: #5B21B6;
+    --primary-light: #F5F3FF;
+    --primary-dark: #4C1D95;
+    --background: #FFFFFF;
+    --surface: #FAFAFB;
+    --surface-hover: #F4F4F6;
+    --border: #E4E4E7;
+    --text-primary: #09090B;
+    --text-secondary: #52525B;
+    --text-muted: #71717A;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFAFB;
+  color: #09090B;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-geist), var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.028em;
+}
+
+/* Subtle, Realistic Elevation Shadows */
+.shadow-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-modal {
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Micro-interaction Easing */
+.transition-spring {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.18s ease;
+}
+
+.plan-card-active {
+  border-color: #6C28D9 !important;
+  background-color: #FAF5FF !important;
+}
+
+/* Subtle Shimmer for Skeletons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #F4F4F6 25%, #E4E4E7 50%, #F4F4F6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }

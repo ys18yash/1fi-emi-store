@@ -1,0 +1,99 @@
+// This is your Prisma schema file for 1Fi Store
+// Supports SQLite for instant local portability and PostgreSQL for production deployments
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id          String           @id @default(cuid())
+  slug        String           @unique
+  name        String
+  brand       String
+  tagline     String?
+  description String
+  badge       String?          // e.g. "NEW", "BESTSELLER", "PRO CHOICE"
+  categoryId  String
+  category    Category         @relation(fields: [categoryId], references: [id])
+  variants    ProductVariant[]
+  isFeatured  Boolean          @default(false)
+  displayOrder Int             @default(0)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([slug])
+}
+
+model ProductVariant {
+  id             String           @id @default(cuid())
+  productId      String
+  product        Product          @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku            String           @unique
+  variantName    String           // e.g. "256GB - Desert Titanium"
+  colorName      String           // e.g. "Desert Titanium"
+  colorHex       String           // e.g. "#C5A98F"
+  storage        String?          // e.g. "256GB", "512GB", "1TB"
+  mrp            Int              // Maximum Retail Price in INR (e.g. 134900)
+  price          Int              // 1Fi Selling Price in INR (e.g. 127400)
+  inventoryCount Int              @default(25)
+  isDefault      Boolean          @default(false)
+  displayOrder   Int              @default(0)
+  images         VariantImage[]
+  emiPlans       ProductEmiPlan[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  @@index([productId])
+}
+
+model VariantImage {
+  id           String         @id @default(cuid())
+  variantId    String
+  variant      ProductVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  url          String
+  altText      String
+  isPrimary    Boolean        @default(false)
+  displayOrder Int            @default(0)
+}
+
+model EmiPlan {
+  id                  String           @id @default(cuid())
+  tenureMonths        Int              // e.g. 3, 6, 12, 24, 36, 48, 60
+  annualInterestRate  Float            // 0.0 for 0% interest, 10.5 for 10.5%
+  isNoCost            Boolean          @default(true)
+  cashbackAmount      Int              @default(0) // in INR (e.g. 7500)
+  cashbackDescription String?          // "Additional cashback of ₹7,500"
+  minPledgeMultiplier Float            @default(1.5) // LAMF Mutual Fund collateral rule (150%)
+  displayOrder        Int              @default(0)
+  products            ProductEmiPlan[]
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+}
+
+model ProductEmiPlan {
+  id               String         @id @default(cuid())
+  variantId        String
+  variant          ProductVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  emiPlanId        String
+  emiPlan          EmiPlan        @relation(fields: [emiPlanId], references: [id], onDelete: Cascade)
+  customMonthlyEmi Int?           // Explicit precomputed amount or calculated on-the-fly
+  displayOrder     Int            @default(0)
+
+  @@unique([variantId, emiPlanId])
+  @@index([variantId])
+}

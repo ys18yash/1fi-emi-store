@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 550" fill="none">
+  <defs>
+    <linearGradient id="bg_mac_sb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+    <linearGradient id="mac_body_sb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D2D30"/>
+      <stop offset="50%" stop-color="#1F1F23"/>
+      <stop offset="100%" stop-color="#141416"/>
+    </linearGradient>
+    <filter id="mac_shadow_sb" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="25" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect width="400" height="550" rx="24" fill="url(#bg_mac_sb)"/>
+  <g filter="url(#mac_shadow_sb)">
+    <!-- Laptop Display Lid -->
+    <rect x="50" y="80" width="300" height="200" rx="14" fill="url(#mac_body_sb)" stroke="#3F3F46" stroke-width="1.5"/>
+    <rect x="56" y="86" width="288" height="188" rx="8" fill="#000000"/>
+    
+    <!-- Notch -->
+    <rect x="182" y="86" width="36" height="10" rx="4" fill="#18181B"/>
+    <circle cx="200" cy="91" r="2.5" fill="#0284C7"/>
+    
+    <!-- Screen Visual -->
+    <circle cx="200" cy="180" r="60" fill="#6C28D9" fill-opacity="0.4" filter="blur(25px)"/>
+    <circle cx="160" cy="160" r="40" fill="#EC4899" fill-opacity="0.3" filter="blur(20px)"/>
+    
+    <!-- Laptop Base / Keyboard Deck -->
+    <polygon points="30,285 370,285 390,340 10,340" fill="url(#mac_body_sb)" stroke="#3F3F46" stroke-width="1.5"/>
+    <!-- Trackpad area -->
+    <rect x="155" y="295" width="90" height="35" rx="4" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+    <!-- Front Notch Lip -->
+    <rect x="175" y="285" width="50" height="4" rx="2" fill="#3F3F46"/>
+    
+    <text x="200" y="420" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#71717A" text-anchor="middle" letter-spacing="3">1Fi LAMF BACKED</text>
+    <text x="200" y="445" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">MacBook Pro 14 (M4)</text>
+    <text x="200" y="468" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#A1A1AA" text-anchor="middle">Space Black</text>
+  </g>
+</svg>
