@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 550" fill="none">
+  <defs>
+    <linearGradient id="sp_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="550" rx="24" fill="url(#sp_bg)"/>
+  
+  <!-- S-Pen Visual Stylus -->
+  <g transform="translate(190, 60) rotate(25)">
+    <!-- Pen Body -->
+    <rect x="-8" y="0" width="16" height="320" rx="6" fill="#334155" stroke="#64748B" stroke-width="1.5"/>
+    <polygon points="-8,320 8,320 0,350" fill="#0F172A" stroke="#64748B" stroke-width="1"/>
+    <circle cx="0" cy="350" r="2" fill="#38BDF8"/>
+    <!-- Clicker Button -->
+    <rect x="-6" y="-12" width="12" height="12" rx="2" fill="#64748B"/>
+    <!-- Function Button on Side -->
+    <rect x="-8" y="180" width="3" height="24" rx="1" fill="#94A3B8"/>
+  </g>
+  
+  <!-- Glow Wave -->
+  <path d="M80 320 Q200 280 320 340" stroke="#38BDF8" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 6" opacity="0.6"/>
+  
+  <text x="200" y="420" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="3">EMBEDDED S-PEN</text>
+  <text x="200" y="450" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">Ultra-Low 2.8ms Latency</text>
+  <text x="200" y="475" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">Air Actions &amp; Smart Handwriting OCR</text>
+</svg>

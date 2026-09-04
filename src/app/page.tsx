@@ -1,3 +1,5 @@
+"use strict";
+
 import { fetchProductsFromApi } from "@/lib/api-client";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,7 +9,8 @@ import { HowItWorksTimeline } from "@/components/home/HowItWorksTimeline";
 import { BenefitsGrid } from "@/components/home/BenefitsGrid";
 import { FinancingExplainer } from "@/components/home/FinancingExplainer";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, Percent, Lock, CheckCircle2 } from "lucide-react";
+import { Suspense } from "react";
 
 export const dynamic = "force-dynamic";
 
@@ -16,56 +19,76 @@ export default async function HomePage() {
   const products = await fetchProductsFromApi();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFB] text-gray-950 selection:bg-purple-100 selection:text-purple-900">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-page)] text-[var(--text-primary)] selection:bg-[var(--brand-primary)]/20 selection:text-[var(--brand-primary)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1">
-        {/* ========================================================= */}
-        {/* HERO SECTION — MINIMAL FINTECH HERO                       */}
-        {/* ========================================================= */}
-        <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-gray-200 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              {/* Left Column: Hero Text & Value Proposition (7 Cols) */}
-              <div className="lg:col-span-7 space-y-6 text-left">
-                {/* Eyebrow — Plain small-caps text */}
-                <div className="text-[11px] font-semibold tracking-wider uppercase text-gray-500">
-                  Loan Against Mutual Funds (LAMF)
+        {/* ================================================================= */}
+        {/* HERO SECTION — EXCLUSIVE TRANSPARENT TECHNICAL GRID OVERLAY       */}
+        {/* ================================================================= */}
+        <section className="relative pt-10 pb-12 lg:pt-16 lg:pb-16 overflow-hidden border-b border-[var(--border-subtle)] dark:border-[#1C2B25]">
+          {/* Transparent grid overlay - same continuous underlying background color */}
+          <div className="absolute inset-0 bg-grid-hero pointer-events-none z-0" />
+          <div className="absolute inset-0 grid-intersection-dots opacity-30 pointer-events-none z-0" />
+
+          <div className="site-container relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              {/* Left Column: Hero Typography (7 Cols) */}
+              <div className="lg:col-span-7 min-w-0 space-y-5 text-left">
+                {/* Technical Protocol Status Eyebrow */}
+                <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/25 text-[11px] font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A]">
+                  <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] dark:bg-[#B7F34A] animate-ping" />
+                  <span>1Fi PROTOCOL • MUTUAL FUND BACKED FINANCING</span>
                 </div>
 
-                {/* Primary Headline — font-black reserved for H1 */}
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-950 leading-[1.1]">
-                  Power your next device with your investments.
+                {/* Primary Editorial Headline */}
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[var(--text-primary)] leading-[1.12]">
+                  Your next device. <br />
+                  <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">Your investments</span> keep growing.
                 </h1>
 
-                {/* Subtitle — One line of gray subtext */}
-                <p className="text-base sm:text-lg text-gray-600 max-w-xl leading-relaxed">
-                  Shop flagship smartphones and laptops on 0% No-Cost EMI without selling your mutual fund units.
+                {/* Subtitle */}
+                <p className="text-sm sm:text-base text-[var(--text-secondary)] dark:text-[#9DA9A3] max-w-lg leading-relaxed font-normal">
+                  Get flagship smartphones and workstations on flexible 0% EMI while your mutual fund portfolio remains invested and compounds.
                 </p>
 
-                {/* Solid CTA Button */}
-                <div className="pt-2 flex items-center gap-3">
+                {/* CTA Action Buttons */}
+                <div className="pt-2 flex flex-wrap items-center gap-3">
                   <a
                     href="#catalog"
-                    className="px-6 py-3 rounded-lg bg-[#6C28D9] hover:bg-[#5B21B6] text-white font-semibold text-sm transition-colors flex items-center gap-2 shadow-sm hover:shadow-md"
+                    className="px-6 py-3.5 rounded-xl bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white font-semibold text-sm transition-all duration-200 flex items-center gap-2 shadow-premium-sm hover:shadow-premium-md focus-glow-btn active:scale-[0.98]"
                   >
-                    <span>Explore Flagship Store</span>
+                    <span>Explore Devices</span>
                     <ArrowRight className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href="#how-it-works"
+                    className="px-5 py-3.5 rounded-xl bg-[var(--bg-surface)] dark:bg-[#111B17] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#16241F] text-[var(--text-primary)] dark:text-[#F2F6F4] font-semibold text-sm transition-colors border border-[var(--border-subtle)] dark:border-[#1C2B25] shadow-premium-xs focus-glow-card"
+                  >
+                    See How It Works
                   </a>
                 </div>
 
-                {/* Trust Badges — Editorial inline text list with middle dots */}
-                <div className="pt-8 border-t border-gray-100 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-gray-600 font-medium">
-                  <span>0% No-Cost EMI</span>
-                  <span className="text-gray-300">•</span>
-                  <span>Zero Capital Gains Tax</span>
-                  <span className="text-gray-300">•</span>
-                  <span>Digital Lien via CAMS & KFintech</span>
+                {/* Small Technical System Badges */}
+                <div className="pt-3 flex flex-wrap items-center gap-4 text-[11px] font-semibold text-[var(--text-muted)] dark:text-[#6B7972] border-t border-[var(--border-subtle)]/60 dark:border-[#1C2B25]/60">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">✓</span>
+                    <span>1.5× Equity Collateral</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">✓</span>
+                    <span>Zero STCG / LTCG Tax</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">✓</span>
+                    <span>CAMS & KFintech Digital Lien</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Right Column: Interactive Simulation Card (5 Cols) */}
-              <div className="lg:col-span-5 flex justify-center">
+              {/* Right Column: Floating Hardware & Wealth Growth Stage (5 Cols) */}
+              <div className="lg:col-span-5 min-w-0 w-full flex justify-center lg:justify-end">
                 <HeroVisualizer />
               </div>
             </div>
@@ -73,45 +96,119 @@ export default async function HomePage() {
         </section>
 
         {/* ========================================================= */}
-        {/* PRODUCT CATALOG SECTION (`#catalog`)                      */}
+        {/* FEATURE STRIP — NO GRID, SAME CONTINUOUS PAGE BACKGROUND  */}
         {/* ========================================================= */}
-        <section id="catalog" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 scroll-mt-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#6C28D9]">
-                Live Storefront
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-950 tracking-tight mt-1.5">
-                Flagship Devices on Mutual Fund EMI
-              </h2>
-            </div>
-            <p className="text-xs sm:text-sm text-gray-500 max-w-md">
-              Choose your device, configure your finish, and select from flexible 3 to 60-month EMI options.
-            </p>
-          </div>
+        <section className="border-b border-[var(--border-subtle)] dark:border-[#1C2B25] bg-[var(--bg-page)] dark:bg-[#09100E] py-3.5 relative z-10">
+          <div className="site-container">
+            <div className="flex flex-wrap items-center justify-between gap-y-3 text-xs font-semibold text-[var(--text-secondary)] dark:text-[#9DA9A3]">
+              <div className="flex items-center gap-2">
+                <Percent className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">0% No-Cost EMI</span>
+              </div>
+              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
 
-          <ProductGrid products={products} />
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Mutual Fund Backed</span>
+              </div>
+              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Digital Lien via CAMS & KFintech</span>
+              </div>
+              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+
+              <div className="flex items-center gap-2">
+                <Lock className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Secure Instant Approvals</span>
+              </div>
+              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] dark:bg-[#B7F34A]" />
+                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Flexible 3–60 Month Plans</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ========================================================= */}
-        {/* HOW IT WORKS TIMELINE SECTION (`#how-it-works`)           */}
+        {/* PRODUCT CATALOG SECTION (`#catalog`) — 01 / STORE         */}
         {/* ========================================================= */}
-        <HowItWorksTimeline />
+        <section id="catalog" className="bg-[var(--bg-page)] dark:bg-[#0C1412] py-16 lg:py-24 scroll-mt-16 border-b border-[var(--border-subtle)] dark:border-[#1E2D27] relative">
+          <div className="site-container relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-[var(--border-subtle)] dark:border-[#1C2B25]">
+              <div>
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A]">
+                  <span>01 / STORE</span>
+                  <span className="text-[var(--border-strong)] dark:text-[#2A3E36]">───</span>
+                  <span>FLAGSHIP HARDWARE</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] dark:text-[#F2F6F4] tracking-tight mt-1">
+                  Flagship Devices. Smarter Financing.
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA9A3] max-w-md">
+                Choose a device, configure your finish, and select a 0% mutual fund EMI plan tailored to your investments.
+              </p>
+            </div>
+
+            <Suspense fallback={<div className="h-96 rounded-2xl bg-[var(--bg-surface-subtle)] dark:bg-[#111B17] border border-[var(--border-subtle)] dark:border-[#1C2B25] animate-pulse" />}>
+              <ProductGrid products={products} />
+            </Suspense>
+          </div>
+        </section>
 
         {/* ========================================================= */}
-        {/* WEALTH ADVANTAGE & BENEFITS SECTION (`#benefits`)         */}
+        {/* WEALTH ADVANTAGE SECTION (`#benefits`) — 02 / ADVANTAGE   */}
         {/* ========================================================= */}
         <BenefitsGrid />
 
         {/* ========================================================= */}
-        {/* FINANCING EXPLAINER & DIAGRAM SECTION (`#financing`)       */}
+        {/* 3-STEP FINANCING EXPLAINER (`#financing`) — 03 / FINANCING */}
         {/* ========================================================= */}
         <FinancingExplainer />
 
         {/* ========================================================= */}
-        {/* FAQ ACCORDION SECTION (`#faq`)                            */}
+        {/* HOW IT WORKS TIMELINE (`#how-it-works`) — 04 / TIMELINE   */}
+        {/* ========================================================= */}
+        <HowItWorksTimeline />
+
+        {/* ========================================================= */}
+        {/* FAQ ACCORDION SECTION (`#faq`) — 05 / FAQ                 */}
         {/* ========================================================= */}
         <FaqAccordion />
+
+        {/* ========================================================= */}
+        {/* BOTTOM CONVERSION CTA BANNER                              */}
+        {/* ========================================================= */}
+        <section className="bg-[#0D1613] dark:bg-[#060B0A] text-white py-16 sm:py-20 border-t border-[#1F2E27] relative overflow-hidden">
+          <div className="site-container text-center space-y-6 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-primary)]/20 dark:bg-[rgba(183,243,74,0.1)] border border-[var(--brand-primary)] dark:border-[#B7F34A]/30 text-xs font-bold uppercase tracking-wider text-[#B7F34A]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Ready to upgrade without breaking your portfolio?</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white max-w-2xl mx-auto leading-tight">
+              Power your next smartphone or laptop today.
+            </h2>
+
+            <p className="text-sm sm:text-base text-[#8D95A0] dark:text-[#9DA9A3] max-w-lg mx-auto leading-relaxed">
+              Explore our full range of flagship electronics with zero capital gains tax and transparent 0% mutual fund EMI.
+            </p>
+
+            <div className="pt-2">
+              <a
+                href="#catalog"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white font-bold text-sm shadow-premium-md focus-glow-btn transition-all active:scale-[0.98]"
+              >
+                <span>Browse All Devices</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

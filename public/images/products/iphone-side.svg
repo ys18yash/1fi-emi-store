@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 550" fill="none">
+  <defs>
+    <linearGradient id="side_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAFAFA"/>
+      <stop offset="100%" stop-color="#ECECEC"/>
+    </linearGradient>
+    <linearGradient id="titanium_rail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2D1C3"/>
+      <stop offset="50%" stop-color="#C5A98F"/>
+      <stop offset="100%" stop-color="#9C8068"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="550" rx="24" fill="url(#side_bg)"/>
+  
+  <!-- Profile Phone View -->
+  <g transform="translate(165, 50)">
+    <!-- Thin Side Profile Bar -->
+    <rect x="0" y="0" width="70" height="400" rx="14" fill="url(#titanium_rail)" stroke="#78604C" stroke-width="1.5"/>
+    
+    <!-- Action Button -->
+    <rect x="-4" y="55" width="4" height="24" rx="2" fill="#8C7058"/>
+    
+    <!-- Volume Buttons -->
+    <rect x="-4" y="95" width="4" height="42" rx="2" fill="#8C7058"/>
+    <rect x="-4" y="145" width="4" height="42" rx="2" fill="#8C7058"/>
+    
+    <!-- Camera Plateau Protrusion -->
+    <path d="M70 45 H78 Q82 45 82 55 V150 Q82 160 78 160 H70 Z" fill="#A88B72"/>
+    
+    <!-- Camera Button (Bottom Right) -->
+    <rect x="70" y="270" width="3" height="36" rx="1.5" fill="#8C7058"/>
+    
+    <!-- Antenna Bands -->
+    <rect x="0" y="40" width="70" height="3" fill="#6B533F" opacity="0.4"/>
+    <rect x="0" y="360" width="70" height="3" fill="#6B533F" opacity="0.4"/>
+  </g>
+  
+  <text x="200" y="480" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#087443" text-anchor="middle" letter-spacing="3">GRADE 5 TITANIUM</text>
+  <text x="200" y="504" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#18181B" text-anchor="middle">Contoured Edges & Action Button</text>
+</svg>

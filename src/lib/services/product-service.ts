@@ -1,12 +1,16 @@
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
 import { calculateEmi } from "@/lib/emi-calculator";
-import { ProductListItemDto, ProductDetailDto } from "@/types/product";
+import { ProductListItemDto, ProductDetailDto, CatalogFacetsDto } from "@/types/product";
 
 export interface ProductFilterParams {
   category?: string;
   brand?: string;
   search?: string;
+  storage?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  sort?: "recommended" | "price_asc" | "price_desc" | "newest";
 }
 
 export async function getAllProducts(
@@ -14,24 +18,85 @@ export async function getAllProducts(
 ): Promise<ProductListItemDto[]> {
   const whereClause: Prisma.ProductWhereInput = {};
 
-  if (filters?.category) {
+  // 1. Category Filter (by slug or name)
+  if (filters?.category && filters.category !== "ALL") {
     whereClause.category = {
-      slug: filters.category,
+      is: {
+        OR: [
+          { slug: { equals: filters.category } },
+          { name: { equals: filters.category } },
+        ],
+      },
     };
   }
 
-  if (filters?.brand) {
+  // 2. Brand Filter
+  if (filters?.brand && filters.brand !== "ALL") {
     whereClause.brand = {
       equals: filters.brand,
     };
   }
 
-  if (filters?.search) {
+  // 3. Search Filter (name, brand, description, tagline, SKU, variantName)
+  if (filters?.search && filters.search.trim()) {
+    const term = filters.search.trim();
     whereClause.OR = [
-      { name: { contains: filters.search } },
-      { brand: { contains: filters.search } },
-      { description: { contains: filters.search } },
+      { name: { contains: term } },
+      { brand: { contains: term } },
+      { tagline: { contains: term } },
+      { description: { contains: term } },
+      {
+        variants: {
+          some: {
+            OR: [
+              { sku: { contains: term } },
+              { variantName: { contains: term } },
+              { colorName: { contains: term } },
+            ],
+          },
+        },
+      },
     ];
+  }
+
+  // 4. Variant-level Storage Filter
+  if (filters?.storage && filters.storage !== "ALL") {
+    whereClause.variants = {
+      ...(whereClause.variants || {}),
+      some: {
+        ...(whereClause.variants?.some || {}),
+        storage: { equals: filters.storage },
+      },
+    };
+  }
+
+  // 5. Variant-level Price Range Filter
+  if (filters?.minPrice !== undefined || filters?.maxPrice !== undefined) {
+    const priceConditions: Prisma.IntFilter = {};
+    if (filters?.minPrice !== undefined && !isNaN(filters.minPrice)) {
+      priceConditions.gte = filters.minPrice;
+    }
+    if (filters?.maxPrice !== undefined && !isNaN(filters.maxPrice)) {
+      priceConditions.lte = filters.maxPrice;
+    }
+
+    whereClause.variants = {
+      ...(whereClause.variants || {}),
+      some: {
+        ...(whereClause.variants?.some || {}),
+        price: priceConditions,
+      },
+    };
+  }
+
+  // Determine Prisma primary orderBy
+  let orderByClause: Prisma.ProductOrderByWithRelationInput[] = [
+    { isFeatured: "desc" },
+    { displayOrder: "asc" },
+  ];
+
+  if (filters?.sort === "newest") {
+    orderByClause = [{ createdAt: "desc" }];
   }
 
   const products = await prisma.product.findMany({
@@ -53,10 +118,10 @@ export async function getAllProducts(
         },
       },
     },
-    orderBy: [{ isFeatured: "desc" }, { displayOrder: "asc" }],
+    orderBy: orderByClause,
   });
 
-  return products.map((product) => {
+  const formattedProducts = products.map((product) => {
     const defaultVariant =
       product.variants.find((v) => v.isDefault) || product.variants[0];
 
@@ -112,7 +177,86 @@ export async function getAllProducts(
       },
     };
   });
+
+  // Apply Price Sorting if requested
+  if (filters?.sort === "price_asc") {
+    formattedProducts.sort((a, b) => a.startingPrice - b.startingPrice);
+  } else if (filters?.sort === "price_desc") {
+    formattedProducts.sort((a, b) => b.startingPrice - a.startingPrice);
+  }
+
+  return formattedProducts;
 }
+
+/**
+ * Retrieve dynamic catalog facets for filters
+ */
+export async function getCatalogFacets(): Promise<CatalogFacetsDto> {
+  const [categories, products, variants, priceStats] = await Promise.all([
+    prisma.category.findMany({
+      include: {
+        _count: {
+          select: { products: true },
+        },
+      },
+      orderBy: { name: "asc" },
+    }),
+    prisma.product.findMany({
+      select: {
+        brand: true,
+      },
+    }),
+    prisma.productVariant.findMany({
+      where: {
+        storage: { not: null },
+      },
+      select: {
+        storage: true,
+      },
+    }),
+    prisma.productVariant.aggregate({
+      _min: { price: true },
+      _max: { price: true },
+    }),
+  ]);
+
+  // Aggregate Brand counts
+  const brandCountMap = new Map<string, number>();
+  products.forEach((p) => {
+    brandCountMap.set(p.brand, (brandCountMap.get(p.brand) || 0) + 1);
+  });
+  const brands = Array.from(brandCountMap.entries()).map(([name, count]) => ({
+    name,
+    count,
+  }));
+
+  // Aggregate Storage counts
+  const storageCountMap = new Map<string, number>();
+  variants.forEach((v) => {
+    if (v.storage) {
+      storageCountMap.set(v.storage, (storageCountMap.get(v.storage) || 0) + 1);
+    }
+  });
+  const storages = Array.from(storageCountMap.entries()).map(([value, count]) => ({
+    value,
+    count,
+  }));
+
+  return {
+    categories: categories.map((c) => ({
+      name: c.name,
+      slug: c.slug,
+      count: c._count.products,
+    })),
+    brands,
+    storages,
+    priceRange: {
+      min: priceStats._min.price ?? 50000,
+      max: priceStats._max.price ?? 200000,
+    },
+  };
+}
+
 
 export async function getProductBySlug(
   slug: string
@@ -121,6 +265,12 @@ export async function getProductBySlug(
     where: { slug },
     include: {
       category: true,
+      reviews: {
+        select: { rating: true },
+      },
+      specifications: {
+        orderBy: { displayOrder: "asc" },
+      },
       variants: {
         orderBy: { displayOrder: "asc" },
         include: {
@@ -140,6 +290,19 @@ export async function getProductBySlug(
 
   if (!product) return null;
 
+  // Calculate review summary
+  const distribution = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+  let sumRatings = 0;
+  product.reviews.forEach((r) => {
+    if (r.rating in distribution) {
+      distribution[r.rating as keyof typeof distribution]++;
+      sumRatings += r.rating;
+    }
+  });
+  const totalReviews = product.reviews.length;
+  const averageRating =
+    totalReviews > 0 ? parseFloat((sumRatings / totalReviews).toFixed(1)) : 0;
+
   return {
     id: product.id,
     slug: product.slug,
@@ -153,6 +316,18 @@ export async function getProductBySlug(
       name: product.category.name,
       slug: product.category.slug,
     },
+    reviewSummary: {
+      averageRating,
+      totalReviews,
+      ratingDistribution: distribution,
+    },
+    specifications: product.specifications.map((spec) => ({
+      id: spec.id,
+      category: spec.category,
+      name: spec.name,
+      value: spec.value,
+      displayOrder: spec.displayOrder,
+    })),
     variants: product.variants.map((v) => {
       const discountPercentage = Math.round(((v.mrp - v.price) / v.mrp) * 100);
 

@@ -30,14 +30,48 @@ model Product {
   badge       String?          // e.g. "NEW", "BESTSELLER", "PRO CHOICE"
   categoryId  String
   category    Category         @relation(fields: [categoryId], references: [id])
-  variants    ProductVariant[]
-  isFeatured  Boolean          @default(false)
-  displayOrder Int             @default(0)
-  createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt
+  variants       ProductVariant[]
+  specifications ProductSpecification[]
+  reviews        Review[]
+  isFeatured     Boolean          @default(false)
+  displayOrder   Int              @default(0)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
 
   @@index([slug])
 }
+
+model Review {
+  id            String   @id @default(cuid())
+  productId     String
+  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variantName   String?  // e.g. "256GB - Desert Titanium"
+  rating        Int      // 1 to 5
+  title         String
+  comment       String
+  reviewerName  String
+  verifiedBuyer Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([productId])
+  @@index([rating])
+}
+
+model ProductSpecification {
+  id           String   @id @default(cuid())
+  productId    String
+  product      Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category     String?  // e.g. "Performance", "Display", "Camera", "Battery & Power", "Connectivity", "General"
+  name         String   // e.g. "Processor", "Display", "RAM", "Rear Camera", "Front Camera", "Battery", "OS", "Warranty"
+  value        String   // e.g. "Apple A19 Pro (3nm)", "6.3-inch OLED"
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([productId])
+}
+
 
 model ProductVariant {
   id             String           @id @default(cuid())

@@ -1,3 +1,4 @@
+"use strict";
 "use client";
 
 import React from "react";
@@ -28,7 +29,6 @@ export function VariantSelector({
   );
 
   const handleStorageChange = (storage: string) => {
-    // Find matching variant with same color if possible, else first in tier
     const matching =
       variants.find(
         (v) => v.storage === storage && v.colorName === selectedVariant.colorName
@@ -49,15 +49,15 @@ export function VariantSelector({
   };
 
   return (
-    <div className="space-y-6 pt-5 border-t border-gray-100">
+    <div className="space-y-6 pt-5 border-t border-[var(--border-subtle)] dark:border-[#1E2D27]">
       {/* 1. Storage Capacity Configurator (if applicable) */}
       {uniqueStorages.length > 0 && (
         <div className="space-y-2.5">
-          <div className="flex items-center justify-between text-xs text-gray-800">
-            <span className="uppercase tracking-wider text-gray-400 text-[11px] font-semibold">
-              Step 1: Choose Capacity
+          <div className="flex items-center justify-between text-xs text-[var(--text-primary)] dark:text-[#F2F5F3]">
+            <span className="uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] text-[11px] font-bold">
+              Choose Capacity
             </span>
-            <span className="text-[#6C28D9] bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-200 text-xs font-medium">
+            <span className="text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] px-2.5 py-0.5 rounded-full border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 text-xs font-bold">
               Selected: {selectedVariant.storage}
             </span>
           </div>
@@ -73,22 +73,22 @@ export function VariantSelector({
                   type="button"
                   onClick={() => handleStorageChange(storage)}
                   className={clsx(
-                    "flex flex-col items-center justify-center p-3.5 rounded-xl border text-center transition-colors",
+                    "flex flex-col items-center justify-center p-3.5 rounded-xl border text-center transition-all cursor-pointer",
                     isSelected
-                      ? "border-[#6C28D9] bg-purple-50/70"
-                      : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+                      ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] shadow-premium-xs ring-1 ring-[var(--brand-primary)] dark:border-[#B7F34A]"
+                      : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] hover:border-[var(--brand-primary)]/40 hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#1F302A]"
                   )}
                 >
                   <span
                     className={clsx(
-                      "text-sm font-semibold",
-                      isSelected ? "text-[#6C28D9]" : "text-gray-950"
+                      "text-sm font-bold",
+                      isSelected ? "text-[var(--brand-primary)] dark:text-[#B7F34A]" : "text-[var(--text-primary)] dark:text-[#F2F5F3]"
                     )}
                   >
                     {storage}
                   </span>
                   {variantForStorage && (
-                    <span className="text-[11px] text-gray-500 font-normal mt-0.5">
+                    <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#9DA7A2] font-normal mt-0.5">
                       {formatINR(variantForStorage.price)}
                     </span>
                   )}
@@ -101,11 +101,11 @@ export function VariantSelector({
 
       {/* 2. Color / Finish Selection */}
       <div className="space-y-2.5">
-        <div className="flex items-center justify-between text-xs text-gray-800">
-          <span className="uppercase tracking-wider text-gray-400 text-[11px] font-semibold">
-            Step 2: Choose Finish
+        <div className="flex items-center justify-between text-xs text-[var(--text-primary)] dark:text-[#F2F5F3]">
+          <span className="uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] text-[11px] font-bold">
+            Choose Finish
           </span>
-          <span className="text-gray-900 font-medium">
+          <span className="text-[var(--text-primary)] dark:text-[#F2F5F3] font-semibold">
             {selectedVariant.colorName} ({availableColorsForStorage.length} available)
           </span>
         </div>
@@ -120,14 +120,14 @@ export function VariantSelector({
                 type="button"
                 onClick={() => handleColorChange(variant.colorName)}
                 className={clsx(
-                  "group flex items-center gap-2 py-2 px-3 rounded-xl border transition-colors",
+                  "group flex items-center gap-2 py-2 px-3.5 rounded-xl border transition-all cursor-pointer",
                   isSelected
-                    ? "border-[#6C28D9] bg-purple-50/70"
-                    : "border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50"
+                    ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] shadow-premium-xs ring-1 ring-[var(--brand-primary)] dark:border-[#B7F34A]"
+                    : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] hover:border-[var(--brand-primary)]/40 hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#1F302A]"
                 )}
               >
                 <span
-                  className="w-4 h-4 rounded-full border border-gray-300 flex items-center justify-center shrink-0"
+                  className="w-4 h-4 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center shrink-0"
                   style={{ backgroundColor: variant.colorHex }}
                 >
                   {isSelected && (
@@ -145,8 +145,8 @@ export function VariantSelector({
                 </span>
                 <span
                   className={clsx(
-                    "text-xs font-semibold",
-                    isSelected ? "text-[#6C28D9]" : "text-gray-700"
+                    "text-xs font-bold",
+                    isSelected ? "text-[var(--brand-primary)] dark:text-[#B7F34A]" : "text-[var(--text-primary)] dark:text-[#F2F5F3]"
                   )}
                 >
                   {variant.colorName}
@@ -159,4 +159,3 @@ export function VariantSelector({
     </div>
   );
 }
-

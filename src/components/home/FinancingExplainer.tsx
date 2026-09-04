@@ -1,9 +1,10 @@
+"use strict";
 "use client";
 
 import React, { useState } from "react";
 import { formatINR } from "@/lib/formatters";
 import { MF_ANNUAL_CAGR, DEFAULT_MIN_PLEDGE_MULTIPLIER } from "@/lib/constants";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, Smartphone, ShieldCheck, CreditCard, Sparkles, CheckCircle2 } from "lucide-react";
 
 export function FinancingExplainer() {
   const [devicePrice, setDevicePrice] = useState<number>(127400);
@@ -16,117 +17,198 @@ export function FinancingExplainer() {
   );
 
   return (
-    <section id="financing" className="py-20 bg-white scroll-mt-16 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-[#6C28D9] bg-purple-50 border border-purple-200">
-            Interactive Financing Flow
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-950 tracking-tight mt-3">
-            The mathematical structure of LAMF purchases
+    <section id="financing" className="py-20 bg-[var(--bg-page)] dark:bg-[#0C1412] scroll-mt-16 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] relative">
+      <div className="site-container relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] border border-[var(--brand-primary)]/30 dark:border-[#B7F34A]/30">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Seamless 3-Step Process</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+            How Mutual Fund Financing Works
           </h2>
-          <p className="text-sm text-gray-600 mt-2 max-w-xl mx-auto leading-relaxed">
-            Understand how collateral pledging works without transferring ownership or selling any of your units.
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] dark:text-[#9DA7A2] max-w-xl mx-auto leading-relaxed">
+            A frictionless digital process that allows you to buy electronics without selling your folio.
           </p>
         </div>
 
-        {/* 4-Step Interactive Calculation Flow */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative items-stretch">
-          {/* Box 1: Product Value */}
-          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between space-y-3">
-            <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
-                01. Device Value
-              </span>
-              <div className="text-2xl font-bold text-gray-950 mt-1 tracking-tight">
-                {formatINR(devicePrice)}
+        {/* 3 Large Step Connected Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative items-stretch mb-14">
+          {/* Step 01 */}
+          <div className="p-7 rounded-3xl bg-[var(--bg-surface)] dark:bg-[#131E1A] border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-premium-xs hover:shadow-premium-md transition-all duration-200 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl sm:text-4xl font-black text-[var(--brand-primary)]/30 dark:text-[#B7F34A]/30 tracking-tight font-mono">
+                  01
+                </span>
+                <div className="w-10 h-10 rounded-xl bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] flex items-center justify-center font-bold">
+                  <Smartphone className="w-5 h-5" />
+                </div>
               </div>
-              <p className="text-xs text-gray-500 mt-1">
-                Invoice amount for the selected device.
+              <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+                Choose Your Device
+              </h3>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] leading-relaxed">
+                Select your preferred flagship smartphone, laptop, or workstation. Choose custom finishes and storage capacity.
               </p>
             </div>
-            <div className="pt-2">
-              <label className="text-[10px] text-gray-400 font-medium block mb-1.5">
-                Try custom price:
-              </label>
-              <input
-                type="range"
-                min="50000"
-                max="200000"
-                step="5000"
-                value={devicePrice}
-                onChange={(e) => setDevicePrice(Number(e.target.value))}
-                className="w-full accent-[#6C28D9] cursor-pointer"
-              />
+            <div className="pt-2 text-xs font-semibold text-[var(--brand-primary)] dark:text-[#B7F34A] flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Full brand manufacturer warranty</span>
             </div>
           </div>
 
-          {/* Box 2: Portfolio Collateral */}
-          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between space-y-3">
-            <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6C28D9]">
-                02. Collateral ({DEFAULT_MIN_PLEDGE_MULTIPLIER}x)
-              </span>
-              <div className="text-2xl font-bold text-[#6C28D9] mt-1 tracking-tight">
-                {formatINR(pledgeRequired)}
+          {/* Step 02 */}
+          <div className="p-7 rounded-3xl bg-[var(--bg-surface)] dark:bg-[#131E1A] border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-premium-xs hover:shadow-premium-md transition-all duration-200 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl sm:text-4xl font-black text-[var(--brand-primary)]/30 dark:text-[#B7F34A]/30 tracking-tight font-mono">
+                  02
+                </span>
+                <div className="w-10 h-10 rounded-xl bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] flex items-center justify-center font-bold">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
               </div>
-              <p className="text-xs text-gray-500 mt-1">
-                Units remain in your demat/folio.
+              <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+                Pledge Mutual Funds
+              </h3>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] leading-relaxed">
+                Complete a 2-minute digital lien marking via CAMS or KFintech. No units are redeemed, transferred, or sold.
               </p>
             </div>
-            <div className="text-[11px] text-emerald-800 font-medium bg-emerald-50 border border-emerald-200 px-2.5 py-1.5 rounded-lg">
-              ✓ 100% Remains in your name
+            <div className="pt-2 text-xs font-semibold text-[var(--brand-primary)] dark:text-[#B7F34A] flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Units stay in your name and folio</span>
             </div>
           </div>
 
-          {/* Box 3: Monthly EMI */}
-          <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between space-y-3">
-            <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-700">
-                03. Monthly EMI ({tenure}m)
-              </span>
-              <div className="text-2xl font-bold text-gray-950 mt-1 tracking-tight">
-                {formatINR(monthlyEmi)}
-                <span className="text-xs font-normal text-gray-500 ml-1">/mo</span>
+          {/* Step 03 */}
+          <div className="p-7 rounded-3xl bg-[var(--bg-surface)] dark:bg-[#131E1A] border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-premium-xs hover:shadow-premium-md transition-all duration-200 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-3xl sm:text-4xl font-black text-[var(--brand-primary)]/30 dark:text-[#B7F34A]/30 tracking-tight font-mono">
+                  03
+                </span>
+                <div className="w-10 h-10 rounded-xl bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] flex items-center justify-center font-bold">
+                  <CreditCard className="w-5 h-5" />
+                </div>
               </div>
-              <p className="text-xs text-gray-500 mt-1">
-                Debited via auto-mandate monthly.
+              <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+                Pay Monthly EMI
+              </h3>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] leading-relaxed">
+                Enjoy your brand-new device while paying convenient 0% monthly installments. Your portfolio continues compounding in background.
               </p>
             </div>
-            <div className="flex gap-1.5 pt-2">
-              {[3, 6, 12, 24].map((m) => (
-                <button
-                  key={m}
-                  type="button"
-                  onClick={() => setTenure(m)}
-                  className={`flex-1 py-1 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                    tenure === m
-                      ? "bg-[#6C28D9] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  {m}m
-                </button>
-              ))}
+            <div className="pt-2 text-xs font-semibold text-[var(--brand-primary)] dark:text-[#B7F34A] flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Automatic lien release upon last EMI</span>
             </div>
           </div>
+        </div>
 
-          {/* Box 4: Wealth Gain */}
-          <div className="p-6 rounded-2xl bg-gray-950 text-white border border-gray-800 shadow-sm flex flex-col justify-between space-y-3">
+        {/* Interactive LAMF Mathematical Simulation Box */}
+        <div className="bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl p-6 sm:p-8 border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-premium-sm space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[var(--border-subtle)] dark:border-[#1E2D27]">
             <div>
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
-                04. Est. Portfolio Gain
-              </span>
-              <div className="text-2xl font-bold text-emerald-400 mt-1 tracking-tight">
-                +{formatINR(projectedMfGain)}
-              </div>
-              <p className="text-xs text-gray-400 mt-1">
-                Estimated growth at {Math.round(MF_ANNUAL_CAGR * 100)}% CAGR over tenure.
+              <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+                Interactive Financing Simulator
+              </h3>
+              <p className="text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2]">
+                Slide to test custom device values and calculate your compounding benefit.
               </p>
             </div>
-            <div className="text-[11px] text-gray-300 flex items-center gap-1.5 font-medium border-t border-gray-800 pt-2.5">
-              <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>Lien released upon final EMI</span>
+            <span className="text-xs font-bold text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] px-3 py-1 rounded-full border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 self-start sm:self-auto">
+              1.5x Collateral Requirement
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch">
+            {/* Box 1: Product Value */}
+            <div className="p-5 rounded-2xl bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] flex flex-col justify-between space-y-3">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2]">
+                  01. Device Value
+                </span>
+                <div className="text-2xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] mt-1 tracking-tight">
+                  {formatINR(devicePrice)}
+                </div>
+              </div>
+              <div className="pt-1">
+                <input
+                  type="range"
+                  min="50000"
+                  max="200000"
+                  step="5000"
+                  value={devicePrice}
+                  onChange={(e) => setDevicePrice(Number(e.target.value))}
+                  className="w-full accent-[var(--brand-primary)] cursor-pointer"
+                />
+              </div>
+            </div>
+
+            {/* Box 2: Portfolio Collateral */}
+            <div className="p-5 rounded-2xl bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] flex flex-col justify-between space-y-3">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A]">
+                  02. Collateral (1.5x)
+                </span>
+                <div className="text-2xl font-black text-[var(--brand-primary)] dark:text-[#B7F34A] mt-1 tracking-tight">
+                  {formatINR(pledgeRequired)}
+                </div>
+              </div>
+              <div className="text-[11px] text-[var(--brand-primary)] dark:text-[#B7F34A] font-semibold bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] px-2.5 py-1 rounded-lg border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20">
+                ✓ Stays in your folio
+              </div>
+            </div>
+
+            {/* Box 3: Monthly EMI */}
+            <div className="p-5 rounded-2xl bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] flex flex-col justify-between space-y-3">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-primary)] dark:text-[#F2F5F3]">
+                  03. Monthly EMI ({tenure}m)
+                </span>
+                <div className="text-2xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] mt-1 tracking-tight">
+                  {formatINR(monthlyEmi)}
+                  <span className="text-xs font-normal text-[var(--text-secondary)] dark:text-[#9DA7A2] ml-1">/mo</span>
+                </div>
+              </div>
+              <div className="flex gap-1 pt-1">
+                {[3, 6, 12, 24].map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    onClick={() => setTenure(m)}
+                    className={`flex-1 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                      tenure === m
+                        ? "bg-[var(--brand-primary)] text-white shadow-xs"
+                        : "bg-[var(--bg-surface)] dark:bg-[#131E1A] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--border-subtle)] dark:hover:bg-[#1F302A] border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+                    }`}
+                  >
+                    {m}m
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Box 4: Wealth Compounding Gain */}
+            <div className="p-5 rounded-2xl bg-[#101A17] dark:bg-[#0C1412] text-white border border-[#1F2E27] dark:border-[#1E2D27] flex flex-col justify-between space-y-3">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#B7F34A]">
+                  04. Est. Portfolio Gain
+                </span>
+                <div className="text-2xl font-black text-[#B7F34A] mt-1 tracking-tight">
+                  +{formatINR(projectedMfGain)}
+                </div>
+                <p className="text-[11px] text-[#8D95A0] dark:text-[#9DA7A2] mt-1">
+                  At {Math.round(MF_ANNUAL_CAGR * 100)}% annual CAGR over {tenure} months.
+                </p>
+              </div>
+              <div className="text-[11px] text-[#B7F34A] flex items-center gap-1.5 font-bold border-t border-[#1F2E27] dark:border-[#1E2D27] pt-2">
+                <TrendingUp className="w-3.5 h-3.5 text-[#B7F34A] shrink-0" />
+                <span>100% Compounding Retained</span>
+              </div>
             </div>
           </div>
         </div>
@@ -134,4 +216,3 @@ export function FinancingExplainer() {
     </section>
   );
 }
-

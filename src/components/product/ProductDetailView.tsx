@@ -10,6 +10,9 @@ import { VariantSelector } from "./VariantSelector";
 import { EmiPlanList } from "./EmiPlanList";
 import { MfAdvantageCard } from "./MfAdvantageCard";
 import { PlanSummaryModal } from "./PlanSummaryModal";
+import { ProductSpecifications } from "./ProductSpecifications";
+import { InteractiveEmiCalculator } from "./InteractiveEmiCalculator";
+import { ProductReviews } from "./ProductReviews";
 import { ChevronRight, ArrowRight } from "lucide-react";
 
 interface ProductDetailViewProps {
@@ -100,17 +103,17 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 pb-32 sm:pb-12">
+    <div className="site-container py-6 sm:py-10 pb-32 sm:pb-12">
       {/* Breadcrumbs Navigation */}
       <div className="flex items-center justify-between gap-3 mb-8">
-        <nav className="flex items-center gap-2 text-xs text-gray-500 font-medium">
-          <Link href="/" className="hover:text-gray-900 transition-colors">
+        <nav className="flex items-center gap-2 text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] font-medium">
+          <Link href="/" className="hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] transition-colors">
             Store Catalog
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
-          <span className="text-gray-400">{product.category.name}</span>
-          <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
-          <span className="text-gray-900 font-semibold">{product.name}</span>
+          <ChevronRight className="w-3.5 h-3.5 text-[var(--text-muted)] dark:text-[#6B7670]" />
+          <span className="text-[var(--text-muted)] dark:text-[#6B7670]">{product.category.name}</span>
+          <ChevronRight className="w-3.5 h-3.5 text-[var(--text-muted)] dark:text-[#6B7670]" />
+          <span className="text-[var(--text-primary)] dark:text-[#F2F5F3] font-semibold">{product.name}</span>
         </nav>
       </div>
 
@@ -134,8 +137,8 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
 
             {/* Storage Tier Selector (if multiple tiers exist) */}
             {product.variants.some((v) => v.storage !== product.variants[0]?.storage) && (
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-2.5">
+              <div className="bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-xs p-5">
+                <span className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider block mb-3">
                   Storage Capacity
                 </span>
                 <VariantSelector
@@ -157,21 +160,21 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
         </div>
 
         {/* Right Column: Price & EMI Plans List (7 Cols) */}
-        <div className="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm space-y-6">
+        <div className="lg:col-span-7 bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl p-6 sm:p-8 border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-xs space-y-6">
           {/* Top Price Header */}
-          <div className="border-b border-gray-100 pb-5">
+          <div className="border-b border-[var(--border-subtle)] dark:border-[#1E2D27] pb-6">
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl sm:text-4xl font-black text-gray-950 tracking-tight">
+              <span className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
                 {formatINR(selectedVariant.price)}
               </span>
               {selectedVariant.mrp > selectedVariant.price && (
-                <span className="text-base text-gray-400 line-through font-normal">
+                <span className="text-base text-[var(--text-muted)] dark:text-[#6B7670] line-through font-normal">
                   {formatINR(selectedVariant.mrp)}
                 </span>
               )}
             </div>
-            <p className="text-sm font-normal text-gray-500 mt-1">
-              EMI plans backed by mutual funds
+            <p className="text-xs sm:text-sm font-medium text-[var(--brand-primary)] dark:text-[#B7F34A] mt-1 flex items-center gap-1.5">
+              <span>●</span> EMI plans backed by mutual funds • Keep earning compound returns
             </p>
           </div>
 
@@ -188,50 +191,78 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="w-full py-3.5 px-6 rounded-lg bg-[#6C28D9] hover:bg-[#5B21B6] text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 px-6 rounded-2xl bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white font-bold text-sm transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer group"
               >
                 <span>Proceed with Selected Plan</span>
-                <span className="text-purple-200 text-xs font-normal">
+                <span className="text-[#C4F36A] text-xs font-semibold">
                   ({formatINR(selectedPlan.monthlyEmi)}/mo)
                 </span>
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <p className="text-center text-xs text-gray-500">
+              <p className="text-center text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2]">
                 Instant digital lien verification via CAMS & KFintech • Zero capital gains tax impact
               </p>
             </div>
           )}
 
-          {/* Product Overview Accordion */}
-          <div className="pt-6 border-t border-gray-100 space-y-2">
-            <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              Product Overview & Specifications
+          {/* Product Overview Summary */}
+          <div className="pt-6 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] space-y-2">
+            <h4 className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider">
+              Product Overview
             </h4>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] leading-relaxed">
               {product.description}
             </p>
           </div>
         </div>
       </div>
 
+      {/* Interactive EMI Calculator Section */}
+      <div className="mt-10 sm:mt-14">
+        <InteractiveEmiCalculator
+          productPrice={selectedVariant.price}
+          productName={product.name}
+          availablePlans={selectedVariant.emiPlans}
+        />
+      </div>
+
+      {/* Dynamic Product Specifications Section */}
+      <div className="mt-8 sm:mt-10">
+        <ProductSpecifications
+          specifications={product.specifications}
+          selectedVariant={selectedVariant}
+          productName={product.name}
+        />
+      </div>
+
+      {/* Customer Ratings & Reviews Section */}
+      <div className="mt-8 sm:mt-10">
+        <ProductReviews
+          productSlug={product.slug}
+          productName={product.name}
+          initialSummary={product.reviewSummary}
+          selectedVariant={selectedVariant}
+        />
+      </div>
+
       {/* Floating Sticky Mobile Bottom Action Bar */}
       {selectedPlan && (
-        <div className="sm:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-gray-200 p-3.5 z-40 shadow-md flex items-center justify-between gap-3">
+        <div className="sm:hidden fixed bottom-0 inset-x-0 bg-[var(--bg-surface)]/95 dark:bg-[#131E1A]/95 backdrop-blur-md border-t border-[var(--border-subtle)] dark:border-[#1E2D27] p-4 z-40 shadow-lg flex items-center justify-between gap-3">
           <div>
-            <span className="text-[10px] text-gray-400 font-medium block uppercase tracking-wider">
+            <span className="text-[10px] text-[var(--text-secondary)] dark:text-[#9DA7A2] font-semibold block uppercase tracking-wider">
               {selectedPlan.tenureMonths} Months EMI
             </span>
-            <span className="text-lg font-black text-[#6C28D9]">
+            <span className="text-lg font-black text-[var(--brand-primary)] dark:text-[#B7F34A]">
               {formatINR(selectedPlan.monthlyEmi)}
-              <span className="text-xs font-normal text-gray-500">/mo</span>
+              <span className="text-xs font-normal text-[var(--text-secondary)] dark:text-[#9DA7A2]">/mo</span>
             </span>
           </div>
 
           <button
             type="button"
             onClick={() => setIsModalOpen(true)}
-            className="py-2.5 px-4 rounded-lg bg-[#6C28D9] hover:bg-[#5B21B6] text-white font-semibold text-xs transition-colors shadow-sm flex items-center gap-1.5"
+            className="py-3 px-5 rounded-xl bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white font-bold text-xs transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer"
           >
             <span>Proceed</span>
             <ArrowRight className="w-4 h-4" />

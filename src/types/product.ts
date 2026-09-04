@@ -17,6 +17,7 @@ export interface VariantImageDto {
   url: string;
   altText: string;
   isPrimary: boolean;
+  displayOrder?: number;
 }
 
 export interface ProductVariantDto {
@@ -35,6 +36,43 @@ export interface ProductVariantDto {
   emiPlans: EmiPlanDto[];
 }
 
+export interface ProductSpecificationDto {
+  id: string;
+  category: string | null;
+  name: string;
+  value: string;
+  displayOrder: number;
+}
+
+export interface ReviewDto {
+  id: string;
+  productId: string;
+  variantName: string | null;
+  rating: number;
+  title: string;
+  comment: string;
+  reviewerName: string;
+  verifiedBuyer: boolean;
+  createdAt: string;
+}
+
+export interface ReviewSummaryDto {
+  averageRating: number;
+  totalReviews: number;
+  ratingDistribution: {
+    5: number;
+    4: number;
+    3: number;
+    2: number;
+    1: number;
+  };
+}
+
+export interface ProductReviewsResponseDto {
+  reviews: ReviewDto[];
+  summary: ReviewSummaryDto;
+}
+
 export interface ProductDetailDto {
   id: string;
   slug: string;
@@ -49,6 +87,8 @@ export interface ProductDetailDto {
     slug: string;
   };
   variants: ProductVariantDto[];
+  specifications: ProductSpecificationDto[];
+  reviewSummary?: ReviewSummaryDto;
 }
 
 export interface ProductListItemDto {

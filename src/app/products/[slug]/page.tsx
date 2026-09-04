@@ -57,7 +57,7 @@ export default async function ProductPage(props: ProductPageProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9FF] text-gray-950">
+    <div className="min-h-screen flex flex-col bg-[#F7F7F4] text-[#111318]">
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<ProductLoading />}>

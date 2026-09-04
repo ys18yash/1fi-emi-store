@@ -1,344 +1,664 @@
-# 1Fi Mutual Fund EMI Store — SDE1 Full-Stack Project
+# 1Fi EMI Store
 
-[![Next.js 16](https://img.shields.io/badge/Next.js-16.3.4-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38bdf8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
-[![Prisma ORM](https://img.shields.io/badge/Prisma-6.4.0-2D3748?style=flat&logo=prisma)](https://www.prisma.io/)
-[![Database](https://img.shields.io/badge/Database-PostgreSQL%20%2F%20SQLite-4169E1?style=flat&logo=postgresql)](https://postgresql.org)
+A full-stack e-commerce application for purchasing flagship devices through flexible EMI plans while demonstrating a mutual-fund-backed financing model.
 
-A production-grade, full-stack fintech e-commerce platform built for the **1Fi SDE1 Assignment**. It serves dynamic catalog data, multi-variant selections, and intelligent Loan Against Mutual Funds (LAMF) EMI calculations backed by a relational database, type-safe REST APIs, and an original visual design.
+## Live Demo
 
----
+[Open Live Demo](<YOUR_LIVE_DEMO_URL>)
 
-## 🌟 Key Features & Original Design System
+## Video Walkthrough
 
-1. **Original Visual Identity & Fintech Aesthetics**:
-   - **Modern Brand System**: Designed around `"Smart purchases powered by your investments"` using deep purple (`#6C28D9`), soft lavender surfaces, crisp white cards, and fintech data visualizers.
-   - **Original Page Compositions**: Custom-crafted layout including an interactive **Hero Simulation Dashboard**, **Connected 4-Step Process Timeline**, **Asymmetric Wealth Advantage Grid**, **4-Step Financing Diagram**, and an **Accordion FAQ Section**.
+[Watch the Video Walkthrough](<YOUR_VIDEO_WALKTHROUGH_URL>)
 
-2. **Interactive Product Configurator (`/products/[slug]`)**:
-   - **Step-by-Step Configurator**: Storage capacity buttons, high-fidelity color swatches, and a dynamic presentation stage with ambient lighting.
-   - **Matrix EMI Tenure Selector**: Distinctive cards highlighting monthly installments, tenure pills (3 to 60 months), 0% No-Cost tags, and cashback rewards.
-   - **URL Deep-Linking & State Synchronization**: Full URL synchronization for `?variant=<sku>&tenure=<months>`. Preserves user configurations on page refresh and direct link sharing.
-   - **1Fi Wealth Compounding Dashboard**: Dynamically computes mutual fund collateral requirements (1.5x) and projected investment returns (~12% CAGR).
+## 1. Project Overview
 
-3. **Production Architecture & Data Layer**:
-   - **Unified Data Service Layer** (`src/lib/services/product-service.ts`): Eliminates duplicate Prisma queries between API route handlers and Server Components.
-   - **Dynamic Server-Side Rendering (SSR)**: Generates metadata, OpenGraph tags, and server-rendered HTML for fast TTFB and SEO.
-   - **Next.js Client Error Boundaries**: Global (`src/app/error.tsx`) and product-level (`src/app/products/[slug]/error.tsx`) error boundaries with retry mechanisms.
-   - **Strict TypeScript & Zod Validation**: Zero `any` type escapes, strictly typed Prisma query filters, and runtime parameter validation.
+1Fi EMI Store combines e-commerce and fintech functionality. Users can browse devices, search and filter the catalog, configure product variants, view technical specifications, calculate EMI options, review products, save products to a wishlist, compare products, and proceed through a financing flow.
 
----
+The project also includes an admin catalog management dashboard for products, variants, categories, EMI plans, inventory, and variant images.
 
-## 🛠 Tech Stack
+### Main Features
 
-| Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Framework** | Next.js 16 (App Router) | Unified Full-Stack Framework with SSR, Server Components, and REST Route Handlers |
-| **Language** | TypeScript 5 | End-to-end strict type safety and interface contracts |
-| **Styling** | Tailwind CSS v4 | Curated 1Fi color system, micro-animations, glassmorphism, responsive viewports |
-| **ORM & Database** | Prisma ORM 6.4 + PostgreSQL / SQLite | Relational schema modeling, foreign key constraints, automated migrations & seeding |
-| **Validation** | Zod | Runtime validation for route params and query filters |
-| **Icons** | Lucide React | Modern, accessible vector iconography |
+- Database-backed product search, filtering, facets, and sorting
+- Category, brand, storage, and price filters
+- URL-synchronized catalog filters
+- Product color and storage variants
+- Variant-aware multi-image gallery
+- Fullscreen image lightbox and mobile swipe gestures
+- Dynamic technical specifications
+- Interactive EMI calculator
+- 0% No-Cost EMI and reducing-balance EMI calculations
+- Mutual-fund-backed financing visualization
+- Product reviews and ratings
+- Wishlist with local persistence
+- Product comparison for up to three products
+- Responsive desktop and mobile interfaces
+- Admin catalog management
+- Zod-based request validation
+- PostgreSQL database with Prisma ORM
+- Automated API, database, and financial verification
 
----
+## 2. Tech Stack Used
 
-## 🚀 Getting Started (Quick Run)
+| Area | Technology |
+|---|---|
+| Frontend | Next.js, React |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Backend | Next.js API Routes |
+| Database | PostgreSQL |
+| ORM | Prisma |
+| Validation | Zod |
+| Client State | React Context |
+| Browser Persistence | localStorage |
+| Build | Next.js with Turbopack |
+| Verification | Custom TypeScript verification suite |
 
-### 1. Clone & Install Dependencies
+## 3. Setup and Run Instructions
+
+### Prerequisites
+
+- Node.js
+- npm
+- PostgreSQL
+
+### Clone the repository
+
 ```bash
-git clone <your-repo-url>
-cd 1fi-emi-store
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd <PROJECT_DIRECTORY>
+```
+
+### Install dependencies
+
+```bash
 npm install
 ```
 
-### 2. Set Up Environment & Database
-The project comes pre-configured with SQLite for **zero-dependency instant local execution**:
-```bash
-# Push schema to database
-npm run db:push
+### Configure environment variables
 
-# Seed the database with all 4 products, 13 variants & EMI plans
-npm run seed
+Create `.env` in the project root:
+
+```env
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+ADMIN_SECRET_KEY="your-admin-secret"
 ```
 
-### 3. Run Automated Tests
+A dedicated admin secret should be configured for non-development environments.
+
+### Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+### Validate the schema
+
+```bash
+npx prisma validate
+```
+
+### Apply the database schema
+
+```bash
+npx prisma db push
+```
+
+### Seed the database
+
+```bash
+npx tsx prisma/seed.ts
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+Application URL:
+
+```text
+http://localhost:3000
+```
+
+### Production build
+
+```bash
+npm run build
+npm start
+```
+
+### TypeScript validation
+
+```bash
+npx tsc --noEmit
+```
+
+### Verification suite
+
 ```bash
 npm run verify
 ```
 
-### 4. Start Local Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) to explore the store!
+## 4. Database Schema and Seed Data
 
----
+The database schema is defined in:
 
-## 🗄 Database Schema & Relational Design
-
-```
-┌──────────────┐       ┌──────────────┐       ┌────────────────┐
-│   Category   │──1:N──│   Product    │──1:N──│ ProductVariant │
-└──────────────┘       └──────────────┘       └────────────────┘
-                                                       │
-                                        ┌──────────────┼──────────────┐
-                                        │ 1:N                         │ 1:N
-                                        ▼                             ▼
-                               ┌─────────────────┐           ┌────────────────┐
-                               │  VariantImage   │           │ ProductEmiPlan │
-                               └─────────────────┘           └────────────────┘
-                                                                      │ N:1
-                                                                      ▼
-                                                             ┌────────────────┐
-                                                             │    EmiPlan     │
-                                                             └────────────────┘
+```text
+prisma/schema.prisma
 ```
 
-### Core Entities:
-- **`Category`**: Product classification (`smartphones`, `laptops`).
-- **`Product`**: Brand, name, slug (`iphone-17-pro`), description, and badges (`NEW`, `BESTSELLER`).
-- **`ProductVariant`**: SKU (`IP17P-512-SILVER`), color finish (`Natural Silver`, `#E3E4E5`), storage tier (`512GB`), MRP, and discounted selling price.
-- **`VariantImage`**: Multi-angle/color product renders with primary flag.
-- **`EmiPlan`**: Master financial plans (tenure in months, interest rate, cashback amount, collateral multiplier).
-- **`ProductEmiPlan`**: Join table binding variants to specific EMI plans with custom or dynamically computed monthly amounts.
+Seed data is defined in:
 
----
+```text
+prisma/seed.ts
+```
 
-## 📡 API Documentation & Endpoints
+The demonstration database contains:
 
-### 1. Catalog Products List
-- **Endpoint**: `GET /api/products`
-- **Query Params (Optional)**: `?category=smartphones&search=iphone`
-- **Example Response**:
+| Resource | Count |
+|---|---:|
+| Products | 4 |
+| Product Variants | 13 |
+| EMI Plans | 91 |
+| Demonstration Reviews | 10 |
+
+Seeded products:
+
+- Apple iPhone 17 Pro
+- Samsung Galaxy S25 Ultra
+- Google Pixel 10 Pro
+- Apple MacBook Pro 14 (M4)
+
+The seed data also includes multiple variant images and product specifications.
+
+## 5. Schema Used
+
+The main relational structure is:
+
+```text
+Category
+    |
+    +-- Product
+          |
+          +-- ProductVariant
+          |      |
+          |      +-- VariantImage
+          |
+          +-- ProductSpecification
+          |
+          +-- Review
+          |
+          +-- EmiPlan
+```
+
+### Product
+
+Stores core product information including:
+
+```text
+id
+name
+slug
+brand
+description
+badge
+categoryId
+createdAt
+updatedAt
+```
+
+### ProductVariant
+
+Stores individual purchasable configurations, including:
+
+```text
+id
+productId
+sku
+variantName
+colorName
+colorHex
+storage
+price
+mrp
+stock
+```
+
+A product can contain multiple color and storage variants.
+
+### VariantImage
+
+Stores images associated with product variants:
+
+```text
+image URL
+alt text
+primary image flag
+display order
+```
+
+### ProductSpecification
+
+Stores normalized product-level technical specifications:
+
+```text
+id
+productId
+category
+name
+value
+displayOrder
+createdAt
+updatedAt
+```
+
+Specification categories include:
+
+```text
+Performance
+Display
+Camera
+Battery & Power
+Connectivity
+General
+```
+
+### Review
+
+Stores:
+
+```text
+id
+productId
+variantName
+rating
+title
+comment
+reviewerName
+verifiedBuyer
+createdAt
+updatedAt
+```
+
+### EmiPlan
+
+Stores predefined financing plan information including:
+
+```text
+tenure
+interest rate
+cashback
+minimum pledge multiplier
+```
+
+The application supports 0% No-Cost EMI and reducing-balance EMI plans.
+
+### Category
+
+Stores product categories and their relationships with products.
+
+## 6. API Endpoints and Example Responses
+
+### Health Check
+
+```http
+GET /api/health
+```
+
+Example response:
+
+```json
+{
+  "success": true
+}
+```
+
+### Product Catalog
+
+```http
+GET /api/products
+```
+
+Supported query parameters:
+
+| Parameter | Description |
+|---|---|
+| `search` | Searches product name, brand, description, tagline, and variant SKU |
+| `category` | Filters by category slug or name |
+| `brand` | Filters by brand |
+| `storage` | Filters by variant storage |
+| `minPrice` | Minimum price |
+| `maxPrice` | Maximum price |
+| `sort` | Sorting mode |
+
+Supported sort values:
+
+```text
+recommended
+price_asc
+price_desc
+newest
+```
+
+Examples:
+
+```http
+GET /api/products?search=iPhone
+GET /api/products?brand=Apple
+GET /api/products?storage=256GB
+GET /api/products?minPrice=100000&maxPrice=150000
+GET /api/products?search=iPhone&brand=Apple&storage=256GB&maxPrice=150000&sort=price_asc
+```
+
+Example response:
+
 ```json
 {
   "success": true,
   "data": [
     {
-      "id": "prod_iphone17pro",
-      "slug": "iphone-17-pro",
+      "id": "product-id",
       "name": "iPhone 17 Pro",
       "brand": "Apple",
-      "badge": "NEW",
-      "categoryName": "Smartphones",
-      "startingPrice": 127400,
-      "startingMrp": 134900,
-      "discountPercentage": 6,
-      "minMonthlyEmi": 2842,
-      "variantsCount": 5,
-      "defaultVariant": {
-        "id": "var_1",
-        "sku": "IP17P-256-DESERT",
-        "storage": "256GB",
-        "colorName": "Desert Titanium",
-        "colorHex": "#C5A98F",
-        "imageUrl": "/images/products/iphone17pro-desert.svg"
-      }
+      "slug": "iphone-17-pro"
     }
-  ]
+  ],
+  "facets": {
+    "categories": [
+      {
+        "name": "Smartphones",
+        "slug": "smartphones",
+        "count": 3
+      }
+    ],
+    "brands": [
+      {
+        "name": "Apple",
+        "count": 2
+      }
+    ],
+    "storages": [
+      {
+        "value": "256GB",
+        "count": 7
+      }
+    ],
+    "priceRange": {
+      "min": 99999,
+      "max": 169900
+    }
+  },
+  "totalCount": 1
 }
 ```
 
-### 2. Product Detail with All Variants & EMI Plans
-- **Endpoint**: `GET /api/products/:slug`
-- **Example**: `GET /api/products/iphone-17-pro`
-- **Example Response**:
+### Product Details
+
+```http
+GET /api/products/[slug]
+```
+
+Example:
+
+```http
+GET /api/products/iphone-17-pro
+```
+
+Example response structure:
+
 ```json
 {
   "success": true,
   "data": {
-    "id": "prod_iphone17pro",
-    "slug": "iphone-17-pro",
     "name": "iPhone 17 Pro",
     "brand": "Apple",
-    "badge": "NEW",
-    "description": "Supercharged by the next-generation A19 Pro chip...",
-    "category": {
-      "id": "cat_1",
-      "name": "Smartphones",
-      "slug": "smartphones"
-    },
-    "variants": [
-      {
-        "id": "var_ip17p_256_desert",
-        "sku": "IP17P-256-DESERT",
-        "variantName": "256GB - Desert Titanium",
-        "colorName": "Desert Titanium",
-        "colorHex": "#C5A98F",
-        "storage": "256GB",
-        "mrp": 134900,
-        "price": 127400,
-        "discountPercentage": 6,
-        "isDefault": true,
-        "images": [
-          {
-            "id": "img_1",
-            "url": "/images/products/iphone17pro-desert.svg",
-            "altText": "iPhone 17 Pro - 256GB - Desert Titanium",
-            "isPrimary": true
-          }
-        ],
-        "emiPlans": [
-          {
-            "id": "plan_3m",
-            "tenureMonths": 3,
-            "monthlyEmi": 44967,
-            "annualInterestRate": 0,
-            "isNoCost": true,
-            "cashbackAmount": 7500,
-            "cashbackDescription": "Additional cashback of ₹7,500",
-            "totalPayable": 134901,
-            "netEffectiveCost": 119900,
-            "requiredMfPledge": 191100
-          },
-          {
-            "id": "plan_12m",
-            "tenureMonths": 12,
-            "monthlyEmi": 11242,
-            "annualInterestRate": 0,
-            "isNoCost": true,
-            "cashbackAmount": 7500,
-            "cashbackDescription": "Additional cashback of ₹7,500",
-            "totalPayable": 134904,
-            "netEffectiveCost": 119900,
-            "requiredMfPledge": 191100
-          },
-          {
-            "id": "plan_60m",
-            "tenureMonths": 60,
-            "monthlyEmi": 2842,
-            "annualInterestRate": 10.5,
-            "isNoCost": false,
-            "cashbackAmount": 7500,
-            "cashbackDescription": "Additional cashback of ₹7,500",
-            "totalPayable": 170520,
-            "netEffectiveCost": 163020,
-            "requiredMfPledge": 191100
-          }
-        ]
-      }
-    ]
+    "slug": "iphone-17-pro",
+    "variants": [],
+    "emiPlans": [],
+    "specifications": []
   }
 }
 ```
 
-### 3. Service Health Check
-- **Endpoint**: `GET /api/health`
-- **Example Response**:
+The returned product also includes the database-backed variant and image information used by the product detail page.
+
+### Product Reviews
+
+Get reviews:
+
+```http
+GET /api/products/[slug]/reviews
+```
+
+Filter by rating:
+
+```http
+GET /api/products/iphone-17-pro/reviews?rating=5
+```
+
+Example response:
+
 ```json
 {
-  "status": "healthy",
-  "timestamp": "2026-09-03T01:10:00.000Z",
-  "database": "connected",
-  "stats": {
-    "products": 4,
-    "variants": 13
+  "success": true,
+  "data": [],
+  "summary": {
+    "averageRating": 4.8,
+    "totalReviews": 10,
+    "ratingDistribution": {
+      "5": 7,
+      "4": 2,
+      "3": 1,
+      "2": 0,
+      "1": 0
+    }
   }
 }
 ```
 
----
+### Create Review
 
-## 🧮 Financial Math & Reducing Balance Formula
+```http
+POST /api/products/[slug]/reviews
+```
 
-For interest-bearing plans (e.g. 10.5% p.a.), the calculation engine uses the standard reducing balance amortization formula:
+Example request:
 
-$$E = P \cdot r \cdot \frac{(1 + r)^n}{(1 + r)^n - 1}$$
+```json
+{
+  "rating": 5,
+  "title": "Excellent device",
+  "comment": "The device and financing experience were excellent.",
+  "reviewerName": "Demo User",
+  "variantName": "256GB - Desert Titanium"
+}
+```
+
+The request is validated using Zod before persistence.
+
+### Product Comparison
+
+```http
+GET /api/products/compare
+```
+
+The endpoint returns the product information required for comparison, including pricing, specifications, and EMI financing information. The frontend supports up to three products.
+
+## 7. Admin API Endpoints
+
+Admin endpoints are protected by the application authentication guard.
+
+Supported authentication mechanisms:
+
+```text
+x-admin-key
+Authorization: Bearer <key>
+1fi_admin_key cookie
+```
+
+### Admin Statistics
+
+```http
+GET /api/admin/stats
+```
+
+### Admin Products
+
+```http
+GET    /api/admin/products
+POST   /api/admin/products
+
+GET    /api/admin/products/[id]
+PUT    /api/admin/products/[id]
+DELETE /api/admin/products/[id]
+```
+
+### Admin Categories
+
+```http
+GET    /api/admin/categories
+POST   /api/admin/categories
+PUT    /api/admin/categories
+DELETE /api/admin/categories
+```
+
+### Admin Variants
+
+```http
+GET    /api/admin/variants
+POST   /api/admin/variants
+PUT    /api/admin/variants
+DELETE /api/admin/variants
+```
+
+### Admin EMI Plans
+
+```http
+GET    /api/admin/emi-plans
+POST   /api/admin/emi-plans
+PUT    /api/admin/emi-plans
+DELETE /api/admin/emi-plans
+```
+
+### Admin Variant Images
+
+```http
+GET    /api/admin/images
+POST   /api/admin/images
+PUT    /api/admin/images
+DELETE /api/admin/images
+```
+
+## 8. EMI Calculation
+
+The centralized financial calculation engine is:
+
+```text
+src/lib/emi-calculator.ts
+```
+
+Reducing-balance EMI:
+
+```text
+EMI = P × r × (1+r)^n / ((1+r)^n - 1)
+```
 
 Where:
-- $E$ = Equated Monthly Installment (EMI)
-- $P$ = Principal Selling Price
-- $r$ = Monthly interest rate ($\text{Annual Rate} / 12 / 100$)
-- $n$ = Loan tenure in months
 
-**Wealth Preservation Calculation:**
-$$\text{Projected Mutual Fund Value} = \text{Pledged Collateral} \times (1 + \text{CAGR})^{n/12}$$
-
----
-
-## 📁 Project Folder Structure
-
+```text
+P = loan principal
+r = monthly interest rate
+n = tenure in months
 ```
-1fi-emi-store/
+
+For 0% No-Cost EMI:
+
+```text
+EMI = Principal / Tenure
+```
+
+The calculator also determines total repayment, total interest, cashback impact, and effective net cost.
+
+## 9. Verification
+
+Run the complete verification suite:
+
+```bash
+npm run verify
+```
+
+Additional checks:
+
+```bash
+npx prisma validate
+npx tsc --noEmit
+npm run build
+```
+
+The verification suite covers database persistence, product and variant relationships, catalog APIs, specifications, variant images, reviews, EMI calculations, product comparison, and admin functionality.
+
+## 10. Project Structure
+
+```text
+.
 ├── prisma/
-│   ├── schema.prisma            # Relational database schema
-│   └── seed.ts                  # Multi-variant catalog seeder
-├── public/
-│   ├── 1fi-logo.svg             # Brand logo mark
-│   └── images/products/         # High-resolution vector device renders
+│   ├── schema.prisma
+│   └── seed.ts
+│
 ├── scripts/
-│   └── verify-api.ts            # Automated verification test suite
+│   └── verify-api.ts
+│
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx           # Root layout with fonts & metadata
-│   │   ├── globals.css          # Tailwind design tokens
-│   │   ├── error.tsx            # Global client error boundary
-│   │   ├── page.tsx             # Storefront homepage
-│   │   ├── products/
-│   │   │   └── [slug]/
-│   │   │       ├── page.tsx     # Dynamic SSR product configurator
-│   │   │       ├── loading.tsx  # Shimmer skeleton loader
-│   │   │       ├── error.tsx    # Product error boundary
-│   │   │       └── not-found.tsx# Custom 404 page
-│   │   └── api/
-│   │       ├── products/
-│   │       │   ├── route.ts     # Catalog REST API
-│   │       │   └── [slug]/
-│   │       │       └── route.ts # Product Detail REST API
-│   │       └── health/
-│   │           └── route.ts     # Health check API
+│   │   ├── api/
+│   │   │   ├── admin/
+│   │   │   └── products/
+│   │   ├── admin/
+│   │   ├── compare/
+│   │   ├── wishlist/
+│   │   └── page.tsx
+│   │
 │   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Navbar.tsx       # Original fintech brand bar & mobile drawer
-│   │   │   └── Footer.tsx       # Trust, API reference & legal footer
-│   │   ├── home/
-│   │   │   ├── HeroVisualizer.tsx       # Live investment vs cash visualizer
-│   │   │   ├── HowItWorksTimeline.tsx   # 4-step connected timeline
-│   │   │   ├── BenefitsGrid.tsx         # Asymmetric wealth preservation tiles
-│   │   │   ├── FinancingExplainer.tsx   # 4-step calculation flow
-│   │   │   └── FaqAccordion.tsx         # Expandable accordion FAQs
 │   │   ├── catalog/
-│   │   │   ├── ProductCard.tsx          # Catalog product card
-│   │   │   └── ProductGrid.tsx          # Search & category filter grid
-│   │   └── product/
-│   │       ├── ProductDetailView.tsx    # Configurator & URL query synchronizer
-│   │       ├── ProductGallery.tsx       # Showcase stage with ambient lighting
-│   │       ├── VariantSelector.tsx      # Step-by-step capacity & finish chips
-│   │       ├── EmiPlanCard.tsx          # Matrix EMI card with cashback ribbon
-│   │       ├── EmiPlanList.tsx          # EMI tenure selector with filter chips
-│   │       ├── MfAdvantageCard.tsx      # Wealth compounding dashboard
-│   │       └── PlanSummaryModal.tsx     # Transparent checkout loan breakdown
+│   │   ├── product/
+│   │   └── layout/
+│   │
+│   ├── context/
 │   ├── lib/
-│   │   ├── prisma.ts            # Prisma client singleton
-│   │   ├── emi-calculator.ts    # Financial calculation engine
-│   │   ├── formatters.ts        # Currency (₹ INR) formatters
-│   │   ├── validators.ts        # Zod validation schemas
-│   │   └── services/
-│   │       └── product-service.ts # Unified product data service
+│   │   ├── services/
+│   │   ├── emi-calculator.ts
+│   │   ├── api-client.ts
+│   │   ├── validators.ts
+│   │   └── auth-guard.ts
+│   │
 │   └── types/
-│       └── product.ts           # TypeScript DTO interfaces
+│
+├── public/
+├── implementation_plan.md
 ├── package.json
-├── tsconfig.json
 └── README.md
 ```
 
----
+## 11. Verification Status
 
-## 🚢 Deployment Instructions (Vercel)
+| Area | Status |
+|---|---|
+| Prisma schema validation | Passed |
+| TypeScript validation | Passed |
+| Database seeding | Passed |
+| Product APIs | Passed |
+| Catalog filtering and sorting | Passed |
+| Product specifications | Passed |
+| Product images | Passed |
+| EMI calculations | Passed |
+| Reviews | Passed |
+| Product comparison | Passed |
+| Admin APIs | Passed |
+| Production build | Passed |
 
-1. Push this repository to GitHub.
-2. Import the repository into [Vercel](https://vercel.com).
-3. Set the build command:
-   ```bash
-   npx prisma generate && npm run build
-   ```
-4. Configure your `DATABASE_URL` environment variable (Neon, Supabase, or Vercel Postgres).
-5. Deploy and submit the live link!
+## 12. Disclaimer
 
----
+This project is a demonstration e-commerce and financing application.
 
-## 👤 Author & Submission Details
-- **Assignment**: 1Fi SDE1 Internship Technical Task
-- **Candidate**: Yash Sharma
-- **Submission Form**: [Google Form](https://forms.gle/V4vqbcSAhJV7BqoAA)
+The mutual-fund-backed financing flow, projected investment growth, cashback values, financing calculations, and seeded reviews are demonstration data and functionality and should not be interpreted as financial advice or as an actual financing offer.

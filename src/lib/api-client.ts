@@ -25,6 +25,10 @@ export async function fetchProductsFromApi(filters?: {
   category?: string;
   brand?: string;
   search?: string;
+  storage?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  sort?: "recommended" | "price_asc" | "price_desc" | "newest";
 }): Promise<ProductListItemDto[]> {
   try {
     const baseUrl = getBaseUrl();
@@ -33,11 +37,23 @@ export async function fetchProductsFromApi(filters?: {
     if (filters?.category && filters.category !== "ALL") {
       url.searchParams.set("category", filters.category);
     }
-    if (filters?.brand) {
+    if (filters?.brand && filters.brand !== "ALL") {
       url.searchParams.set("brand", filters.brand);
     }
     if (filters?.search) {
       url.searchParams.set("search", filters.search);
+    }
+    if (filters?.storage && filters.storage !== "ALL") {
+      url.searchParams.set("storage", filters.storage);
+    }
+    if (filters?.minPrice !== undefined) {
+      url.searchParams.set("minPrice", filters.minPrice.toString());
+    }
+    if (filters?.maxPrice !== undefined) {
+      url.searchParams.set("maxPrice", filters.maxPrice.toString());
+    }
+    if (filters?.sort) {
+      url.searchParams.set("sort", filters.sort);
     }
 
     const response = await fetch(url.toString(), {
@@ -65,6 +81,7 @@ export async function fetchProductsFromApi(filters?: {
     return await getAllProducts(filters);
   }
 }
+
 
 /**
  * Consumer for GET /api/products/[slug]

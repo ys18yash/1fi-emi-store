@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 550" fill="none">
+  <defs>
+    <linearGradient id="p_cam_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="550" rx="24" fill="url(#p_cam_bg)"/>
+  
+  <!-- Pixel Visor Camera Bar -->
+  <g transform="translate(50, 140)">
+    <!-- Camera Bar Pill -->
+    <rect width="300" height="95" rx="47" fill="#0F172A" stroke="#475569" stroke-width="3"/>
+    <!-- Pill Cutout for Triple Lenses -->
+    <rect x="30" y="16" width="160" height="63" rx="31" fill="#020617"/>
+    
+    <!-- Lens 1 (Main 50MP) -->
+    <circle cx="65" cy="47" r="22" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+    <circle cx="65" cy="47" r="12" fill="#3B82F6" fill-opacity="0.6"/>
+    
+    <!-- Lens 2 (Ultrawide) -->
+    <circle cx="115" cy="47" r="22" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+    <circle cx="115" cy="47" r="12" fill="#10B981" fill-opacity="0.6"/>
+    
+    <!-- Lens 3 (5x Telephoto Periscope Pill) -->
+    <rect x="150" y="32" width="28" height="30" rx="8" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+    
+    <!-- Flash & Sensor -->
+    <circle cx="230" cy="47" r="14" fill="#FACC15"/>
+    <circle cx="265" cy="47" r="8" fill="#475569"/>
+  </g>
+  
+  <text x="200" y="360" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#38BDF8" text-anchor="middle" letter-spacing="3">ICONIC CAMERA BAR</text>
+  <text x="200" y="390" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">50MP Octa PD + 48MP 5x Zoom</text>
+  <text x="200" y="415" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#94A3B8" text-anchor="middle">Pro Video Boost &amp; Night Sight Video</text>
+  <text x="200" y="450" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#10B981" text-anchor="middle">1Fi PROTOCOL MUTUAL FUND BACKED</text>
+</svg>

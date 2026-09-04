@@ -23,11 +23,11 @@ export function Badge({
   };
 
   const variantStyles = {
-    primary: "bg-purple-100 text-purple-900 border border-purple-200",
+    primary: "bg-[#087443]/10 text-[#087443] border border-[#087443]/20",
     success: "bg-emerald-50 text-emerald-700 border border-emerald-200",
-    accent: "bg-amber-50 text-amber-800 border border-amber-200",
-    neutral: "bg-gray-100 text-gray-700 border border-gray-200",
-    outline: "bg-white text-gray-900 border border-gray-300",
+    accent: "bg-[#C4F36A]/20 text-[#111318] border border-[#C4F36A]/40",
+    neutral: "bg-[#F7F7F4] text-[#646A73] border border-[#E3E5E2]",
+    outline: "bg-white text-[#111318] border border-[#E3E5E2]",
   };
 
   return (

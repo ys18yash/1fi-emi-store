@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 550" fill="none">
+  <defs>
+    <linearGradient id="sc_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="550" rx="24" fill="url(#sc_bg)"/>
+  
+  <text x="200" y="55" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#64748B" text-anchor="middle" letter-spacing="2">TITANIUM COLOR FINISHES</text>
+  <text x="200" y="80" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0F172A" text-anchor="middle">Galaxy S25 Ultra Finishes</text>
+  
+  <!-- Titanium Gray (Left) -->
+  <g transform="translate(80, 110)">
+    <rect width="100" height="210" rx="14" fill="#717378" stroke="#475569" stroke-width="2"/>
+    <circle cx="25" cy="30" r="10" fill="#1E293B"/>
+    <circle cx="25" cy="60" r="10" fill="#1E293B"/>
+    <circle cx="25" cy="90" r="10" fill="#1E293B"/>
+    <text x="50" y="245" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">Titanium Gray</text>
+  </g>
+  
+  <!-- Titanium Black (Right) -->
+  <g transform="translate(220, 110)">
+    <rect width="100" height="210" rx="14" fill="#2B2B2B" stroke="#0F172A" stroke-width="2"/>
+    <circle cx="25" cy="30" r="10" fill="#000000"/>
+    <circle cx="25" cy="60" r="10" fill="#000000"/>
+    <circle cx="25" cy="90" r="10" fill="#000000"/>
+    <text x="50" y="245" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">Titanium Black</text>
+  </g>
+  
+  <!-- Box Note -->
+  <g transform="translate(50, 400)">
+    <rect width="300" height="85" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="150" y="35" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0F172A" text-anchor="middle">What's in the Box</text>
+    <text x="150" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748B" text-anchor="middle">Galaxy S25 Ultra + S-Pen + Type-C Cable</text>
+    <text x="150" y="72" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#087443" text-anchor="middle">100% MUTUAL FUND BACKED • ZERO DOWN PAYMENT</text>
+  </g>
+</svg>
