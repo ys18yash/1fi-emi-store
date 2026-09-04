@@ -17,7 +17,7 @@ export function FinancingExplainer() {
   );
 
   return (
-    <section id="financing" className="py-20 bg-[var(--bg-page)] dark:bg-[#0C1412] scroll-mt-16 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] relative">
+    <section id="financing" className="py-20 bg-[var(--bg-page)] dark:bg-[#0C1412] scroll-mt-16 relative">
       <div className="site-container relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">

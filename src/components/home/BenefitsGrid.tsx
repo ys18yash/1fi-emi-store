@@ -7,7 +7,7 @@ export function BenefitsGrid() {
   return (
     <section
       id="benefits"
-      className="py-20 lg:py-24 bg-[var(--bg-page)] dark:bg-[#0C1412] text-[var(--text-primary)] dark:text-white scroll-mt-16 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] relative overflow-hidden transition-colors duration-200"
+      className="py-20 lg:py-24 bg-[var(--bg-page)] dark:bg-[#0C1412] text-[var(--text-primary)] dark:text-white scroll-mt-16 relative overflow-hidden transition-colors duration-200"
     >
       {/* Subtle Fintech Technical Grid and Glow Overlay */}
       <div className="absolute inset-0 bg-grid-hero opacity-25 dark:opacity-15 pointer-events-none z-0" />

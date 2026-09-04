@@ -136,7 +136,7 @@ export default async function HomePage() {
         {/* ========================================================= */}
         {/* PRODUCT CATALOG SECTION (`#catalog`) — 01 / STORE         */}
         {/* ========================================================= */}
-        <section id="catalog" className="bg-[var(--bg-page)] dark:bg-[#0C1412] py-16 lg:py-24 scroll-mt-16 border-b border-[var(--border-subtle)] dark:border-[#1E2D27] relative">
+        <section id="catalog" className="bg-[var(--bg-page)] dark:bg-[#0C1412] py-16 lg:py-24 scroll-mt-16 relative">
           <div className="site-container relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-[var(--border-subtle)] dark:border-[#1C2B25]">
               <div>
