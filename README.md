@@ -4,11 +4,11 @@ A full-stack e-commerce application for purchasing flagship devices through flex
 
 ## Live Demo
 
-[View the Live Demo](<YOUR_LIVE_DEMO_URL>)
+[View the Live Demo](https://emi-store-1fi.web.app/)
 
 ## Video Walkthrough
 
-[Watch the Video Walkthrough](<YOUR_VIDEO_WALKTHROUGH_URL>)
+[Watch the Video Walkthrough](https://drive.google.com/file/d/1251CD94LZqXvP2UDaQz1B0hBmpeueukp/view?usp=sharing)
 
 ## 1. Project Overview
 

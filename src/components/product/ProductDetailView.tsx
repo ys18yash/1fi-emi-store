@@ -61,17 +61,19 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
     );
   }, [selectedVariant, selectedPlanId]);
 
-  // Synchronize state with URL search params
+  // Synchronize state with URL search params safely without router reload
   const updateUrlParams = useCallback(
     (variantSku: string, tenureMonths?: number) => {
-      const params = new URLSearchParams(searchParams.toString());
+      if (typeof window === "undefined") return;
+      const params = new URLSearchParams(window.location.search);
       params.set("variant", variantSku);
       if (tenureMonths) {
         params.set("tenure", tenureMonths.toString());
       }
-      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+      const newUrl = `${window.location.pathname}?${params.toString()}`;
+      window.history.replaceState(null, "", newUrl);
     },
-    [pathname, router, searchParams]
+    []
   );
 
   // Variant switch handler
@@ -106,14 +108,14 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
     <div className="site-container py-6 sm:py-10 pb-32 sm:pb-12">
       {/* Breadcrumbs Navigation */}
       <div className="flex items-center justify-between gap-3 mb-8">
-        <nav className="flex items-center gap-2 text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] font-medium">
-          <Link href="/" className="hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] transition-colors">
+        <nav className="flex items-center gap-2 text-xs text-[var(--text-secondary)] font-medium">
+          <Link href="/" className="hover:text-[var(--text-primary)] transition-colors">
             Store Catalog
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-[var(--text-muted)] dark:text-[#6B7670]" />
-          <span className="text-[var(--text-muted)] dark:text-[#6B7670]">{product.category.name}</span>
-          <ChevronRight className="w-3.5 h-3.5 text-[var(--text-muted)] dark:text-[#6B7670]" />
-          <span className="text-[var(--text-primary)] dark:text-[#F2F5F3] font-semibold">{product.name}</span>
+          <ChevronRight className="w-3.5 h-3.5 text-[var(--text-muted)]" />
+          <span className="text-[var(--text-muted)]">{product.category.name}</span>
+          <ChevronRight className="w-3.5 h-3.5 text-[var(--text-muted)]" />
+          <span className="text-[var(--text-primary)] font-semibold">{product.name}</span>
         </nav>
       </div>
 
@@ -137,8 +139,8 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
 
             {/* Storage Tier Selector (if multiple tiers exist) */}
             {product.variants.some((v) => v.storage !== product.variants[0]?.storage) && (
-              <div className="bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-xs p-5">
-                <span className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider block mb-3">
+              <div className="bg-[var(--bg-surface)] rounded-3xl border border-[var(--border-subtle)] shadow-xs p-5">
+                <span className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider block mb-3">
                   Storage Capacity
                 </span>
                 <VariantSelector
@@ -160,20 +162,20 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
         </div>
 
         {/* Right Column: Price & EMI Plans List (7 Cols) */}
-        <div className="lg:col-span-7 bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl p-6 sm:p-8 border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-xs space-y-6">
+        <div className="lg:col-span-7 bg-[var(--bg-surface)] rounded-3xl p-6 sm:p-8 border border-[var(--border-subtle)] shadow-xs space-y-6">
           {/* Top Price Header */}
-          <div className="border-b border-[var(--border-subtle)] dark:border-[#1E2D27] pb-6">
+          <div className="border-b border-[var(--border-subtle)] pb-6">
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+              <span className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] tracking-tight">
                 {formatINR(selectedVariant.price)}
               </span>
               {selectedVariant.mrp > selectedVariant.price && (
-                <span className="text-base text-[var(--text-muted)] dark:text-[#6B7670] line-through font-normal">
+                <span className="text-base text-[var(--text-muted)] line-through font-normal">
                   {formatINR(selectedVariant.mrp)}
                 </span>
               )}
             </div>
-            <p className="text-xs sm:text-sm font-medium text-[var(--brand-primary)] dark:text-[#B7F34A] mt-1 flex items-center gap-1.5">
+            <p className="text-xs sm:text-sm font-medium text-[var(--brand-primary)] mt-1 flex items-center gap-1.5">
               <span>●</span> EMI plans backed by mutual funds • Keep earning compound returns
             </p>
           </div>
@@ -200,18 +202,18 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                 <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <p className="text-center text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2]">
+              <p className="text-center text-xs text-[var(--text-secondary)]">
                 Instant digital lien verification via CAMS & KFintech • Zero capital gains tax impact
               </p>
             </div>
           )}
 
           {/* Product Overview Summary */}
-          <div className="pt-6 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] space-y-2">
-            <h4 className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider">
+          <div className="pt-6 border-t border-[var(--border-subtle)] space-y-2">
+            <h4 className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider">
               Product Overview
             </h4>
-            <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
               {product.description}
             </p>
           </div>
@@ -248,14 +250,14 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
 
       {/* Floating Sticky Mobile Bottom Action Bar */}
       {selectedPlan && (
-        <div className="sm:hidden fixed bottom-0 inset-x-0 bg-[var(--bg-surface)]/95 dark:bg-[#131E1A]/95 backdrop-blur-md border-t border-[var(--border-subtle)] dark:border-[#1E2D27] p-4 z-40 shadow-lg flex items-center justify-between gap-3">
+        <div className="sm:hidden fixed bottom-0 inset-x-0 bg-[var(--bg-surface)]/95 backdrop-blur-md border-t border-[var(--border-subtle)] p-4 z-40 shadow-lg flex items-center justify-between gap-3">
           <div>
-            <span className="text-[10px] text-[var(--text-secondary)] dark:text-[#9DA7A2] font-semibold block uppercase tracking-wider">
+            <span className="text-[10px] text-[var(--text-secondary)] font-semibold block uppercase tracking-wider">
               {selectedPlan.tenureMonths} Months EMI
             </span>
-            <span className="text-lg font-black text-[var(--brand-primary)] dark:text-[#B7F34A]">
+            <span className="text-lg font-black text-[var(--brand-primary)]">
               {formatINR(selectedPlan.monthlyEmi)}
-              <span className="text-xs font-normal text-[var(--text-secondary)] dark:text-[#9DA7A2]">/mo</span>
+              <span className="text-xs font-normal text-[var(--text-secondary)]">/mo</span>
             </span>
           </div>
 

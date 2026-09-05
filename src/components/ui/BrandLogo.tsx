@@ -26,10 +26,10 @@ export function BrandLogo({
 }: BrandLogoProps) {
   const logoContent = (
     <span className={clsx("inline-flex items-center gap-2 group select-none", className)}>
-      {/* Canonical Purple 1Fi Logo Icon */}
+      {/* Canonical 1Fi Logo Icon */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/logo.png"
+        src="/1fi-icon.svg"
         alt="1Fi"
         className={clsx(
           "rounded-lg object-contain shadow-xs transition-transform duration-200 group-hover:scale-105 shrink-0",
@@ -43,7 +43,7 @@ export function BrandLogo({
       {badgeText && (
         <span
           className={clsx(
-            "font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] px-2 py-0.5 rounded-md border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/25 leading-tight inline-flex items-center self-center",
+            "font-bold uppercase tracking-wider text-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] px-2 py-0.5 rounded-md border border-[var(--brand-primary)]/20 leading-tight inline-flex items-center self-center",
             size === "sm" && "text-[10px]",
             size === "md" && "text-[11px]",
             size === "lg" && "text-xs"

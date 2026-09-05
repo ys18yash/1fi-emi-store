@@ -37,7 +37,7 @@ export function EmiPlanList({
             "px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer",
             filter === "ALL"
               ? "bg-[var(--brand-primary)] text-white shadow-premium-xs"
-              : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] bg-[var(--bg-surface-subtle)] dark:bg-[#192722] hover:bg-[var(--border-subtle)]/50 border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--bg-surface-subtle)] hover:bg-[var(--border-subtle)]/50 border border-[var(--border-subtle)]"
           )}
         >
           All Plans ({plans.length})
@@ -49,7 +49,7 @@ export function EmiPlanList({
             "px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer",
             filter === "NO_COST"
               ? "bg-[var(--brand-primary)] text-white shadow-premium-xs"
-              : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] bg-[var(--bg-surface-subtle)] dark:bg-[#192722] hover:bg-[var(--border-subtle)]/50 border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--bg-surface-subtle)] hover:bg-[var(--border-subtle)]/50 border border-[var(--border-subtle)]"
           )}
         >
           0% No-Cost
@@ -61,7 +61,7 @@ export function EmiPlanList({
             "px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer",
             filter === "EXTENDED"
               ? "bg-[var(--brand-primary)] text-white shadow-premium-xs"
-              : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] bg-[var(--bg-surface-subtle)] dark:bg-[#192722] hover:bg-[var(--border-subtle)]/50 border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-[var(--bg-surface-subtle)] hover:bg-[var(--border-subtle)]/50 border border-[var(--border-subtle)]"
           )}
         >
           Long Tenures (24m+)
@@ -80,15 +80,15 @@ export function EmiPlanList({
         ))}
 
         {filteredPlans.length === 0 && (
-          <div className="p-6 text-center text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] bg-[var(--bg-surface-subtle)] dark:bg-[#192722] rounded-2xl border border-dashed border-[var(--border-subtle)] dark:border-[#1E2D27]">
+          <div className="p-6 text-center text-xs text-[var(--text-secondary)] bg-[var(--bg-surface-subtle)] rounded-2xl border border-dashed border-[var(--border-subtle)]">
             No EMI plans match this filter.
           </div>
         )}
       </div>
 
       {/* Reassurance Info Banner */}
-      <div className="flex items-center gap-2.5 p-3.5 bg-[var(--brand-primary-subtle)] dark:bg-[rgba(16,185,129,0.12)] rounded-xl border border-[var(--brand-primary)]/20 text-xs text-[var(--brand-primary)] dark:text-[#B7F34A] font-medium">
-        <ShieldCheck className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A] shrink-0" />
+      <div className="flex items-center gap-2.5 p-3.5 bg-[var(--brand-primary-subtle)] rounded-xl border border-[var(--brand-primary)]/20 text-xs text-[var(--brand-primary)] font-medium">
+        <ShieldCheck className="w-4 h-4 text-[var(--brand-primary)] shrink-0" />
         <span>
           Instant digital lien via CAMS / KFintech. No paperwork, zero foreclosure penalty.
         </span>

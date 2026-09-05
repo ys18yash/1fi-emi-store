@@ -12,8 +12,6 @@ import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { ArrowRight, ShieldCheck, Sparkles, Percent, Lock, CheckCircle2 } from "lucide-react";
 import { Suspense } from "react";
 
-export const dynamic = "force-dynamic";
-
 export default async function HomePage() {
   // Load dynamic catalog data through the backend REST API
   const products = await fetchProductsFromApi();
@@ -26,7 +24,7 @@ export default async function HomePage() {
         {/* ================================================================= */}
         {/* HERO SECTION — EXCLUSIVE TRANSPARENT TECHNICAL GRID OVERLAY       */}
         {/* ================================================================= */}
-        <section className="relative pt-10 pb-12 lg:pt-16 lg:pb-16 overflow-hidden border-b border-[var(--border-subtle)] dark:border-[#1C2B25]">
+        <section className="relative pt-10 pb-12 lg:pt-16 lg:pb-16 overflow-hidden border-b border-[var(--border-subtle)]">
           {/* Transparent grid overlay - same continuous underlying background color */}
           <div className="absolute inset-0 bg-grid-hero pointer-events-none z-0" />
           <div className="absolute inset-0 grid-intersection-dots opacity-30 pointer-events-none z-0" />
@@ -36,19 +34,19 @@ export default async function HomePage() {
               {/* Left Column: Hero Typography (7 Cols) */}
               <div className="lg:col-span-7 min-w-0 space-y-5 text-left">
                 {/* Technical Protocol Status Eyebrow */}
-                <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/25 text-[11px] font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A]">
-                  <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] dark:bg-[#B7F34A] animate-ping" />
+                <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[var(--brand-primary-subtle)] border border-[var(--brand-primary)]/20 text-[11px] font-bold uppercase tracking-wider text-[var(--brand-primary)]">
+                  <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] animate-ping" />
                   <span>1Fi PROTOCOL • MUTUAL FUND BACKED FINANCING</span>
                 </div>
 
                 {/* Primary Editorial Headline */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[var(--text-primary)] leading-[1.12]">
                   Your next device. <br />
-                  <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">Your investments</span> keep growing.
+                  <span className="text-[var(--brand-primary)]">Your investments</span> keep growing.
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-sm sm:text-base text-[var(--text-secondary)] dark:text-[#9DA9A3] max-w-lg leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-lg leading-relaxed font-normal">
                   Get flagship smartphones and workstations on flexible 0% EMI while your mutual fund portfolio remains invested and compounds.
                 </p>
 
@@ -64,24 +62,24 @@ export default async function HomePage() {
 
                   <a
                     href="#how-it-works"
-                    className="px-5 py-3.5 rounded-xl bg-[var(--bg-surface)] dark:bg-[#111B17] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#16241F] text-[var(--text-primary)] dark:text-[#F2F6F4] font-semibold text-sm transition-colors border border-[var(--border-subtle)] dark:border-[#1C2B25] shadow-premium-xs focus-glow-card"
+                    className="px-5 py-3.5 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-subtle)] text-[var(--text-primary)] font-semibold text-sm transition-colors border border-[var(--border-subtle)] shadow-premium-xs focus-glow-card"
                   >
                     See How It Works
                   </a>
                 </div>
 
                 {/* Small Technical System Badges */}
-                <div className="pt-3 flex flex-wrap items-center gap-4 text-[11px] font-semibold text-[var(--text-muted)] dark:text-[#6B7972] border-t border-[var(--border-subtle)]/60 dark:border-[#1C2B25]/60">
+                <div className="pt-3 flex flex-wrap items-center gap-4 text-[11px] font-semibold text-[var(--text-muted)] border-t border-[var(--border-subtle)]/60">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">✓</span>
+                    <span className="text-[var(--brand-primary)]">✓</span>
                     <span>1.5× Equity Collateral</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">✓</span>
+                    <span className="text-[var(--brand-primary)]">✓</span>
                     <span>Zero STCG / LTCG Tax</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">✓</span>
+                    <span className="text-[var(--brand-primary)]">✓</span>
                     <span>CAMS & KFintech Digital Lien</span>
                   </div>
                 </div>
@@ -98,36 +96,36 @@ export default async function HomePage() {
         {/* ========================================================= */}
         {/* FEATURE STRIP — NO GRID, SAME CONTINUOUS PAGE BACKGROUND  */}
         {/* ========================================================= */}
-        <section className="border-b border-[var(--border-subtle)] dark:border-[#1C2B25] bg-[var(--bg-page)] dark:bg-[#09100E] py-3.5 relative z-10">
+        <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-page)] py-3.5 relative z-10">
           <div className="site-container">
-            <div className="flex flex-wrap items-center justify-between gap-y-3 text-xs font-semibold text-[var(--text-secondary)] dark:text-[#9DA9A3]">
+            <div className="flex flex-wrap items-center justify-between gap-y-3 text-xs font-semibold text-[var(--text-secondary)]">
               <div className="flex items-center gap-2">
-                <Percent className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
-                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">0% No-Cost EMI</span>
+                <Percent className="w-4 h-4 text-[var(--brand-primary)]" />
+                <span className="text-[var(--text-primary)]">0% No-Cost EMI</span>
               </div>
-              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+              <span className="hidden sm:inline text-[var(--border-subtle)]">•</span>
 
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
-                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Mutual Fund Backed</span>
+                <ShieldCheck className="w-4 h-4 text-[var(--brand-primary)]" />
+                <span className="text-[var(--text-primary)]">Mutual Fund Backed</span>
               </div>
-              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+              <span className="hidden sm:inline text-[var(--border-subtle)]">•</span>
 
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
-                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Digital Lien via CAMS & KFintech</span>
+                <CheckCircle2 className="w-4 h-4 text-[var(--brand-primary)]" />
+                <span className="text-[var(--text-primary)]">Digital Lien via CAMS & KFintech</span>
               </div>
-              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+              <span className="hidden sm:inline text-[var(--border-subtle)]">•</span>
 
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
-                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Secure Instant Approvals</span>
+                <Lock className="w-4 h-4 text-[var(--brand-primary)]" />
+                <span className="text-[var(--text-primary)]">Secure Instant Approvals</span>
               </div>
-              <span className="hidden sm:inline text-[var(--border-subtle)] dark:text-[#1C2B25]">•</span>
+              <span className="hidden sm:inline text-[var(--border-subtle)]">•</span>
 
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] dark:bg-[#B7F34A]" />
-                <span className="text-[var(--text-primary)] dark:text-[#F2F6F4]">Flexible 3–60 Month Plans</span>
+                <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)]" />
+                <span className="text-[var(--text-primary)]">Flexible 3–60 Month Plans</span>
               </div>
             </div>
           </div>
@@ -136,25 +134,25 @@ export default async function HomePage() {
         {/* ========================================================= */}
         {/* PRODUCT CATALOG SECTION (`#catalog`) — 01 / STORE         */}
         {/* ========================================================= */}
-        <section id="catalog" className="bg-[var(--bg-page)] dark:bg-[#0C1412] py-16 lg:py-24 scroll-mt-16 relative">
+        <section id="catalog" className="bg-[var(--bg-page)] py-16 lg:py-24 scroll-mt-16 relative">
           <div className="site-container relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-[var(--border-subtle)] dark:border-[#1C2B25]">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-[var(--border-subtle)]">
               <div>
-                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A]">
+                <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--brand-primary)]">
                   <span>01 / STORE</span>
-                  <span className="text-[var(--border-strong)] dark:text-[#2A3E36]">───</span>
+                  <span className="text-[var(--border-strong)]">───</span>
                   <span>FLAGSHIP HARDWARE</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] dark:text-[#F2F6F4] tracking-tight mt-1">
+                <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] tracking-tight mt-1">
                   Flagship Devices. Smarter Financing.
                 </h2>
               </div>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA9A3] max-w-md">
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] max-w-md">
                 Choose a device, configure your finish, and select a 0% mutual fund EMI plan tailored to your investments.
               </p>
             </div>
 
-            <Suspense fallback={<div className="h-96 rounded-2xl bg-[var(--bg-surface-subtle)] dark:bg-[#111B17] border border-[var(--border-subtle)] dark:border-[#1C2B25] animate-pulse" />}>
+            <Suspense fallback={<div className="h-96 rounded-2xl bg-[var(--bg-surface-subtle)] border border-[var(--border-subtle)] animate-pulse" />}>
               <ProductGrid products={products} />
             </Suspense>
           </div>
@@ -183,18 +181,18 @@ export default async function HomePage() {
         {/* ========================================================= */}
         {/* BOTTOM CONVERSION CTA BANNER                              */}
         {/* ========================================================= */}
-        <section className="bg-[#0D1613] dark:bg-[#060B0A] text-white py-16 sm:py-20 border-t border-[#1F2E27] relative overflow-hidden">
+        <section className="bg-[var(--bg-surface-subtle)] text-[var(--text-primary)] py-16 sm:py-20 border-t border-[var(--border-subtle)] relative overflow-hidden transition-colors">
           <div className="site-container text-center space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-primary)]/20 dark:bg-[rgba(183,243,74,0.1)] border border-[var(--brand-primary)] dark:border-[#B7F34A]/30 text-xs font-bold uppercase tracking-wider text-[#B7F34A]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] border border-[var(--brand-primary)]/30 text-xs font-bold uppercase tracking-wider text-[var(--brand-primary)]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Ready to upgrade without breaking your portfolio?</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white max-w-2xl mx-auto leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[var(--text-primary)] max-w-2xl mx-auto leading-tight">
               Power your next smartphone or laptop today.
             </h2>
 
-            <p className="text-sm sm:text-base text-[#8D95A0] dark:text-[#9DA9A3] max-w-lg mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-lg mx-auto leading-relaxed">
               Explore our full range of flagship electronics with zero capital gains tax and transparent 0% mutual fund EMI.
             </p>
 

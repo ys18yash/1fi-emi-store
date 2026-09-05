@@ -152,19 +152,19 @@ export function InteractiveEmiCalculator({
   const interestSharePct = 100 - principalSharePct;
 
   return (
-    <div className="bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-premium-sm p-6 sm:p-8 space-y-6">
+    <div className="bg-[var(--bg-surface)] rounded-3xl border border-[var(--border-subtle)] shadow-premium-sm p-6 sm:p-8 space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[var(--border-subtle)] dark:border-[#1E2D27] pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[var(--border-subtle)] pb-5">
         <div>
           <div className="flex items-center gap-2">
-            <span className="p-1.5 rounded-xl bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20">
+            <span className="p-1.5 rounded-xl bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/20">
               <Calculator className="w-5 h-5" />
             </span>
-            <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+            <h3 className="text-xl font-bold text-[var(--text-primary)]">
               Interactive EMI Calculator
             </h3>
           </div>
-          <p className="text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] mt-1">
+          <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">
             Simulate custom down payments and tenure for {productName}
           </p>
         </div>
@@ -172,7 +172,7 @@ export function InteractiveEmiCalculator({
         <button
           type="button"
           onClick={handleReset}
-          className="self-start sm:self-auto flex items-center gap-1.5 text-xs font-bold text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] transition-colors py-1.5 px-3 rounded-xl border border-[var(--border-subtle)] dark:border-[#1E2D27] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#192722] cursor-pointer"
+          className="self-start sm:self-auto flex items-center gap-1.5 text-xs font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors py-1.5 px-3 rounded-xl border border-[var(--border-subtle)] hover:bg-[var(--bg-surface-subtle)] cursor-pointer"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           <span>Reset Calculator</span>
@@ -188,19 +188,19 @@ export function InteractiveEmiCalculator({
             <div className="flex items-center justify-between">
               <label
                 htmlFor="down-payment-input"
-                className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider flex items-center gap-1.5"
+                className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider flex items-center gap-1.5"
               >
-                <Wallet className="w-3.5 h-3.5 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+                <Wallet className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
                 Down Payment Amount
               </label>
-              <span className="text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2]">
-                Product Price: <strong className="text-[var(--text-primary)] dark:text-[#F2F5F3] font-bold">{formatINR(productPrice)}</strong>
+              <span className="text-xs text-[var(--text-secondary)]">
+                Product Price: <strong className="text-[var(--text-primary)] font-bold">{formatINR(productPrice)}</strong>
               </span>
             </div>
 
             {/* Input with INR Prefix */}
             <div className="relative">
-              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-bold text-[var(--text-muted)] dark:text-[#6B7670]">
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-bold text-[var(--text-muted)]">
                 ₹
               </span>
               <input
@@ -214,15 +214,15 @@ export function InteractiveEmiCalculator({
                 placeholder="0"
                 className={`w-full pl-8 pr-4 py-2.5 rounded-xl border text-sm font-bold transition-all focus:outline-none focus:ring-2 ${
                   validationError
-                    ? "border-rose-400 focus:ring-rose-200 text-rose-900 dark:text-rose-300 bg-rose-50/30 dark:bg-rose-950/20"
-                    : "border-[var(--border-subtle)] dark:border-[#1E2D27] focus:border-[var(--brand-primary)] focus:ring-[var(--brand-primary-subtle)] text-[var(--text-primary)] dark:text-[#F2F5F3] bg-[var(--bg-surface-subtle)] dark:bg-[#192722]"
+                    ? "border-rose-400 focus:ring-rose-200 text-rose-900 bg-rose-50/30"
+                    : "border-[var(--border-subtle)] focus:border-[var(--brand-primary)] focus:ring-[var(--brand-primary-subtle)] text-[var(--text-primary)] bg-[var(--bg-surface-subtle)]"
                 }`}
               />
             </div>
 
             {/* Validation Message */}
             {validationError && (
-              <p className="text-xs text-rose-600 dark:text-rose-400 font-semibold flex items-center gap-1">
+              <p className="text-xs text-rose-600 font-semibold flex items-center gap-1">
                 <span>⚠️</span> {validationError}
               </p>
             )}
@@ -236,9 +236,9 @@ export function InteractiveEmiCalculator({
                 step="1000"
                 value={downPayment}
                 onChange={handleSliderChange}
-                className="w-full h-1.5 bg-[var(--border-subtle)] dark:bg-[#1E2D27] rounded-lg appearance-none cursor-pointer accent-[var(--brand-primary)] dark:accent-[#B7F34A]"
+                className="w-full h-1.5 bg-[var(--border-subtle)] rounded-lg appearance-none cursor-pointer accent-[var(--brand-primary)]"
               />
-              <div className="flex justify-between text-[11px] text-[var(--text-muted)] dark:text-[#6B7670] font-semibold mt-1">
+              <div className="flex justify-between text-[11px] text-[var(--text-muted)] font-semibold mt-1">
                 <span>₹0 (Zero Down)</span>
                 <span>Max: {formatINR(maxDownPayment)}</span>
               </div>
@@ -257,7 +257,7 @@ export function InteractiveEmiCalculator({
                     className={`text-xs py-1 px-2.5 rounded-lg font-bold transition-all cursor-pointer ${
                       isSelected
                         ? "bg-[var(--brand-primary)] text-white shadow-xs"
-                        : "bg-[var(--bg-surface-subtle)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--border-subtle)] dark:hover:bg-[#1F302A] border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+                        : "bg-[var(--bg-surface-subtle)] text-[var(--text-secondary)] hover:bg-[var(--border-subtle)] border border-[var(--border-subtle)]"
                     }`}
                   >
                     {preset.label} ({formatINR(presetValue)})
@@ -269,8 +269,8 @@ export function InteractiveEmiCalculator({
 
           {/* Interest Rate Selection */}
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider flex items-center gap-1.5">
-              <Percent className="w-3.5 h-3.5 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+            <label className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider flex items-center gap-1.5">
+              <Percent className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
               Interest Rate Model
             </label>
             <div className="grid grid-cols-2 gap-3">
@@ -283,12 +283,12 @@ export function InteractiveEmiCalculator({
                     onClick={() => setSelectedRate(rate.value)}
                     className={`p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
                       isSelected
-                        ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] ring-1 ring-[var(--brand-primary)] dark:border-[#B7F34A]"
-                        : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] hover:border-[var(--brand-primary)]/40 text-[var(--text-primary)] dark:text-[#F2F5F3]"
+                        ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] ring-1 ring-[var(--brand-primary)]"
+                        : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--brand-primary)]/40 text-[var(--text-primary)]"
                     }`}
                   >
                     <span className="text-xs font-bold block">{rate.label}</span>
-                    <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#9DA7A2] block mt-0.5">
+                    <span className="text-[11px] text-[var(--text-secondary)] block mt-0.5">
                       {rate.value === 0 ? "Standard 0% interest" : "10.5% p.a. reducing"}
                     </span>
                   </button>
@@ -299,8 +299,8 @@ export function InteractiveEmiCalculator({
 
           {/* Tenure Selection */}
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] uppercase tracking-wider flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+            <label className="text-xs font-bold text-[var(--text-primary)] uppercase tracking-wider flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
               Repayment Tenure
             </label>
             <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
@@ -314,7 +314,7 @@ export function InteractiveEmiCalculator({
                     className={`py-2 px-1 text-center rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                       isSelected
                         ? "border-[var(--brand-primary)] bg-[var(--brand-primary)] text-white shadow-premium-xs"
-                        : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] hover:border-[var(--brand-primary)]/40 text-[var(--text-primary)] dark:text-[#F2F5F3] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#1F302A]"
+                        : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--brand-primary)]/40 text-[var(--text-primary)] hover:bg-[var(--bg-surface-subtle)]"
                     }`}
                   >
                     {months}m
@@ -326,30 +326,30 @@ export function InteractiveEmiCalculator({
         </div>
 
         {/* Right Column: Calculated Results & Visualization (5 Cols) */}
-        <div className="lg:col-span-5 bg-[var(--bg-surface-subtle)] dark:bg-[#192722] rounded-2xl border border-[var(--border-subtle)] dark:border-[#1E2D27] p-5 sm:p-6 space-y-5">
+        <div className="lg:col-span-5 bg-[var(--bg-surface-subtle)] rounded-2xl border border-[var(--border-subtle)] p-5 sm:p-6 space-y-5">
           {/* Main Monthly EMI Callout */}
-          <div className="bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-2xl p-4 border border-[var(--brand-primary)]/20 dark:border-[#1E2D27] shadow-premium-xs text-center">
-            <span className="text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] font-bold uppercase tracking-wider block">
+          <div className="bg-[var(--bg-surface)] rounded-2xl p-4 border border-[var(--brand-primary)]/20 shadow-premium-xs text-center">
+            <span className="text-xs text-[var(--text-secondary)] font-bold uppercase tracking-wider block">
               Estimated Monthly Installment
             </span>
-            <div className="text-3xl sm:text-4xl font-black text-[var(--brand-primary)] dark:text-[#B7F34A] tracking-tight mt-1">
+            <div className="text-3xl sm:text-4xl font-black text-[var(--brand-primary)] tracking-tight mt-1">
               {formatINR(calculatedResult.monthlyEmi)}
-              <span className="text-xs font-normal text-[var(--text-secondary)] dark:text-[#9DA7A2]">/mo</span>
+              <span className="text-xs font-normal text-[var(--text-secondary)]">/mo</span>
             </div>
-            <span className="text-xs font-semibold text-[var(--text-primary)] dark:text-[#F2F5F3] block mt-1">
+            <span className="text-xs font-semibold text-[var(--text-primary)] block mt-1">
               For {selectedTenure} Months @ {formatInterest(selectedRate)}
             </span>
           </div>
 
           {/* Visual Breakdown Progress Bar */}
           <div className="space-y-2">
-            <div className="flex justify-between text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+            <div className="flex justify-between text-xs font-bold text-[var(--text-primary)]">
               <span>Repayment Breakdown</span>
               <span>Total: {formatINR(totalRepayment)}</span>
             </div>
 
             {/* Proportion Bar */}
-            <div className="w-full h-3 bg-[var(--border-subtle)] dark:bg-[#1E2D27] rounded-full overflow-hidden flex">
+            <div className="w-full h-3 bg-[var(--border-subtle)] rounded-full overflow-hidden flex">
               <div
                 style={{ width: `${principalSharePct}%` }}
                 className="bg-[var(--brand-primary)] h-full transition-all duration-300"
@@ -365,7 +365,7 @@ export function InteractiveEmiCalculator({
             </div>
 
             {/* Legend */}
-            <div className="flex items-center justify-between text-[11px] text-[var(--text-secondary)] dark:text-[#9DA7A2] font-semibold pt-0.5">
+            <div className="flex items-center justify-between text-[11px] text-[var(--text-secondary)] font-semibold pt-0.5">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)]" />
                 <span>Loan: {formatINR(loanAmount)} ({principalSharePct}%)</span>
@@ -378,46 +378,46 @@ export function InteractiveEmiCalculator({
           </div>
 
           {/* Key Financial Metrics Table */}
-          <div className="space-y-2 text-xs border-t border-[var(--border-subtle)] dark:border-[#1E2D27] pt-3">
-            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60 dark:border-[#1E2D27]/60">
-              <span className="text-[var(--text-secondary)] dark:text-[#9DA7A2]">Product Price</span>
-              <span className="font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">{formatINR(productPrice)}</span>
+          <div className="space-y-2 text-xs border-t border-[var(--border-subtle)] pt-3">
+            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60">
+              <span className="text-[var(--text-secondary)]">Product Price</span>
+              <span className="font-bold text-[var(--text-primary)]">{formatINR(productPrice)}</span>
             </div>
-            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60 dark:border-[#1E2D27]/60">
-              <span className="text-[var(--text-secondary)] dark:text-[#9DA7A2]">Down Payment</span>
-              <span className="font-bold text-[var(--brand-primary)] dark:text-[#B7F34A]">
+            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60">
+              <span className="text-[var(--text-secondary)]">Down Payment</span>
+              <span className="font-bold text-[var(--brand-primary)]">
                 - {formatINR(downPayment)}
               </span>
             </div>
-            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60 dark:border-[#1E2D27]/60">
-              <span className="text-[var(--text-secondary)] dark:text-[#9DA7A2]">Net Loan Amount</span>
-              <span className="font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">{formatINR(loanAmount)}</span>
+            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60">
+              <span className="text-[var(--text-secondary)]">Net Loan Amount</span>
+              <span className="font-bold text-[var(--text-primary)]">{formatINR(loanAmount)}</span>
             </div>
-            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60 dark:border-[#1E2D27]/60">
-              <span className="text-[var(--text-secondary)] dark:text-[#9DA7A2]">Total Interest Payable</span>
-              <span className="font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+            <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60">
+              <span className="text-[var(--text-secondary)]">Total Interest Payable</span>
+              <span className="font-bold text-[var(--text-primary)]">
                 {totalInterest === 0 ? "₹0 (0% No-Cost)" : formatINR(totalInterest)}
               </span>
             </div>
             {matchedCashback > 0 && (
-              <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60 dark:border-[#1E2D27]/60">
-                <span className="text-[var(--text-secondary)] dark:text-[#9DA7A2]">Eligible Cashback</span>
-                <span className="font-bold text-[var(--brand-primary)] dark:text-[#B7F34A]">
+              <div className="flex justify-between py-1 border-b border-[var(--border-subtle)]/60">
+                <span className="text-[var(--text-secondary)]">Eligible Cashback</span>
+                <span className="font-bold text-[var(--brand-primary)]">
                   - {formatINR(matchedCashback)}
                 </span>
               </div>
             )}
-            <div className="flex justify-between py-1 font-black text-sm text-[var(--text-primary)] dark:text-[#F2F5F3] pt-1">
+            <div className="flex justify-between py-1 font-black text-sm text-[var(--text-primary)] pt-1">
               <span>Effective Net Cost</span>
-              <span className="text-[var(--brand-primary)] dark:text-[#B7F34A]">
+              <span className="text-[var(--brand-primary)]">
                 {formatINR(calculatedResult.netEffectiveCost + downPayment)}
               </span>
             </div>
           </div>
 
           {/* Informational Disclaimer */}
-          <div className="flex items-start gap-2 text-[11px] text-[var(--text-secondary)] dark:text-[#9DA7A2] bg-[var(--bg-surface)] dark:bg-[#131E1A] p-3 rounded-xl border border-[var(--border-subtle)] dark:border-[#1E2D27]">
-            <Info className="w-3.5 h-3.5 text-[var(--brand-primary)] dark:text-[#B7F34A] shrink-0 mt-0.5" />
+          <div className="flex items-start gap-2 text-[11px] text-[var(--text-secondary)] bg-[var(--bg-surface)] p-3 rounded-xl border border-[var(--border-subtle)]">
+            <Info className="w-3.5 h-3.5 text-[var(--brand-primary)] shrink-0 mt-0.5" />
             <span>
               This calculator provides custom financing estimates. Standard pre-approved plans without down payment are selectable on the right panel.
             </span>

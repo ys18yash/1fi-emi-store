@@ -160,19 +160,19 @@ export function ProductGallery({
   );
 
   return (
-    <div className="bg-[var(--bg-surface)] dark:bg-[#131E1A] rounded-3xl border border-[var(--border-subtle)] dark:border-[#1E2D27] shadow-premium-sm p-5 sm:p-7 flex flex-col justify-between space-y-6">
+    <div className="bg-[var(--bg-surface)] rounded-3xl border border-[var(--border-subtle)] shadow-premium-sm p-5 sm:p-7 flex flex-col justify-between space-y-6">
       {/* Top Meta: Badge, Name, Storage Tier */}
       <div className="text-left space-y-1.5">
         {badge && (
-          <span className="text-[10px] font-bold text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] px-2.5 py-0.5 rounded uppercase tracking-wider inline-block border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20">
+          <span className="text-[10px] font-bold text-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] px-2.5 py-0.5 rounded uppercase tracking-wider inline-block border border-[var(--brand-primary)]/20">
             {badge}
           </span>
         )}
-        <h1 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-black text-[var(--text-primary)] tracking-tight">
           {productName}
         </h1>
         {storage && (
-          <p className="text-xs font-semibold text-[var(--text-secondary)] dark:text-[#9DA7A2]">
+          <p className="text-xs font-semibold text-[var(--text-secondary)]">
             {storage} • {colorName}
           </p>
         )}
@@ -191,10 +191,10 @@ export function ProductGallery({
                   type="button"
                   onClick={() => handleSelectImage(idx)}
                   className={clsx(
-                    "relative w-14 h-14 lg:w-16 lg:h-16 rounded-xl p-1 bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border transition-all duration-200 shrink-0 cursor-pointer overflow-hidden group/thumb flex items-center justify-center",
+                    "relative w-14 h-14 lg:w-16 lg:h-16 rounded-xl p-1 bg-[var(--bg-surface-subtle)] border transition-all duration-200 shrink-0 cursor-pointer overflow-hidden group/thumb flex items-center justify-center",
                     isSelected
-                      ? "border-[var(--brand-primary)] dark:border-[#B7F34A] ring-2 ring-[var(--brand-primary)]/25 dark:ring-[#B7F34A]/30 bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] scale-[1.02]"
-                      : "border-[var(--border-subtle)] dark:border-[#1E2D27] hover:border-[var(--brand-primary)]/40 dark:hover:border-[#B7F34A]/40 opacity-75 hover:opacity-100 hover:scale-[1.03]"
+                      ? "border-[var(--brand-primary)] ring-2 ring-[var(--brand-primary)]/25 bg-[var(--brand-primary-subtle)] scale-[1.02]"
+                      : "border-[var(--border-subtle)] hover:border-[var(--brand-primary)]/40 opacity-75 hover:opacity-100 hover:scale-[1.03]"
                   )}
                   aria-label={`View image ${idx + 1} of ${validImages.length}: ${img.altText || productName}`}
                   aria-selected={isSelected}
@@ -215,7 +215,7 @@ export function ProductGallery({
               <button
                 type="button"
                 onClick={() => setIsLightboxOpen(true)}
-                className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-xl p-1 bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] hover:border-[var(--brand-primary)]/60 dark:hover:border-[#B7F34A]/60 transition-all duration-200 shrink-0 cursor-pointer overflow-hidden group/overflow flex items-center justify-center"
+                className="relative w-14 h-14 lg:w-16 lg:h-16 rounded-xl p-1 bg-[var(--bg-surface-subtle)] border border-[var(--border-subtle)] hover:border-[var(--brand-primary)]/60 transition-all duration-200 shrink-0 cursor-pointer overflow-hidden group/overflow flex items-center justify-center"
                 aria-label={`View all ${validImages.length} images (+${overflowCount} more)`}
                 title={`Click to view all ${validImages.length} images`}
               >
@@ -228,7 +228,7 @@ export function ProductGallery({
                 />
 
                 {/* +N Overlay Badge */}
-                <div className="absolute inset-0 bg-black/45 dark:bg-black/60 flex items-center justify-center text-white font-bold text-sm lg:text-base tracking-tight font-mono group-hover/overflow:bg-[var(--brand-primary)]/80 transition-colors">
+                <div className="absolute inset-0 bg-black/45 flex items-center justify-center text-white font-bold text-sm lg:text-base tracking-tight font-mono group-hover/overflow:bg-[var(--brand-primary)]/80 transition-colors">
                   +{overflowCount}
                 </div>
               </button>
@@ -238,7 +238,7 @@ export function ProductGallery({
 
         {/* Large Center Stage Product Image */}
         <div
-          className="relative flex-1 min-w-0 aspect-square rounded-2xl bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border border-[var(--border-subtle)]/60 dark:border-[#1E2D27] p-6 sm:p-8 flex items-center justify-center overflow-hidden group select-none cursor-zoom-in"
+          className="relative flex-1 min-w-0 aspect-square rounded-2xl bg-[var(--bg-surface-subtle)] border border-[var(--border-subtle)]/60 p-6 sm:p-8 flex items-center justify-center overflow-hidden group select-none cursor-zoom-in"
           onClick={() => setIsLightboxOpen(true)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -273,15 +273,15 @@ export function ProductGallery({
               e.stopPropagation();
               setIsLightboxOpen(true);
             }}
-            className="absolute top-3 right-3 p-2 rounded-xl bg-[var(--bg-surface)]/90 dark:bg-[#131E1A]/90 hover:bg-[var(--bg-surface)] text-[var(--text-primary)] dark:text-[#F2F5F3] shadow-premium-xs border border-[var(--border-subtle)] dark:border-[#1E2D27] transition-all opacity-80 hover:opacity-100 cursor-pointer z-10"
+            className="absolute top-3 right-3 p-2 rounded-xl bg-[var(--bg-surface)]/90 hover:bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-premium-xs border border-[var(--border-subtle)] transition-all opacity-80 hover:opacity-100 cursor-pointer z-10"
             aria-label="Open fullscreen image preview"
           >
-            <Maximize2 className="w-4 h-4 text-[var(--text-secondary)] dark:text-[#9DA7A2]" />
+            <Maximize2 className="w-4 h-4 text-[var(--text-secondary)]" />
           </button>
 
           {/* Live Image Counter (e.g. 1 / 6) */}
           {validImages.length > 1 && (
-            <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#101A17]/80 dark:bg-black/75 backdrop-blur-xs text-white text-[11px] font-semibold pointer-events-none font-mono z-10 border border-white/10">
+            <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#101A17]/80 backdrop-blur-xs text-white text-[11px] font-semibold pointer-events-none font-mono z-10 border border-white/10">
               {safeIndex + 1} / {validImages.length}
             </div>
           )}
@@ -295,7 +295,7 @@ export function ProductGallery({
                   e.stopPropagation();
                   handlePrev();
                 }}
-                className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[var(--bg-surface)]/95 dark:bg-[#131E1A]/95 hover:bg-[var(--bg-surface)] text-[var(--text-primary)] dark:text-[#F2F5F3] shadow-premium-sm border border-[var(--border-subtle)] dark:border-[#1E2D27] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity cursor-pointer z-10 active:scale-95"
+                className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[var(--bg-surface)]/95 hover:bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-premium-sm border border-[var(--border-subtle)] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity cursor-pointer z-10 active:scale-95"
                 aria-label="Previous product image"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -307,7 +307,7 @@ export function ProductGallery({
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[var(--bg-surface)]/95 dark:bg-[#131E1A]/95 hover:bg-[var(--bg-surface)] text-[var(--text-primary)] dark:text-[#F2F5F3] shadow-premium-sm border border-[var(--border-subtle)] dark:border-[#1E2D27] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity cursor-pointer z-10 active:scale-95"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[var(--bg-surface)]/95 hover:bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-premium-sm border border-[var(--border-subtle)] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity cursor-pointer z-10 active:scale-95"
                 aria-label="Next product image"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -330,10 +330,10 @@ export function ProductGallery({
                   type="button"
                   onClick={() => handleSelectImage(idx)}
                   className={clsx(
-                    "relative w-12 h-12 rounded-xl p-1 bg-[var(--bg-surface-subtle)] dark:bg-[#192722] border transition-all shrink-0 cursor-pointer overflow-hidden",
+                    "relative w-12 h-12 rounded-xl p-1 bg-[var(--bg-surface-subtle)] border transition-all shrink-0 cursor-pointer overflow-hidden",
                     isSelected
-                      ? "border-[var(--brand-primary)] dark:border-[#B7F34A] ring-2 ring-[var(--brand-primary)]/20 bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)]"
-                      : "border-[var(--border-subtle)] dark:border-[#1E2D27] opacity-60"
+                      ? "border-[var(--brand-primary)] ring-2 ring-[var(--brand-primary)]/20 bg-[var(--brand-primary-subtle)]"
+                      : "border-[var(--border-subtle)] opacity-60"
                   )}
                   aria-label={`View photo ${idx + 1}`}
                   aria-selected={isSelected}
@@ -359,8 +359,8 @@ export function ProductGallery({
                 className={clsx(
                   "h-1.5 rounded-full transition-all duration-200",
                   dotIdx === safeIndex
-                    ? "bg-[var(--brand-primary)] dark:bg-[#B7F34A] w-4"
-                    : "bg-[var(--border-subtle)] dark:bg-[#2A3E36] w-1.5 hover:bg-[var(--text-muted)]"
+                    ? "bg-[var(--brand-primary)] w-4"
+                    : "bg-[var(--border-subtle)] w-1.5 hover:bg-[var(--text-muted)]"
                 )}
                 aria-label={`Jump to photo ${dotIdx + 1}`}
               />
@@ -370,8 +370,8 @@ export function ProductGallery({
       )}
 
       {/* Bottom: Available in X finishes + Color Palette Dots */}
-      <div className="text-center pt-3 space-y-2.5 border-t border-[var(--border-subtle)] dark:border-[#1E2D27]">
-        <span className="text-xs font-semibold text-[var(--text-secondary)] dark:text-[#9DA7A2]">
+      <div className="text-center pt-3 space-y-2.5 border-t border-[var(--border-subtle)]">
+        <span className="text-xs font-semibold text-[var(--text-secondary)]">
           Available in {availableColorVariants.length || variants.length} finishes
         </span>
 
@@ -388,8 +388,8 @@ export function ProductGallery({
                 className={clsx(
                   "w-5 h-5 rounded-full border transition-all duration-200 relative flex items-center justify-center cursor-pointer",
                   isSelected
-                    ? "ring-2 ring-[var(--brand-primary)] dark:ring-[#B7F34A] ring-offset-2 ring-offset-[var(--bg-surface)] dark:ring-offset-[#131E1A] border-transparent scale-110"
-                    : "border-gray-300 dark:border-gray-600 hover:scale-110 opacity-85 hover:opacity-100"
+                    ? "ring-2 ring-[var(--brand-primary)] ring-offset-2 ring-offset-[var(--bg-surface)] border-transparent scale-110"
+                    : "border-gray-300 hover:scale-110 opacity-85 hover:opacity-100"
                 )}
                 style={{ backgroundColor: v.colorHex }}
               >

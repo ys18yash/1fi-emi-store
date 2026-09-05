@@ -99,11 +99,13 @@ export interface ProductListItemDto {
   tagline: string | null;
   badge: string | null;
   categoryName: string;
+  categorySlug?: string;
   startingPrice: number;
   startingMrp: number;
   discountPercentage: number;
   minMonthlyEmi: number;
   variantsCount: number;
+  availableStorages?: string[];
   defaultVariant: {
     id: string;
     sku?: string;

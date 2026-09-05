@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *, [data-theme="dark"], [data-theme="dark"] *));
+
 @layer base {
-  :root {
+  :root,
+  [data-theme="light"],
+  html[data-theme="light"] {
     /* Surface & Background */
     --bg-page: #F8F9F6;
     --bg-surface: #FFFFFF;
@@ -48,7 +52,10 @@
     --focus-glow: rgba(8, 116, 67, 0.25);
   }
 
-  .dark {
+  .dark,
+  [data-theme="dark"],
+  html.dark,
+  html[data-theme="dark"] {
     /* Dark Mode Deep Charcoal / Green-Black Layered Surfaces */
     --bg-page: #09100E;
     --bg-surface: #111B17;

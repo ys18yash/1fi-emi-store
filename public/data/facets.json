@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "data": {
+    "categories": [
+      {
+        "name": "Laptops & Computing",
+        "slug": "laptops",
+        "count": 1
+      },
+      {
+        "name": "Smartphones",
+        "slug": "smartphones",
+        "count": 3
+      }
+    ],
+    "brands": [
+      {
+        "name": "Apple",
+        "count": 2
+      },
+      {
+        "name": "Samsung",
+        "count": 1
+      },
+      {
+        "name": "Google",
+        "count": 1
+      }
+    ],
+    "storages": [
+      {
+        "value": "256GB",
+        "count": 9
+      },
+      {
+        "value": "512GB",
+        "count": 7
+      },
+      {
+        "value": "128GB",
+        "count": 4
+      },
+      {
+        "value": "1TB",
+        "count": 2
+      }
+    ],
+    "priceRange": {
+      "min": 99999,
+      "max": 189900
+    }
+  }
+}

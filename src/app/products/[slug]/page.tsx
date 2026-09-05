@@ -7,7 +7,12 @@ import { ProductDetailView } from "@/components/product/ProductDetailView";
 import { Suspense } from "react";
 import ProductLoading from "./loading";
 
-export const dynamic = "force-dynamic";
+import { getAllProducts } from "@/lib/services/product-service";
+
+export async function generateStaticParams() {
+  const products = await getAllProducts();
+  return products.map((p) => ({ slug: p.slug }));
+}
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -57,7 +62,7 @@ export default async function ProductPage(props: ProductPageProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F7F4] text-[#111318]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-page)] text-[var(--text-primary)] transition-colors duration-200">
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<ProductLoading />}>

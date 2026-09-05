@@ -45,18 +45,18 @@ export function FaqAccordion() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-[var(--bg-page)] dark:bg-[#0C1412] scroll-mt-16 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] relative">
+    <section id="faq" className="py-20 bg-[var(--bg-page)] scroll-mt-16 border-t border-[var(--border-subtle)] relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] border border-[var(--brand-primary)]/30 dark:border-[#B7F34A]/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] border border-[var(--brand-primary)]/30">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] dark:text-[#F2F5F3] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-primary)] tracking-tight">
             Got Questions About Mutual Fund EMIs?
           </h2>
-          <p className="text-sm sm:text-base text-[var(--text-secondary)] dark:text-[#9DA7A2] max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
             Everything you need to know about purchasing products with investment-backed financing.
           </p>
         </div>
@@ -72,8 +72,8 @@ export function FaqAccordion() {
                 className={clsx(
                   "rounded-2xl border transition-all duration-200 overflow-hidden",
                   isOpen
-                    ? "border-[var(--brand-primary)]/40 bg-[var(--brand-primary-subtle)]/40 dark:bg-[#131E1A] dark:border-[#10B981]/40 shadow-premium-xs"
-                    : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#131E1A] hover:border-[var(--brand-primary)]/30 shadow-premium-xs"
+                    ? "border-[var(--brand-primary)]/40 bg-[var(--brand-primary-subtle)]/40 shadow-premium-xs"
+                    : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--brand-primary)]/30 shadow-premium-xs"
                 )}
               >
                 <button
@@ -82,7 +82,7 @@ export function FaqAccordion() {
                   className="w-full p-5 text-left flex items-center justify-between gap-4 select-none cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm sm:text-base font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+                  <span className="text-sm sm:text-base font-bold text-[var(--text-primary)]">
                     {item.question}
                   </span>
                   <div
@@ -90,7 +90,7 @@ export function FaqAccordion() {
                       "w-7 h-7 rounded-full flex items-center justify-center transition-transform duration-200 shrink-0",
                       isOpen
                         ? "rotate-180 bg-[var(--brand-primary)] text-white shadow-xs"
-                        : "bg-[var(--bg-surface-subtle)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2]"
+                        : "bg-[var(--bg-surface-subtle)] text-[var(--text-secondary)]"
                     )}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -98,7 +98,7 @@ export function FaqAccordion() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-[var(--text-secondary)] dark:text-[#9DA7A2] leading-relaxed border-t border-[var(--brand-primary)]/10 dark:border-[#1E2D27] pt-3 animate-in fade-in duration-150">
+                  <div className="px-5 pb-5 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--brand-primary)]/10 pt-3 animate-in fade-in duration-150">
                     {item.answer}
                   </div>
                 )}

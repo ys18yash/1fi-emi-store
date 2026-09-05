@@ -30,10 +30,10 @@ export function ProductFilterSidebar({
   return (
     <div className="space-y-6">
       {/* Header & Reset Action */}
-      <div className="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)] dark:border-[#1E2D27]">
+      <div className="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)]">
         <div className="flex items-center gap-2">
-          <SlidersHorizontal className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
-          <h3 className="text-sm font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">Catalog Filters</h3>
+          <SlidersHorizontal className="w-4 h-4 text-[var(--brand-primary)]" />
+          <h3 className="text-sm font-bold text-[var(--text-primary)]">Catalog Filters</h3>
           {activeFilterCount > 0 && (
             <span className="w-5 h-5 rounded-full bg-[var(--brand-primary)] text-white text-[11px] font-bold flex items-center justify-center">
               {activeFilterCount}
@@ -45,7 +45,7 @@ export function ProductFilterSidebar({
           <button
             type="button"
             onClick={onClearAll}
-            className="flex items-center gap-1 text-xs text-[var(--brand-primary)] dark:text-[#B7F34A] hover:underline font-bold transition-colors cursor-pointer"
+            className="flex items-center gap-1 text-xs text-[var(--brand-primary)] hover:underline font-bold transition-colors cursor-pointer"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Reset All</span>
@@ -55,7 +55,7 @@ export function ProductFilterSidebar({
 
       {/* 1. Category Filter */}
       <div className="space-y-2.5">
-        <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] block">
+        <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] block">
           Device Category
         </label>
         <div className="space-y-1.5">
@@ -65,8 +65,8 @@ export function ProductFilterSidebar({
             className={clsx(
               "w-full px-3 py-2 rounded-xl text-xs font-semibold text-left flex items-center justify-between transition-colors cursor-pointer",
               !filters.category || filters.category === "ALL"
-                ? "bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/30 dark:border-[#B7F34A]/30"
-                : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#192722] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] border border-transparent"
+                ? "bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/30"
+                : "text-[var(--text-secondary)] hover:bg-[var(--bg-surface-subtle)] hover:text-[var(--text-primary)] border border-transparent"
             )}
           >
             <span>All Categories</span>
@@ -82,8 +82,8 @@ export function ProductFilterSidebar({
                 className={clsx(
                   "w-full px-3 py-2 rounded-xl text-xs font-semibold text-left flex items-center justify-between transition-colors cursor-pointer",
                   isSelected
-                    ? "bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/30 dark:border-[#B7F34A]/30"
-                    : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#192722] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] border border-transparent"
+                    ? "bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/30"
+                    : "text-[var(--text-secondary)] hover:bg-[var(--bg-surface-subtle)] hover:text-[var(--text-primary)] border border-transparent"
                 )}
               >
                 <span>{cat.name}</span>
@@ -95,8 +95,8 @@ export function ProductFilterSidebar({
       </div>
 
       {/* 2. Brand Filter */}
-      <div className="space-y-2.5 pt-4 border-t border-[var(--border-subtle)] dark:border-[#1E2D27]">
-        <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] block">
+      <div className="space-y-2.5 pt-4 border-t border-[var(--border-subtle)]">
+        <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] block">
           Brand
         </label>
         <div className="flex flex-wrap gap-1.5">
@@ -107,7 +107,7 @@ export function ProductFilterSidebar({
               "px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer",
               !filters.brand || filters.brand === "ALL"
                 ? "bg-[var(--brand-primary)] text-white"
-                : "bg-[var(--bg-surface)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--border-subtle)] dark:hover:bg-[#1F302A] border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+                : "bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--border-subtle)] border border-[var(--border-subtle)]"
             )}
           >
             All Brands
@@ -124,11 +124,11 @@ export function ProductFilterSidebar({
                   "px-3 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer flex items-center gap-1",
                   isSelected
                     ? "bg-[var(--brand-primary)] text-white"
-                    : "bg-[var(--bg-surface)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--border-subtle)] dark:hover:bg-[#1F302A] border border-[var(--border-subtle)] dark:border-[#1E2D27]"
+                    : "bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--border-subtle)] border border-[var(--border-subtle)]"
                 )}
               >
                 <span>{b.name}</span>
-                <span className={clsx("text-[10px]", isSelected ? "text-[#B7F34A]" : "text-[var(--text-muted)]")}>
+                <span className={clsx("text-[10px]", isSelected ? "text-white/80" : "text-[var(--text-muted)]")}>
                   ({b.count})
                 </span>
               </button>
@@ -139,8 +139,8 @@ export function ProductFilterSidebar({
 
       {/* 3. Storage Filter */}
       {facets && facets.storages.length > 0 && (
-        <div className="space-y-2.5 pt-4 border-t border-[var(--border-subtle)] dark:border-[#1E2D27]">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] block">
+        <div className="space-y-2.5 pt-4 border-t border-[var(--border-subtle)]">
+          <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] block">
             Storage Capacity
           </label>
           <div className="grid grid-cols-2 gap-1.5">
@@ -154,8 +154,8 @@ export function ProductFilterSidebar({
                   className={clsx(
                     "py-2 px-2.5 rounded-xl text-xs font-semibold border text-center transition-colors cursor-pointer",
                     isSelected
-                      ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A]"
-                      : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:border-[var(--brand-primary)]/40"
+                      ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)]"
+                      : "border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:border-[var(--brand-primary)]/40"
                   )}
                 >
                   <span>{s.value}</span>
@@ -170,12 +170,12 @@ export function ProductFilterSidebar({
       )}
 
       {/* 4. Price Range Filter */}
-      <div className="space-y-3 pt-4 border-t border-[var(--border-subtle)] dark:border-[#1E2D27]">
+      <div className="space-y-3 pt-4 border-t border-[var(--border-subtle)]">
         <div className="flex items-center justify-between">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2]">
+          <label className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)]">
             Maximum Budget
           </label>
-          <span className="text-xs font-bold text-[var(--brand-primary)] dark:text-[#B7F34A]">
+          <span className="text-xs font-bold text-[var(--brand-primary)]">
             {formatINR(currentMaxPrice)}
           </span>
         </div>
@@ -203,8 +203,8 @@ export function ProductFilterSidebar({
             className={clsx(
               "py-1.5 px-2 rounded-xl text-[11px] font-semibold border text-center transition-colors cursor-pointer",
               currentMaxPrice === 130000
-                ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A]"
-                : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--bg-surface-subtle)]"
+                ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)]"
+                : "border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-subtle)]"
             )}
           >
             ≤ ₹1.30 Lakh
@@ -215,8 +215,8 @@ export function ProductFilterSidebar({
             className={clsx(
               "py-1.5 px-2 rounded-xl text-[11px] font-semibold border text-center transition-colors cursor-pointer",
               currentMaxPrice === 150000
-                ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A]"
-                : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:bg-[var(--bg-surface-subtle)]"
+                ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)]"
+                : "border-[var(--border-subtle)] bg-[var(--bg-surface)] text-[var(--text-secondary)] hover:bg-[var(--bg-surface-subtle)]"
             )}
           >
             ≤ ₹1.50 Lakh

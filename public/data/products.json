@@ -1,0 +1,163 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "cmtnf5egl000ad6rgmcu3czeu",
+      "slug": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "brand": "Apple",
+      "tagline": "Titanium design. A19 Pro powerhouse. 0% EMI with Mutual Funds.",
+      "badge": "NEW LAUNCH",
+      "categoryName": "Smartphones",
+      "categorySlug": "smartphones",
+      "startingPrice": 127400,
+      "startingMrp": 134900,
+      "discountPercentage": 6,
+      "minMonthlyEmi": 2842,
+      "variantsCount": 6,
+      "availableStorages": [
+        "256GB",
+        "512GB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5eh30010d6rgtpwtstv9",
+        "sku": "IP17P-256-SILVER",
+        "storage": "256GB",
+        "colorName": "Silver",
+        "colorHex": "#E3E4E5",
+        "imageUrl": "/images/products/real/iphone17pro-silver/image-1.jpg"
+      }
+    },
+    {
+      "id": "cmtnf5ekv006gd6rgvfc5yuy4",
+      "slug": "samsung-galaxy-s25-ultra",
+      "name": "Samsung Galaxy S25 Ultra",
+      "brand": "Samsung",
+      "tagline": "Galaxy AI meets Snapdragon 8 Elite with embedded S-Pen.",
+      "badge": "BESTSELLER",
+      "categoryName": "Smartphones",
+      "categorySlug": "smartphones",
+      "startingPrice": 129999,
+      "startingMrp": 139999,
+      "discountPercentage": 7,
+      "minMonthlyEmi": 2794,
+      "variantsCount": 6,
+      "availableStorages": [
+        "256GB",
+        "512GB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5ele0076d6rg3kqapfna",
+        "sku": "S25U-256-BLACK",
+        "storage": "256GB",
+        "colorName": "Titanium Black",
+        "colorHex": "#2B2B2B",
+        "imageUrl": "/images/products/real/samsung-s25-black/image-1.jpg"
+      }
+    },
+    {
+      "id": "cmtnf5eq600cod6rgkhi53rge",
+      "slug": "google-pixel-10-pro",
+      "name": "Google Pixel 10 Pro",
+      "brand": "Google",
+      "tagline": "Tensor G5 and on-device Gemini AI with pro-level computational photography.",
+      "badge": "POPULAR",
+      "categoryName": "Smartphones",
+      "categorySlug": "smartphones",
+      "startingPrice": 99999,
+      "startingMrp": 109999,
+      "discountPercentage": 9,
+      "minMonthlyEmi": 2149,
+      "variantsCount": 6,
+      "availableStorages": [
+        "128GB",
+        "256GB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5eqp00ded6rgvqbnyexx",
+        "sku": "PIX10-128-FROST",
+        "storage": "128GB",
+        "colorName": "Frost",
+        "colorHex": "#E5E9EC",
+        "imageUrl": "/images/products/real/pixel10-frost/image-1.jpg"
+      }
+    },
+    {
+      "id": "cmtnf5evf00jud6rgl9c9l708",
+      "slug": "macbook-pro-14-m4",
+      "name": "Apple MacBook Pro 14 (M4)",
+      "brand": "Apple",
+      "tagline": "Apple M4 chip, Liquid Retina XDR display, up to 24 hours battery life.",
+      "badge": "PRO CHOICE",
+      "categoryName": "Laptops & Computing",
+      "categorySlug": "laptops",
+      "startingPrice": 169900,
+      "startingMrp": 179900,
+      "discountPercentage": 6,
+      "minMonthlyEmi": 3652,
+      "variantsCount": 4,
+      "availableStorages": [
+        "512GB",
+        "1TB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5evy00kgd6rgakxsnm8f",
+        "sku": "MBP14-512-SPACEBLACK",
+        "storage": "512GB",
+        "colorName": "Space Black",
+        "colorHex": "#222327",
+        "imageUrl": "/images/products/real/macbook-pro-14/image-4.jpg"
+      }
+    }
+  ],
+  "facets": {
+    "categories": [
+      {
+        "name": "Laptops & Computing",
+        "slug": "laptops",
+        "count": 1
+      },
+      {
+        "name": "Smartphones",
+        "slug": "smartphones",
+        "count": 3
+      }
+    ],
+    "brands": [
+      {
+        "name": "Apple",
+        "count": 2
+      },
+      {
+        "name": "Samsung",
+        "count": 1
+      },
+      {
+        "name": "Google",
+        "count": 1
+      }
+    ],
+    "storages": [
+      {
+        "value": "256GB",
+        "count": 9
+      },
+      {
+        "value": "512GB",
+        "count": 7
+      },
+      {
+        "value": "128GB",
+        "count": 4
+      },
+      {
+        "value": "1TB",
+        "count": 2
+      }
+    ],
+    "priceRange": {
+      "min": 99999,
+      "max": 189900
+    }
+  }
+}

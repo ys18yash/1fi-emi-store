@@ -49,15 +49,15 @@ export function VariantSelector({
   };
 
   return (
-    <div className="space-y-6 pt-5 border-t border-[var(--border-subtle)] dark:border-[#1E2D27]">
+    <div className="space-y-6 pt-5 border-t border-[var(--border-subtle)]">
       {/* 1. Storage Capacity Configurator (if applicable) */}
       {uniqueStorages.length > 0 && (
         <div className="space-y-2.5">
-          <div className="flex items-center justify-between text-xs text-[var(--text-primary)] dark:text-[#F2F5F3]">
-            <span className="uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] text-[11px] font-bold">
+          <div className="flex items-center justify-between text-xs text-[var(--text-primary)]">
+            <span className="uppercase tracking-wider text-[var(--text-secondary)] text-[11px] font-bold">
               Choose Capacity
             </span>
-            <span className="text-[var(--brand-primary)] dark:text-[#B7F34A] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] px-2.5 py-0.5 rounded-full border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 text-xs font-bold">
+            <span className="text-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] px-2.5 py-0.5 rounded-full border border-[var(--brand-primary)]/20 text-xs font-bold">
               Selected: {selectedVariant.storage}
             </span>
           </div>
@@ -75,20 +75,20 @@ export function VariantSelector({
                   className={clsx(
                     "flex flex-col items-center justify-center p-3.5 rounded-xl border text-center transition-all cursor-pointer",
                     isSelected
-                      ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] shadow-premium-xs ring-1 ring-[var(--brand-primary)] dark:border-[#B7F34A]"
-                      : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] hover:border-[var(--brand-primary)]/40 hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#1F302A]"
+                      ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] shadow-premium-xs ring-1 ring-[var(--brand-primary)]"
+                      : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--brand-primary)]/40 hover:bg-[var(--bg-surface-subtle)]"
                   )}
                 >
                   <span
                     className={clsx(
                       "text-sm font-bold",
-                      isSelected ? "text-[var(--brand-primary)] dark:text-[#B7F34A]" : "text-[var(--text-primary)] dark:text-[#F2F5F3]"
+                      isSelected ? "text-[var(--brand-primary)]" : "text-[var(--text-primary)]"
                     )}
                   >
                     {storage}
                   </span>
                   {variantForStorage && (
-                    <span className="text-[11px] text-[var(--text-secondary)] dark:text-[#9DA7A2] font-normal mt-0.5">
+                    <span className="text-[11px] text-[var(--text-secondary)] font-normal mt-0.5">
                       {formatINR(variantForStorage.price)}
                     </span>
                   )}
@@ -101,11 +101,11 @@ export function VariantSelector({
 
       {/* 2. Color / Finish Selection */}
       <div className="space-y-2.5">
-        <div className="flex items-center justify-between text-xs text-[var(--text-primary)] dark:text-[#F2F5F3]">
-          <span className="uppercase tracking-wider text-[var(--text-secondary)] dark:text-[#9DA7A2] text-[11px] font-bold">
+        <div className="flex items-center justify-between text-xs text-[var(--text-primary)]">
+          <span className="uppercase tracking-wider text-[var(--text-secondary)] text-[11px] font-bold">
             Choose Finish
           </span>
-          <span className="text-[var(--text-primary)] dark:text-[#F2F5F3] font-semibold">
+          <span className="text-[var(--text-primary)] font-semibold">
             {selectedVariant.colorName} ({availableColorsForStorage.length} available)
           </span>
         </div>
@@ -122,12 +122,12 @@ export function VariantSelector({
                 className={clsx(
                   "group flex items-center gap-2 py-2 px-3.5 rounded-xl border transition-all cursor-pointer",
                   isSelected
-                    ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] shadow-premium-xs ring-1 ring-[var(--brand-primary)] dark:border-[#B7F34A]"
-                    : "border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#192722] hover:border-[var(--brand-primary)]/40 hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#1F302A]"
+                    ? "border-[var(--brand-primary)] bg-[var(--brand-primary-subtle)] shadow-premium-xs ring-1 ring-[var(--brand-primary)]"
+                    : "border-[var(--border-subtle)] bg-[var(--bg-surface)] hover:border-[var(--brand-primary)]/40 hover:bg-[var(--bg-surface-subtle)]"
                 )}
               >
                 <span
-                  className="w-4 h-4 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center shrink-0"
+                  className="w-4 h-4 rounded-full border border-[var(--border-subtle)] flex items-center justify-center shrink-0"
                   style={{ backgroundColor: variant.colorHex }}
                 >
                   {isSelected && (
@@ -146,7 +146,7 @@ export function VariantSelector({
                 <span
                   className={clsx(
                     "text-xs font-bold",
-                    isSelected ? "text-[var(--brand-primary)] dark:text-[#B7F34A]" : "text-[var(--text-primary)] dark:text-[#F2F5F3]"
+                    isSelected ? "text-[var(--brand-primary)]" : "text-[var(--text-primary)]"
                   )}
                 >
                   {variant.colorName}

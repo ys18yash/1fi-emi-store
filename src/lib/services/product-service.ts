@@ -154,6 +154,14 @@ export async function getAllProducts(
       defaultVariant?.images[0]?.url ||
       "/images/products/iphone17pro-desert.svg";
 
+    const availableStorages = Array.from(
+      new Set(
+        product.variants
+          .map((v) => v.storage)
+          .filter((s): s is string => Boolean(s))
+      )
+    );
+
     return {
       id: product.id,
       slug: product.slug,
@@ -162,11 +170,13 @@ export async function getAllProducts(
       tagline: product.tagline,
       badge: product.badge,
       categoryName: product.category.name,
+      categorySlug: product.category.slug,
       startingPrice,
       startingMrp: correspondingMrp,
       discountPercentage,
       minMonthlyEmi,
       variantsCount: product.variants.length,
+      availableStorages,
       defaultVariant: {
         id: defaultVariant?.id ?? "",
         sku: defaultVariant?.sku ?? "",

@@ -1,0 +1,4160 @@
+{
+  "products": [
+    {
+      "id": "cmtnf5egl000ad6rgmcu3czeu",
+      "slug": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "brand": "Apple",
+      "tagline": "Titanium design. A19 Pro powerhouse. 0% EMI with Mutual Funds.",
+      "badge": "NEW LAUNCH",
+      "categoryName": "Smartphones",
+      "categorySlug": "smartphones",
+      "startingPrice": 127400,
+      "startingMrp": 134900,
+      "discountPercentage": 6,
+      "minMonthlyEmi": 2842,
+      "variantsCount": 6,
+      "availableStorages": [
+        "256GB",
+        "512GB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5eh30010d6rgtpwtstv9",
+        "sku": "IP17P-256-SILVER",
+        "storage": "256GB",
+        "colorName": "Silver",
+        "colorHex": "#E3E4E5",
+        "imageUrl": "/images/products/real/iphone17pro-silver/image-1.jpg"
+      }
+    },
+    {
+      "id": "cmtnf5ekv006gd6rgvfc5yuy4",
+      "slug": "samsung-galaxy-s25-ultra",
+      "name": "Samsung Galaxy S25 Ultra",
+      "brand": "Samsung",
+      "tagline": "Galaxy AI meets Snapdragon 8 Elite with embedded S-Pen.",
+      "badge": "BESTSELLER",
+      "categoryName": "Smartphones",
+      "categorySlug": "smartphones",
+      "startingPrice": 129999,
+      "startingMrp": 139999,
+      "discountPercentage": 7,
+      "minMonthlyEmi": 2794,
+      "variantsCount": 6,
+      "availableStorages": [
+        "256GB",
+        "512GB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5ele0076d6rg3kqapfna",
+        "sku": "S25U-256-BLACK",
+        "storage": "256GB",
+        "colorName": "Titanium Black",
+        "colorHex": "#2B2B2B",
+        "imageUrl": "/images/products/real/samsung-s25-black/image-1.jpg"
+      }
+    },
+    {
+      "id": "cmtnf5eq600cod6rgkhi53rge",
+      "slug": "google-pixel-10-pro",
+      "name": "Google Pixel 10 Pro",
+      "brand": "Google",
+      "tagline": "Tensor G5 and on-device Gemini AI with pro-level computational photography.",
+      "badge": "POPULAR",
+      "categoryName": "Smartphones",
+      "categorySlug": "smartphones",
+      "startingPrice": 99999,
+      "startingMrp": 109999,
+      "discountPercentage": 9,
+      "minMonthlyEmi": 2149,
+      "variantsCount": 6,
+      "availableStorages": [
+        "128GB",
+        "256GB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5eqp00ded6rgvqbnyexx",
+        "sku": "PIX10-128-FROST",
+        "storage": "128GB",
+        "colorName": "Frost",
+        "colorHex": "#E5E9EC",
+        "imageUrl": "/images/products/real/pixel10-frost/image-1.jpg"
+      }
+    },
+    {
+      "id": "cmtnf5evf00jud6rgl9c9l708",
+      "slug": "macbook-pro-14-m4",
+      "name": "Apple MacBook Pro 14 (M4)",
+      "brand": "Apple",
+      "tagline": "Apple M4 chip, Liquid Retina XDR display, up to 24 hours battery life.",
+      "badge": "PRO CHOICE",
+      "categoryName": "Laptops & Computing",
+      "categorySlug": "laptops",
+      "startingPrice": 169900,
+      "startingMrp": 179900,
+      "discountPercentage": 6,
+      "minMonthlyEmi": 3652,
+      "variantsCount": 4,
+      "availableStorages": [
+        "512GB",
+        "1TB"
+      ],
+      "defaultVariant": {
+        "id": "cmtnf5evy00kgd6rgakxsnm8f",
+        "sku": "MBP14-512-SPACEBLACK",
+        "storage": "512GB",
+        "colorName": "Space Black",
+        "colorHex": "#222327",
+        "imageUrl": "/images/products/real/macbook-pro-14/image-4.jpg"
+      }
+    }
+  ],
+  "facets": {
+    "categories": [
+      {
+        "name": "Laptops & Computing",
+        "slug": "laptops",
+        "count": 1
+      },
+      {
+        "name": "Smartphones",
+        "slug": "smartphones",
+        "count": 3
+      }
+    ],
+    "brands": [
+      {
+        "name": "Apple",
+        "count": 2
+      },
+      {
+        "name": "Samsung",
+        "count": 1
+      },
+      {
+        "name": "Google",
+        "count": 1
+      }
+    ],
+    "storages": [
+      {
+        "value": "256GB",
+        "count": 9
+      },
+      {
+        "value": "512GB",
+        "count": 7
+      },
+      {
+        "value": "128GB",
+        "count": 4
+      },
+      {
+        "value": "1TB",
+        "count": 2
+      }
+    ],
+    "priceRange": {
+      "min": 99999,
+      "max": 189900
+    }
+  },
+  "productDetails": {
+    "iphone-17-pro": {
+      "id": "cmtnf5egl000ad6rgmcu3czeu",
+      "slug": "iphone-17-pro",
+      "name": "iPhone 17 Pro",
+      "brand": "Apple",
+      "tagline": "Titanium design. A19 Pro powerhouse. 0% EMI with Mutual Funds.",
+      "description": "Supercharged by the next-generation A19 Pro chip with advanced GPU architecture and exceptional battery life. Forged in aerospace-grade titanium with the most advanced triple camera system.",
+      "badge": "NEW LAUNCH",
+      "category": {
+        "id": "cmtnf5eg50000d6rgygfbjpz7",
+        "name": "Smartphones",
+        "slug": "smartphones"
+      },
+      "reviewSummary": {
+        "averageRating": 4.8,
+        "totalReviews": 4,
+        "ratingDistribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 3
+        }
+      },
+      "specifications": [
+        {
+          "id": "cmtnf5egm000cd6rg6dfgf286",
+          "category": "Display",
+          "name": "Display",
+          "value": "6.3-inch Super Retina XDR OLED",
+          "displayOrder": 1
+        },
+        {
+          "id": "cmtnf5ego000ed6rgzf2k0m0m",
+          "category": "Display",
+          "name": "Resolution & Refresh Rate",
+          "value": "2622 x 1206 pixels, 120Hz ProMotion Adaptive",
+          "displayOrder": 2
+        },
+        {
+          "id": "cmtnf5egp000gd6rg8wgg0lhs",
+          "category": "Performance",
+          "name": "Processor",
+          "value": "Apple A19 Pro (3nm, 6-core CPU & 6-core GPU)",
+          "displayOrder": 3
+        },
+        {
+          "id": "cmtnf5egr000id6rg8l5l288e",
+          "category": "Performance",
+          "name": "RAM",
+          "value": "12 GB Unified Memory",
+          "displayOrder": 4
+        },
+        {
+          "id": "cmtnf5egs000kd6rgwacj73jt",
+          "category": "Camera",
+          "name": "Rear Camera",
+          "value": "48MP Main (f/1.78) + 48MP Ultra Wide (f/2.2) + 48MP 5x Telephoto",
+          "displayOrder": 5
+        },
+        {
+          "id": "cmtnf5egt000md6rgvz70fd18",
+          "category": "Camera",
+          "name": "Front Camera",
+          "value": "24MP TrueDepth with Autofocus (f/1.9)",
+          "displayOrder": 6
+        },
+        {
+          "id": "cmtnf5egv000od6rgnt2g31wm",
+          "category": "Battery & Power",
+          "name": "Battery",
+          "value": "Up to 29 hours video playback with MagSafe Fast Wireless Charging",
+          "displayOrder": 7
+        },
+        {
+          "id": "cmtnf5egw000qd6rgwwm0osck",
+          "category": "General",
+          "name": "Operating System",
+          "value": "iOS 19 with Apple Intelligence",
+          "displayOrder": 8
+        },
+        {
+          "id": "cmtnf5egy000sd6rg2n6y1szc",
+          "category": "General",
+          "name": "Connectivity",
+          "value": "5G, Wi-Fi 7 (802.11be), Bluetooth 5.4, Thread, USB-C (USB 3 10Gbps)",
+          "displayOrder": 9
+        },
+        {
+          "id": "cmtnf5egz000ud6rgyluevanb",
+          "category": "General",
+          "name": "SIM Configuration",
+          "value": "Dual SIM (Nano-SIM and eSIM)",
+          "displayOrder": 10
+        },
+        {
+          "id": "cmtnf5eh0000wd6rgoas2tnz2",
+          "category": "General",
+          "name": "Warranty",
+          "value": "1 Year Official Apple Manufacturer Warranty",
+          "displayOrder": 11
+        },
+        {
+          "id": "cmtnf5eh2000yd6rgeppq06ct",
+          "category": "General",
+          "name": "What's in the Box",
+          "value": "iPhone 17 Pro, USB-C Charge Cable (1m), Documentation",
+          "displayOrder": 12
+        }
+      ],
+      "variants": [
+        {
+          "id": "cmtnf5eh30010d6rgtpwtstv9",
+          "sku": "IP17P-256-SILVER",
+          "variantName": "256GB - Silver",
+          "colorName": "Silver",
+          "colorHex": "#E3E4E5",
+          "storage": "256GB",
+          "mrp": 134900,
+          "price": 127400,
+          "discountPercentage": 6,
+          "inventoryCount": 25,
+          "isDefault": true,
+          "images": [
+            {
+              "id": "cmtnf5eh50012d6rgn899tdnj",
+              "url": "/images/products/real/iphone17pro-silver/image-1.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eh70014d6rgdvnit3p3",
+              "url": "/images/products/real/iphone17pro-silver/image-2.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eh80016d6rgzymms2v7",
+              "url": "/images/products/real/iphone17pro-silver/image-3.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eha0018d6rgdma6m1z8",
+              "url": "/images/products/real/iphone17pro-silver/image-4.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehb001ad6rgkgj3zouy",
+              "url": "/images/products/real/iphone17pro-silver/image-5.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehc001cd6rgm2ye0l9z",
+              "url": "/images/products/real/iphone17pro-silver/image-6.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehe001ed6rgebv4tzkk",
+              "url": "/images/products/real/iphone17pro-silver/image-7.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehf001gd6rg5n3qpp90",
+              "url": "/images/products/real/iphone17pro-silver/image-8.jpg",
+              "altText": "iPhone 17 Pro 256GB - Silver - View 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 44967,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134901,
+              "netEffectiveCost": 127401,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1831
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 22483,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134898,
+              "netEffectiveCost": 127398,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1857
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 11242,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134904,
+              "netEffectiveCost": 127404,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1911
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5621,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134904,
+              "netEffectiveCost": 127404,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2026
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4297,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 154692,
+              "netEffectiveCost": 147192,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2150
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3385,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 162480,
+              "netEffectiveCost": 154980,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2283
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2842,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 170520,
+              "netEffectiveCost": 163020,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2428
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5ehq001wd6rgdmgdw244",
+          "sku": "IP17P-256-DEEPBLUE",
+          "variantName": "256GB - Deep Blue",
+          "colorName": "Deep Blue",
+          "colorHex": "#1C2D42",
+          "storage": "256GB",
+          "mrp": 134900,
+          "price": 127400,
+          "discountPercentage": 6,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5ehr001yd6rg9rji55f1",
+              "url": "/images/products/real/iphone17pro-deepblue/image-1.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ehs0020d6rg0muqxyda",
+              "url": "/images/products/real/iphone17pro-deepblue/image-2.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehu0022d6rgtk136nzv",
+              "url": "/images/products/real/iphone17pro-deepblue/image-3.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehv0024d6rgorz97jcg",
+              "url": "/images/products/real/iphone17pro-deepblue/image-4.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehw0026d6rg1jmnw4de",
+              "url": "/images/products/real/iphone17pro-deepblue/image-5.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehx0028d6rg1fiisoir",
+              "url": "/images/products/real/iphone17pro-deepblue/image-6.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ehz002ad6rg3pwbzrp4",
+              "url": "/images/products/real/iphone17pro-deepblue/image-7.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ei0002cd6rgi8lgbnns",
+              "url": "/images/products/real/iphone17pro-deepblue/image-8.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ei2002ed6rgjapi7rsx",
+              "url": "/images/products/real/iphone17pro-deepblue/image-9.jpg",
+              "altText": "iPhone 17 Pro 256GB - Deep Blue - View 9",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 44967,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134901,
+              "netEffectiveCost": 127401,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1831
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 22483,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134898,
+              "netEffectiveCost": 127398,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1857
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 11242,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134904,
+              "netEffectiveCost": 127404,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1911
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5621,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134904,
+              "netEffectiveCost": 127404,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2026
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4297,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 154692,
+              "netEffectiveCost": 147192,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2150
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3385,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 162480,
+              "netEffectiveCost": 154980,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2283
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2842,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 170520,
+              "netEffectiveCost": 163020,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2428
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5eid002ud6rgbqlj5aqs",
+          "sku": "IP17P-256-ORANGE",
+          "variantName": "256GB - Cosmic Orange",
+          "colorName": "Cosmic Orange",
+          "colorHex": "#D45B28",
+          "storage": "256GB",
+          "mrp": 134900,
+          "price": 127400,
+          "discountPercentage": 6,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5eie002wd6rgik98pf07",
+              "url": "/images/products/real/iphone17pro-orange/image-1.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eif002yd6rg2cidt6ct",
+              "url": "/images/products/real/iphone17pro-orange/image-2.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eih0030d6rg3aok5td9",
+              "url": "/images/products/real/iphone17pro-orange/image-3.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eii0032d6rgq39v11z3",
+              "url": "/images/products/real/iphone17pro-orange/image-4.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eij0034d6rgd8f80333",
+              "url": "/images/products/real/iphone17pro-orange/image-5.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eik0036d6rga2c5591d",
+              "url": "/images/products/real/iphone17pro-orange/image-6.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eim0038d6rgh63qwten",
+              "url": "/images/products/real/iphone17pro-orange/image-7.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ein003ad6rgqfaacagt",
+              "url": "/images/products/real/iphone17pro-orange/image-8.jpg",
+              "altText": "iPhone 17 Pro 256GB - Cosmic Orange - View 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 44967,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134901,
+              "netEffectiveCost": 127401,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1831
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 22483,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134898,
+              "netEffectiveCost": 127398,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1857
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 11242,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134904,
+              "netEffectiveCost": 127404,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 1911
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5621,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 134904,
+              "netEffectiveCost": 127404,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2026
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4297,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 154692,
+              "netEffectiveCost": 147192,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2150
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3385,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 162480,
+              "netEffectiveCost": 154980,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2283
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2842,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 170520,
+              "netEffectiveCost": 163020,
+              "requiredMfPledge": 191100,
+              "monthlyMutualFundGrowthEstimated": 2428
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5eiy003qd6rgjwzcpsau",
+          "sku": "IP17P-512-SILVER",
+          "variantName": "512GB - Silver",
+          "colorName": "Silver",
+          "colorHex": "#E3E4E5",
+          "storage": "512GB",
+          "mrp": 154900,
+          "price": 147400,
+          "discountPercentage": 5,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5ej0003sd6rgcetvxvly",
+              "url": "/images/products/real/iphone17pro-silver/image-1.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ej1003ud6rgpe1ctbm4",
+              "url": "/images/products/real/iphone17pro-silver/image-2.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ej3003wd6rgcn0o6yc6",
+              "url": "/images/products/real/iphone17pro-silver/image-3.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ej4003yd6rgrooeug8k",
+              "url": "/images/products/real/iphone17pro-silver/image-4.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ej50040d6rggbey8sy1",
+              "url": "/images/products/real/iphone17pro-silver/image-5.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ej70042d6rg5ywrfv2s",
+              "url": "/images/products/real/iphone17pro-silver/image-6.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ej80044d6rgykij58s7",
+              "url": "/images/products/real/iphone17pro-silver/image-7.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eja0046d6rg5bnpzyr4",
+              "url": "/images/products/real/iphone17pro-silver/image-8.jpg",
+              "altText": "iPhone 17 Pro 512GB - Silver - View 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 52026,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156078,
+              "netEffectiveCost": 148578,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2118
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 26013,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156078,
+              "netEffectiveCost": 148578,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2148
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 13007,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156084,
+              "netEffectiveCost": 148584,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2211
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 6503,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156072,
+              "netEffectiveCost": 148572,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2344
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4972,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 178992,
+              "netEffectiveCost": 171492,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2487
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3916,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 187968,
+              "netEffectiveCost": 180468,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2642
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3288,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 197280,
+              "netEffectiveCost": 189780,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2809
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5ejl004md6rg2unlg3fv",
+          "sku": "IP17P-512-DEEPBLUE",
+          "variantName": "512GB - Deep Blue",
+          "colorName": "Deep Blue",
+          "colorHex": "#1C2D42",
+          "storage": "512GB",
+          "mrp": 154900,
+          "price": 147400,
+          "discountPercentage": 5,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5ejn004od6rgose6r68v",
+              "url": "/images/products/real/iphone17pro-deepblue/image-1.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ejo004qd6rgj1l8wzvs",
+              "url": "/images/products/real/iphone17pro-deepblue/image-2.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejp004sd6rgzxdxxml7",
+              "url": "/images/products/real/iphone17pro-deepblue/image-3.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejr004ud6rgtkzmew6a",
+              "url": "/images/products/real/iphone17pro-deepblue/image-4.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejs004wd6rganj6f6ro",
+              "url": "/images/products/real/iphone17pro-deepblue/image-5.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejt004yd6rgi8de59gv",
+              "url": "/images/products/real/iphone17pro-deepblue/image-6.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejv0050d6rgevqqyxdg",
+              "url": "/images/products/real/iphone17pro-deepblue/image-7.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejw0052d6rg5y8kkdvx",
+              "url": "/images/products/real/iphone17pro-deepblue/image-8.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ejy0054d6rg32xfbaq6",
+              "url": "/images/products/real/iphone17pro-deepblue/image-9.jpg",
+              "altText": "iPhone 17 Pro 512GB - Deep Blue - View 9",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 52026,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156078,
+              "netEffectiveCost": 148578,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2118
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 26013,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156078,
+              "netEffectiveCost": 148578,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2148
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 13007,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156084,
+              "netEffectiveCost": 148584,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2211
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 6503,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156072,
+              "netEffectiveCost": 148572,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2344
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4972,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 178992,
+              "netEffectiveCost": 171492,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2487
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3916,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 187968,
+              "netEffectiveCost": 180468,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2642
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3288,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 197280,
+              "netEffectiveCost": 189780,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2809
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5ek9005kd6rg9zphcety",
+          "sku": "IP17P-512-ORANGE",
+          "variantName": "512GB - Cosmic Orange",
+          "colorName": "Cosmic Orange",
+          "colorHex": "#D45B28",
+          "storage": "512GB",
+          "mrp": 154900,
+          "price": 147400,
+          "discountPercentage": 5,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5eka005md6rgjjheqytn",
+              "url": "/images/products/real/iphone17pro-orange/image-1.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ekb005od6rgr5ocyp3a",
+              "url": "/images/products/real/iphone17pro-orange/image-2.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ekd005qd6rgmt8ir7cs",
+              "url": "/images/products/real/iphone17pro-orange/image-3.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eke005sd6rg5qkmn7l6",
+              "url": "/images/products/real/iphone17pro-orange/image-4.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ekg005ud6rgwn3p6r02",
+              "url": "/images/products/real/iphone17pro-orange/image-5.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ekh005wd6rgpn0ro0bf",
+              "url": "/images/products/real/iphone17pro-orange/image-6.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eki005yd6rgex3e2142",
+              "url": "/images/products/real/iphone17pro-orange/image-7.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ekj0060d6rg3s0qboli",
+              "url": "/images/products/real/iphone17pro-orange/image-8.jpg",
+              "altText": "iPhone 17 Pro 512GB - Cosmic Orange - View 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 52026,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156078,
+              "netEffectiveCost": 148578,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2118
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 26013,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156078,
+              "netEffectiveCost": 148578,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2148
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 13007,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156084,
+              "netEffectiveCost": 148584,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2211
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 6503,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 156072,
+              "netEffectiveCost": 148572,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2344
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4972,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 178992,
+              "netEffectiveCost": 171492,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2487
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3916,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 187968,
+              "netEffectiveCost": 180468,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2642
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3288,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 197280,
+              "netEffectiveCost": 189780,
+              "requiredMfPledge": 221100,
+              "monthlyMutualFundGrowthEstimated": 2809
+            }
+          ]
+        }
+      ]
+    },
+    "samsung-galaxy-s25-ultra": {
+      "id": "cmtnf5ekv006gd6rgvfc5yuy4",
+      "slug": "samsung-galaxy-s25-ultra",
+      "name": "Samsung Galaxy S25 Ultra",
+      "brand": "Samsung",
+      "tagline": "Galaxy AI meets Snapdragon 8 Elite with embedded S-Pen.",
+      "description": "Redefining mobile intelligence with next-gen Snapdragon 8 Elite, 200MP Quad Telephoto camera, vibrant Dynamic AMOLED 2X display, and seamless mutual fund EMI options.",
+      "badge": "BESTSELLER",
+      "category": {
+        "id": "cmtnf5eg50000d6rgygfbjpz7",
+        "name": "Smartphones",
+        "slug": "smartphones"
+      },
+      "reviewSummary": {
+        "averageRating": 5,
+        "totalReviews": 2,
+        "ratingDistribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 2
+        }
+      },
+      "specifications": [
+        {
+          "id": "cmtnf5ekx006id6rgd8largg3",
+          "category": "Display",
+          "name": "Display",
+          "value": "6.8-inch Dynamic AMOLED 2X, Corning Gorilla Armor 2",
+          "displayOrder": 1
+        },
+        {
+          "id": "cmtnf5eky006kd6rg8aov7rkf",
+          "category": "Display",
+          "name": "Resolution & Refresh Rate",
+          "value": "3120 x 1440 (Quad HD+), 1-120Hz Adaptive Refresh Rate",
+          "displayOrder": 2
+        },
+        {
+          "id": "cmtnf5el0006md6rgmcdxw8qj",
+          "category": "Performance",
+          "name": "Processor",
+          "value": "Qualcomm Snapdragon 8 Elite for Galaxy (3nm)",
+          "displayOrder": 3
+        },
+        {
+          "id": "cmtnf5el1006od6rg8c4dttmc",
+          "category": "Performance",
+          "name": "RAM",
+          "value": "12 GB LPDDR5X",
+          "displayOrder": 4
+        },
+        {
+          "id": "cmtnf5el3006qd6rg3r96t43q",
+          "category": "Camera",
+          "name": "Rear Camera",
+          "value": "200MP Main (f/1.7 OIS) + 50MP 5x Periscope + 50MP 3x Telephoto + 50MP Ultra-Wide",
+          "displayOrder": 5
+        },
+        {
+          "id": "cmtnf5el4006sd6rg6hj1y6no",
+          "category": "Camera",
+          "name": "Front Camera",
+          "value": "12MP Dual Pixel AF (f/2.2)",
+          "displayOrder": 6
+        },
+        {
+          "id": "cmtnf5el5006ud6rgbn55cuut",
+          "category": "Battery & Power",
+          "name": "Battery",
+          "value": "5,000 mAh with 45W Fast Wired & 15W Wireless PowerShare",
+          "displayOrder": 7
+        },
+        {
+          "id": "cmtnf5el7006wd6rgcbx3iugq",
+          "category": "General",
+          "name": "Operating System",
+          "value": "Android 15 with One UI 7.0 (7 Years OS & Security Updates)",
+          "displayOrder": 8
+        },
+        {
+          "id": "cmtnf5el8006yd6rgip7to8oa",
+          "category": "General",
+          "name": "Connectivity",
+          "value": "5G SA/NSA, Wi-Fi 7, Bluetooth 5.4, UWB, NFC, USB Type-C 3.2",
+          "displayOrder": 9
+        },
+        {
+          "id": "cmtnf5ela0070d6rg5uvygrat",
+          "category": "General",
+          "name": "SIM Configuration",
+          "value": "Dual SIM (Nano-SIM + eSIM)",
+          "displayOrder": 10
+        },
+        {
+          "id": "cmtnf5elb0072d6rg2ytoq217",
+          "category": "General",
+          "name": "Warranty",
+          "value": "1 Year Samsung India Brand Warranty",
+          "displayOrder": 11
+        },
+        {
+          "id": "cmtnf5elc0074d6rg7qbtoxpb",
+          "category": "General",
+          "name": "What's in the Box",
+          "value": "Samsung Galaxy S25 Ultra, Built-in S-Pen, USB-C Cable, Ejection Pin",
+          "displayOrder": 12
+        }
+      ],
+      "variants": [
+        {
+          "id": "cmtnf5ele0076d6rg3kqapfna",
+          "sku": "S25U-256-BLACK",
+          "variantName": "256GB - Titanium Black",
+          "colorName": "Titanium Black",
+          "colorHex": "#2B2B2B",
+          "storage": "256GB",
+          "mrp": 139999,
+          "price": 129999,
+          "discountPercentage": 7,
+          "inventoryCount": 25,
+          "isDefault": true,
+          "images": [
+            {
+              "id": "cmtnf5elf0078d6rgweydknsw",
+              "url": "/images/products/real/samsung-s25-black/image-1.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5elh007ad6rgdmcao91m",
+              "url": "/images/products/real/samsung-s25-black/image-2.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eli007cd6rgipkjwoy2",
+              "url": "/images/products/real/samsung-s25-black/image-3.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5elj007ed6rgp0it7ff6",
+              "url": "/images/products/real/samsung-s25-black/image-4.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ell007gd6rga2z58tgu",
+              "url": "/images/products/real/samsung-s25-black/image-5.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5elm007id6rgow6uwbp3",
+              "url": "/images/products/real/samsung-s25-black/image-6.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eln007kd6rgxywqi3va",
+              "url": "/images/products/real/samsung-s25-black/image-7.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5elo007md6rgxqt1nwph",
+              "url": "/images/products/real/samsung-s25-black/image-8.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Black - Angle 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 43333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1868
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 21667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1895
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 10833,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1950
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5417,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2067
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4225,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 152100,
+              "netEffectiveCost": 144600,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2193
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3328,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 159744,
+              "netEffectiveCost": 152244,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2330
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2794,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 167640,
+              "netEffectiveCost": 160140,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2478
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5em00082d6rg3ieypmac",
+          "sku": "S25U-256-SILVERBLUE",
+          "variantName": "256GB - Titanium Silver Blue",
+          "colorName": "Titanium Silver Blue",
+          "colorHex": "#8CA2B5",
+          "storage": "256GB",
+          "mrp": 139999,
+          "price": 129999,
+          "discountPercentage": 7,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5em20084d6rgmgomrvpb",
+              "url": "/images/products/real/samsung-s25-silverblue/image-1.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5em40086d6rg7yrwr0eq",
+              "url": "/images/products/real/samsung-s25-silverblue/image-2.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5em50088d6rg7vwko169",
+              "url": "/images/products/real/samsung-s25-silverblue/image-3.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5em6008ad6rgsrlztz5o",
+              "url": "/images/products/real/samsung-s25-silverblue/image-4.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5em8008cd6rg5knll4ln",
+              "url": "/images/products/real/samsung-s25-silverblue/image-5.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ema008ed6rgebr52bs3",
+              "url": "/images/products/real/samsung-s25-silverblue/image-6.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emb008gd6rg4qcdw8as",
+              "url": "/images/products/real/samsung-s25-silverblue/image-7.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emc008id6rgtwsn9aik",
+              "url": "/images/products/real/samsung-s25-silverblue/image-8.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emd008kd6rggt0xl5es",
+              "url": "/images/products/real/samsung-s25-silverblue/image-9.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Silver Blue - Angle 9",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 43333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1868
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 21667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1895
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 10833,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1950
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5417,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2067
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4225,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 152100,
+              "netEffectiveCost": 144600,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2193
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3328,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 159744,
+              "netEffectiveCost": 152244,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2330
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2794,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 167640,
+              "netEffectiveCost": 160140,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2478
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5emp0090d6rgznn2bsei",
+          "sku": "S25U-256-WHITESILVER",
+          "variantName": "256GB - Titanium White Silver",
+          "colorName": "Titanium White Silver",
+          "colorHex": "#E4E5E8",
+          "storage": "256GB",
+          "mrp": 139999,
+          "price": 129999,
+          "discountPercentage": 7,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5emr0092d6rgjfyqs0ic",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-1.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ems0094d6rgir3936z5",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-2.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emu0096d6rg6ligrk4f",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-3.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emv0098d6rgtnu45y4o",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-4.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emw009ad6rg9ek8n08k",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-5.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emy009cd6rgutt4fctg",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-6.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5emz009ed6rgc6h3ygou",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-7.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5en0009gd6rg3sngapd8",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-8.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5en2009id6rgw2q793ri",
+              "url": "/images/products/real/samsung-s25-whitesilver/image-9.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium White Silver - Angle 9",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 43333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1868
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 21667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1895
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 10833,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1950
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5417,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2067
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4225,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 152100,
+              "netEffectiveCost": 144600,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2193
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3328,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 159744,
+              "netEffectiveCost": 152244,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2330
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2794,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 167640,
+              "netEffectiveCost": 160140,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2478
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5end009yd6rgkmz8wld2",
+          "sku": "S25U-256-GRAY",
+          "variantName": "256GB - Titanium Gray",
+          "colorName": "Titanium Gray",
+          "colorHex": "#717378",
+          "storage": "256GB",
+          "mrp": 139999,
+          "price": 129999,
+          "discountPercentage": 7,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5enf00a0d6rgqj6ga0yj",
+              "url": "/images/products/real/samsung-s25-gray/image-1.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eng00a2d6rgnpw0b3mc",
+              "url": "/images/products/real/samsung-s25-gray/image-2.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eni00a4d6rgb4w93sxu",
+              "url": "/images/products/real/samsung-s25-gray/image-3.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5enj00a6d6rgzp9eckx5",
+              "url": "/images/products/real/samsung-s25-gray/image-4.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5enk00a8d6rg81nyc8hm",
+              "url": "/images/products/real/samsung-s25-gray/image-5.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5enm00aad6rgefqb3k0k",
+              "url": "/images/products/real/samsung-s25-gray/image-6.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eno00acd6rgn8yzh6xg",
+              "url": "/images/products/real/samsung-s25-gray/image-7.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5enp00aed6rgnpzp8ex8",
+              "url": "/images/products/real/samsung-s25-gray/image-8.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 256GB - Titanium Gray - Angle 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 43333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1868
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 21667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1895
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 10833,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 1950
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5417,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 129999,
+              "netEffectiveCost": 122499,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2067
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4225,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 152100,
+              "netEffectiveCost": 144600,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2193
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3328,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 159744,
+              "netEffectiveCost": 152244,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2330
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2794,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 167640,
+              "netEffectiveCost": 160140,
+              "requiredMfPledge": 194999,
+              "monthlyMutualFundGrowthEstimated": 2478
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5eo000aud6rgkwf7vuka",
+          "sku": "S25U-512-BLACK",
+          "variantName": "512GB - Titanium Black",
+          "colorName": "Titanium Black",
+          "colorHex": "#2B2B2B",
+          "storage": "512GB",
+          "mrp": 149999,
+          "price": 139999,
+          "discountPercentage": 7,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5eo200awd6rghow5t3u3",
+              "url": "/images/products/real/samsung-s25-black/image-1.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eo300ayd6rg7o2iw429",
+              "url": "/images/products/real/samsung-s25-black/image-2.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eo500b0d6rgwykn9gd7",
+              "url": "/images/products/real/samsung-s25-black/image-3.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eo600b2d6rg4gcmcpoy",
+              "url": "/images/products/real/samsung-s25-black/image-4.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eo700b4d6rgf04gswus",
+              "url": "/images/products/real/samsung-s25-black/image-5.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eo900b6d6rglvbfiovi",
+              "url": "/images/products/real/samsung-s25-black/image-6.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eoa00b8d6rghxsecpbl",
+              "url": "/images/products/real/samsung-s25-black/image-7.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eoc00bad6rg6xa4umsh",
+              "url": "/images/products/real/samsung-s25-black/image-8.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Black - Angle 8",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 46666,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2012
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 23333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2041
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 11667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2100
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5833,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2226
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4550,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 163800,
+              "netEffectiveCost": 156300,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2362
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3584,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 172032,
+              "netEffectiveCost": 164532,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2509
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3009,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 180540,
+              "netEffectiveCost": 173040,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2668
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5eon00bqd6rgdl6bx51a",
+          "sku": "S25U-512-SILVERBLUE",
+          "variantName": "512GB - Titanium Silver Blue",
+          "colorName": "Titanium Silver Blue",
+          "colorHex": "#8CA2B5",
+          "storage": "512GB",
+          "mrp": 149999,
+          "price": 139999,
+          "discountPercentage": 7,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5eop00bsd6rgpfagwzs5",
+              "url": "/images/products/real/samsung-s25-silverblue/image-1.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eoq00bud6rgqmct6iyo",
+              "url": "/images/products/real/samsung-s25-silverblue/image-2.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eor00bwd6rgvfwa4xo0",
+              "url": "/images/products/real/samsung-s25-silverblue/image-3.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eot00byd6rgqqvxjcul",
+              "url": "/images/products/real/samsung-s25-silverblue/image-4.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eou00c0d6rg2wo3u3xx",
+              "url": "/images/products/real/samsung-s25-silverblue/image-5.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eov00c2d6rgl0aw21zd",
+              "url": "/images/products/real/samsung-s25-silverblue/image-6.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eow00c4d6rgnwulmf3i",
+              "url": "/images/products/real/samsung-s25-silverblue/image-7.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eoy00c6d6rgq2dbmwtc",
+              "url": "/images/products/real/samsung-s25-silverblue/image-8.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eoz00c8d6rg2763ct9l",
+              "url": "/images/products/real/samsung-s25-silverblue/image-9.jpg",
+              "altText": "Samsung Galaxy S25 Ultra 512GB - Titanium Silver Blue - Angle 9",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 46666,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2012
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 23333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2041
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 11667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2100
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 5833,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 139999,
+              "netEffectiveCost": 132499,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2226
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 4550,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 163800,
+              "netEffectiveCost": 156300,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2362
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 3584,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 172032,
+              "netEffectiveCost": 164532,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2509
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3009,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 180540,
+              "netEffectiveCost": 173040,
+              "requiredMfPledge": 209999,
+              "monthlyMutualFundGrowthEstimated": 2668
+            }
+          ]
+        }
+      ]
+    },
+    "google-pixel-10-pro": {
+      "id": "cmtnf5eq600cod6rgkhi53rge",
+      "slug": "google-pixel-10-pro",
+      "name": "Google Pixel 10 Pro",
+      "brand": "Google",
+      "tagline": "Tensor G5 and on-device Gemini AI with pro-level computational photography.",
+      "description": "Experience the cleanest Android experience with on-device Gemini Pro AI, custom Tensor G5 processor, Super Actua display, and zero-foreclosure mutual fund EMIs.",
+      "badge": "POPULAR",
+      "category": {
+        "id": "cmtnf5eg50000d6rgygfbjpz7",
+        "name": "Smartphones",
+        "slug": "smartphones"
+      },
+      "reviewSummary": {
+        "averageRating": 4.5,
+        "totalReviews": 2,
+        "ratingDistribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1
+        }
+      },
+      "specifications": [
+        {
+          "id": "cmtnf5eq800cqd6rgmz9qo0fi",
+          "category": "Display",
+          "name": "Display",
+          "value": "6.3-inch Super Actua LTPO OLED (3000 nits peak)",
+          "displayOrder": 1
+        },
+        {
+          "id": "cmtnf5eqa00csd6rgi5wrkltv",
+          "category": "Display",
+          "name": "Resolution & Refresh Rate",
+          "value": "2856 x 1280 pixels, 1-120Hz Smooth Display",
+          "displayOrder": 2
+        },
+        {
+          "id": "cmtnf5eqc00cud6rg5e1rhc5r",
+          "category": "Performance",
+          "name": "Processor",
+          "value": "Google Tensor G5 with Titan M2 Security Chip",
+          "displayOrder": 3
+        },
+        {
+          "id": "cmtnf5eqd00cwd6rgfy9hskfp",
+          "category": "Performance",
+          "name": "RAM",
+          "value": "16 GB LPDDR5X",
+          "displayOrder": 4
+        },
+        {
+          "id": "cmtnf5eqe00cyd6rgk9pg3pnb",
+          "category": "Camera",
+          "name": "Rear Camera",
+          "value": "50MP Octa PD Main (f/1.68) + 48MP Quad PD Ultrawide + 48MP 5x Telephoto",
+          "displayOrder": 5
+        },
+        {
+          "id": "cmtnf5eqg00d0d6rg4dq344l0",
+          "category": "Camera",
+          "name": "Front Camera",
+          "value": "42MP Dual PD Selfie Camera with Autofocus (f/2.2)",
+          "displayOrder": 6
+        },
+        {
+          "id": "cmtnf5eqh00d2d6rgij3xzgm1",
+          "category": "Battery & Power",
+          "name": "Battery",
+          "value": "4,700 mAh with 30W Fast Charging & Qi-certified Fast Wireless",
+          "displayOrder": 7
+        },
+        {
+          "id": "cmtnf5eqi00d4d6rg23jrfy9g",
+          "category": "General",
+          "name": "Operating System",
+          "value": "Android 15 with 7 Years of Feature Drops & OS Upgrades",
+          "displayOrder": 8
+        },
+        {
+          "id": "cmtnf5eqk00d6d6rgunj66rkv",
+          "category": "General",
+          "name": "Connectivity",
+          "value": "5G Sub-6/mmWave, Wi-Fi 7, Bluetooth 5.4, NFC, Google Cast",
+          "displayOrder": 9
+        },
+        {
+          "id": "cmtnf5eql00d8d6rgfmfqm980",
+          "category": "General",
+          "name": "SIM Configuration",
+          "value": "Dual SIM (Single Nano-SIM and eSIM)",
+          "displayOrder": 10
+        },
+        {
+          "id": "cmtnf5eqm00dad6rgadt5unyf",
+          "category": "General",
+          "name": "Warranty",
+          "value": "1 Year Google India Warranty",
+          "displayOrder": 11
+        },
+        {
+          "id": "cmtnf5eqo00dcd6rgmjquc87n",
+          "category": "General",
+          "name": "What's in the Box",
+          "value": "Google Pixel 10 Pro, 1m USB-C Cable, Quick Switch Adapter, SIM Tool",
+          "displayOrder": 12
+        }
+      ],
+      "variants": [
+        {
+          "id": "cmtnf5eqp00ded6rgvqbnyexx",
+          "sku": "PIX10-128-FROST",
+          "variantName": "128GB - Frost",
+          "colorName": "Frost",
+          "colorHex": "#E5E9EC",
+          "storage": "128GB",
+          "mrp": 109999,
+          "price": 99999,
+          "discountPercentage": 9,
+          "inventoryCount": 25,
+          "isDefault": true,
+          "images": [
+            {
+              "id": "cmtnf5eqr00dgd6rg92l58iwg",
+              "url": "/images/products/real/pixel10-frost/image-1.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eqs00did6rgrfqxgbf1",
+              "url": "/images/products/real/pixel10-frost/image-2.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5equ00dkd6rgdprnfjko",
+              "url": "/images/products/real/pixel10-frost/image-3.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eqv00dmd6rgkfvj68et",
+              "url": "/images/products/real/pixel10-frost/image-4.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eqw00dod6rg4pug1fay",
+              "url": "/images/products/real/pixel10-frost/image-5.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eqy00dqd6rglsjnl7ef",
+              "url": "/images/products/real/pixel10-frost/image-6.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eqz00dsd6rgfox57yz2",
+              "url": "/images/products/real/pixel10-frost/image-7.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5er000dud6rggo3wcf2f",
+              "url": "/images/products/real/pixel10-frost/image-8.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5er200dwd6rgpxmvb86w",
+              "url": "/images/products/real/pixel10-frost/image-9.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 9",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5er300dyd6rg69v3yvuc",
+              "url": "/images/products/real/pixel10-frost/image-10.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 10",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5er500e0d6rgz8q8rgy6",
+              "url": "/images/products/real/pixel10-frost/image-11.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Frost - Angle 11",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 33333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1437
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 16667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1458
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 8333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1500
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 4167,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1590
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 3250,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 117000,
+              "netEffectiveCost": 109500,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1687
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 2560,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 122880,
+              "netEffectiveCost": 115380,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1792
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2149,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 128940,
+              "netEffectiveCost": 121440,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1906
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5erg00egd6rgbnd48lf1",
+          "sku": "PIX10-128-INDIGO",
+          "variantName": "128GB - Indigo",
+          "colorName": "Indigo",
+          "colorHex": "#384A68",
+          "storage": "128GB",
+          "mrp": 109999,
+          "price": 99999,
+          "discountPercentage": 9,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5eri00eid6rg09mfu7hs",
+              "url": "/images/products/real/pixel10-indigo/image-1.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5erj00ekd6rgux8db3bj",
+              "url": "/images/products/real/pixel10-indigo/image-2.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5erl00emd6rg7mjadz6c",
+              "url": "/images/products/real/pixel10-indigo/image-3.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5erm00eod6rg3we7dp5y",
+              "url": "/images/products/real/pixel10-indigo/image-4.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ern00eqd6rggqhredul",
+              "url": "/images/products/real/pixel10-indigo/image-5.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5erp00esd6rgt6je6crm",
+              "url": "/images/products/real/pixel10-indigo/image-6.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5erq00eud6rg8krpbvnz",
+              "url": "/images/products/real/pixel10-indigo/image-7.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5err00ewd6rg2khz97na",
+              "url": "/images/products/real/pixel10-indigo/image-8.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ert00eyd6rg09o5x4l9",
+              "url": "/images/products/real/pixel10-indigo/image-9.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 9",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eru00f0d6rg01a5ubtu",
+              "url": "/images/products/real/pixel10-indigo/image-10.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 10",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5erv00f2d6rgo5n7ndsy",
+              "url": "/images/products/real/pixel10-indigo/image-11.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 11",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ery00f4d6rgzqx0gmoe",
+              "url": "/images/products/real/pixel10-indigo/image-12.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Indigo - Angle 12",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 33333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1437
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 16667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1458
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 8333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1500
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 4167,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1590
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 3250,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 117000,
+              "netEffectiveCost": 109500,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1687
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 2560,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 122880,
+              "netEffectiveCost": 115380,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1792
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2149,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 128940,
+              "netEffectiveCost": 121440,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1906
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5esa00fkd6rgj5lt8gt2",
+          "sku": "PIX10-128-LEMONGRASS",
+          "variantName": "128GB - Lemongrass",
+          "colorName": "Lemongrass",
+          "colorHex": "#D4DCB2",
+          "storage": "128GB",
+          "mrp": 109999,
+          "price": 99999,
+          "discountPercentage": 9,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5esc00fmd6rg5v66j4bw",
+              "url": "/images/products/real/pixel10-lemongrass/image-1.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5esd00fod6rgjcjfzs8o",
+              "url": "/images/products/real/pixel10-lemongrass/image-2.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ese00fqd6rguwo3kjub",
+              "url": "/images/products/real/pixel10-lemongrass/image-3.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esg00fsd6rg0z7apna9",
+              "url": "/images/products/real/pixel10-lemongrass/image-4.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esh00fud6rgr8fiawge",
+              "url": "/images/products/real/pixel10-lemongrass/image-5.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esj00fwd6rg4z56b99b",
+              "url": "/images/products/real/pixel10-lemongrass/image-6.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esk00fyd6rg90re1uge",
+              "url": "/images/products/real/pixel10-lemongrass/image-7.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esm00g0d6rg6tr15zm1",
+              "url": "/images/products/real/pixel10-lemongrass/image-8.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esn00g2d6rgiltg5chq",
+              "url": "/images/products/real/pixel10-lemongrass/image-9.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 9",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esp00g4d6rg9og30vty",
+              "url": "/images/products/real/pixel10-lemongrass/image-10.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 10",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5esq00g6d6rguuhc7myh",
+              "url": "/images/products/real/pixel10-lemongrass/image-11.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 11",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ess00g8d6rg5w6nc5fh",
+              "url": "/images/products/real/pixel10-lemongrass/image-12.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Lemongrass - Angle 12",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 33333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1437
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 16667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1458
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 8333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1500
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 4167,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1590
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 3250,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 117000,
+              "netEffectiveCost": 109500,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1687
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 2560,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 122880,
+              "netEffectiveCost": 115380,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1792
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2149,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 128940,
+              "netEffectiveCost": 121440,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1906
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5et400god6rgtsqijrmk",
+          "sku": "PIX10-128-OBSIDIAN",
+          "variantName": "128GB - Obsidian",
+          "colorName": "Obsidian",
+          "colorHex": "#202124",
+          "storage": "128GB",
+          "mrp": 109999,
+          "price": 99999,
+          "discountPercentage": 9,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5et600gqd6rgly7lmsj2",
+              "url": "/images/products/real/pixel10-obsidian/image-1.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5et700gsd6rgvdzmcykv",
+              "url": "/images/products/real/pixel10-obsidian/image-2.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5et800gud6rghiex9axf",
+              "url": "/images/products/real/pixel10-obsidian/image-3.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eta00gwd6rgnwbm2oe7",
+              "url": "/images/products/real/pixel10-obsidian/image-4.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5etb00gyd6rgi16avo20",
+              "url": "/images/products/real/pixel10-obsidian/image-5.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5etd00h0d6rghryazlmo",
+              "url": "/images/products/real/pixel10-obsidian/image-6.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5etf00h2d6rg15abduqd",
+              "url": "/images/products/real/pixel10-obsidian/image-7.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5etg00h4d6rgv7c4kjhs",
+              "url": "/images/products/real/pixel10-obsidian/image-8.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eti00h6d6rg0yneigws",
+              "url": "/images/products/real/pixel10-obsidian/image-9.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 9",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5etj00h8d6rg75ptz4gc",
+              "url": "/images/products/real/pixel10-obsidian/image-10.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 10",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5etk00had6rgnnd1e6z5",
+              "url": "/images/products/real/pixel10-obsidian/image-11.jpg",
+              "altText": "Google Pixel 10 Pro 128GB - Obsidian - Angle 11",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 33333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1437
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 16667,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1458
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 8333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1500
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 4167,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 99999,
+              "netEffectiveCost": 92499,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1590
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 3250,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 117000,
+              "netEffectiveCost": 109500,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1687
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 2560,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 122880,
+              "netEffectiveCost": 115380,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1792
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2149,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 128940,
+              "netEffectiveCost": 121440,
+              "requiredMfPledge": 149999,
+              "monthlyMutualFundGrowthEstimated": 1906
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5etx00hqd6rgchfesq7x",
+          "sku": "PIX10-256-FROST",
+          "variantName": "256GB - Frost",
+          "colorName": "Frost",
+          "colorHex": "#E5E9EC",
+          "storage": "256GB",
+          "mrp": 119999,
+          "price": 109999,
+          "discountPercentage": 8,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5etz00hsd6rg0kcvy8l5",
+              "url": "/images/products/real/pixel10-frost/image-1.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5eu000hud6rgwhsbbl1l",
+              "url": "/images/products/real/pixel10-frost/image-2.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu100hwd6rgs5ds05gg",
+              "url": "/images/products/real/pixel10-frost/image-3.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu300hyd6rggc6qkp7w",
+              "url": "/images/products/real/pixel10-frost/image-4.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu400i0d6rg9monlm9h",
+              "url": "/images/products/real/pixel10-frost/image-5.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu500i2d6rgjvp7iwqh",
+              "url": "/images/products/real/pixel10-frost/image-6.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu700i4d6rgtn1ffajc",
+              "url": "/images/products/real/pixel10-frost/image-7.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu800i6d6rgxhvy23fr",
+              "url": "/images/products/real/pixel10-frost/image-8.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eu900i8d6rge28gyul9",
+              "url": "/images/products/real/pixel10-frost/image-9.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 9",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eua00iad6rgo3ugkg3f",
+              "url": "/images/products/real/pixel10-frost/image-10.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 10",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5euc00icd6rggoj2w6q6",
+              "url": "/images/products/real/pixel10-frost/image-11.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Frost - Angle 11",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 36666,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1581
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 18333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1603
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 9167,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1650
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 4583,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1749
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 3575,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 128700,
+              "netEffectiveCost": 121200,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1856
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 2816,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 135168,
+              "netEffectiveCost": 127668,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1971
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2364,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 141840,
+              "netEffectiveCost": 134340,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 2096
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5eun00isd6rgmftiu7ax",
+          "sku": "PIX10-256-OBSIDIAN",
+          "variantName": "256GB - Obsidian",
+          "colorName": "Obsidian",
+          "colorHex": "#202124",
+          "storage": "256GB",
+          "mrp": 119999,
+          "price": 109999,
+          "discountPercentage": 8,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5eup00iud6rg4kovmnla",
+              "url": "/images/products/real/pixel10-obsidian/image-1.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5euq00iwd6rg7dpyjwtj",
+              "url": "/images/products/real/pixel10-obsidian/image-2.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eur00iyd6rgoq8j1xwa",
+              "url": "/images/products/real/pixel10-obsidian/image-3.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eut00j0d6rg5pgosmdi",
+              "url": "/images/products/real/pixel10-obsidian/image-4.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5euu00j2d6rgp6vay7ij",
+              "url": "/images/products/real/pixel10-obsidian/image-5.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5euw00j4d6rgl4kjc5jr",
+              "url": "/images/products/real/pixel10-obsidian/image-6.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eux00j6d6rgfq1kg47q",
+              "url": "/images/products/real/pixel10-obsidian/image-7.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 7",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5euy00j8d6rgko9qybkn",
+              "url": "/images/products/real/pixel10-obsidian/image-8.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 8",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ev000jad6rgb6evqrd4",
+              "url": "/images/products/real/pixel10-obsidian/image-9.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 9",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ev200jcd6rgk88fkzry",
+              "url": "/images/products/real/pixel10-obsidian/image-10.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 10",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ev300jed6rgwg9e8tvy",
+              "url": "/images/products/real/pixel10-obsidian/image-11.jpg",
+              "altText": "Google Pixel 10 Pro 256GB - Obsidian - Angle 11",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 36666,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1581
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 18333,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1603
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 9167,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1650
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 4583,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 109999,
+              "netEffectiveCost": 102499,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1749
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 3575,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 128700,
+              "netEffectiveCost": 121200,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1856
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 2816,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 135168,
+              "netEffectiveCost": 127668,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 1971
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 2364,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 141840,
+              "netEffectiveCost": 134340,
+              "requiredMfPledge": 164999,
+              "monthlyMutualFundGrowthEstimated": 2096
+            }
+          ]
+        }
+      ]
+    },
+    "macbook-pro-14-m4": {
+      "id": "cmtnf5evf00jud6rgl9c9l708",
+      "slug": "macbook-pro-14-m4",
+      "name": "Apple MacBook Pro 14 (M4)",
+      "brand": "Apple",
+      "tagline": "Apple M4 chip, Liquid Retina XDR display, up to 24 hours battery life.",
+      "description": "Engineered for demanding workflows, machine learning, and creative professionals. Shop with no-cost mutual fund EMIs and keep your investment portfolio compounding.",
+      "badge": "PRO CHOICE",
+      "category": {
+        "id": "cmtnf5eg80001d6rg91vrazkz",
+        "name": "Laptops & Computing",
+        "slug": "laptops"
+      },
+      "reviewSummary": {
+        "averageRating": 5,
+        "totalReviews": 2,
+        "ratingDistribution": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 2
+        }
+      },
+      "specifications": [
+        {
+          "id": "cmtnf5evh00jwd6rgk8pp4wgb",
+          "category": "Display",
+          "name": "Display",
+          "value": "14.2-inch Liquid Retina XDR Display (1600 nits peak HDR)",
+          "displayOrder": 1
+        },
+        {
+          "id": "cmtnf5evj00jyd6rgcefu0s7c",
+          "category": "Display",
+          "name": "Resolution & Refresh Rate",
+          "value": "3024 x 1964 native resolution, 120Hz ProMotion Technology",
+          "displayOrder": 2
+        },
+        {
+          "id": "cmtnf5evk00k0d6rg5opy6zcc",
+          "category": "Performance",
+          "name": "Processor",
+          "value": "Apple M4 Chip (10-core CPU, 10-core GPU, 16-core Neural Engine)",
+          "displayOrder": 3
+        },
+        {
+          "id": "cmtnf5evm00k2d6rgdck8wb0i",
+          "category": "Performance",
+          "name": "RAM",
+          "value": "16 GB Unified Memory (Configurable up to 32GB)",
+          "displayOrder": 4
+        },
+        {
+          "id": "cmtnf5evo00k4d6rgaov7e0qa",
+          "category": "Camera",
+          "name": "Camera",
+          "value": "12MP Center Stage Camera with 1080p HD video & Desk View",
+          "displayOrder": 5
+        },
+        {
+          "id": "cmtnf5evq00k6d6rgps5opyh6",
+          "category": "Battery & Power",
+          "name": "Battery",
+          "value": "72.4Wh Lithium-polymer battery with up to 24 hours battery life",
+          "displayOrder": 6
+        },
+        {
+          "id": "cmtnf5evr00k8d6rgzewzhza0",
+          "category": "General",
+          "name": "Operating System",
+          "value": "macOS Sequoia",
+          "displayOrder": 7
+        },
+        {
+          "id": "cmtnf5evt00kad6rgibkv3i2j",
+          "category": "General",
+          "name": "Connectivity",
+          "value": "3x Thunderbolt 4 (USB-C), HDMI port, SDXC card slot, MagSafe 3, 3.5mm Headphone Jack",
+          "displayOrder": 8
+        },
+        {
+          "id": "cmtnf5evu00kcd6rgvhqro9h3",
+          "category": "General",
+          "name": "Warranty",
+          "value": "1 Year Official Apple Manufacturer Warranty",
+          "displayOrder": 9
+        },
+        {
+          "id": "cmtnf5evw00ked6rg1dqaec7j",
+          "category": "General",
+          "name": "What's in the Box",
+          "value": "14-inch MacBook Pro, 70W USB-C Power Adapter, USB-C to MagSafe 3 Cable (2m)",
+          "displayOrder": 10
+        }
+      ],
+      "variants": [
+        {
+          "id": "cmtnf5evy00kgd6rgakxsnm8f",
+          "sku": "MBP14-512-SPACEBLACK",
+          "variantName": "512GB SSD / 16GB RAM - Space Black",
+          "colorName": "Space Black",
+          "colorHex": "#222327",
+          "storage": "512GB",
+          "mrp": 179900,
+          "price": 169900,
+          "discountPercentage": 6,
+          "inventoryCount": 25,
+          "isDefault": true,
+          "images": [
+            {
+              "id": "cmtnf5ew100kid6rg3oxgo5fm",
+              "url": "/images/products/real/macbook-pro-14/image-4.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ew300kkd6rg0jwd382x",
+              "url": "/images/products/real/macbook-pro-14/image-5.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ew400kmd6rgn6x28f5l",
+              "url": "/images/products/real/macbook-pro-14/image-6.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ew600kod6rgp6mi2vai",
+              "url": "/images/products/real/macbook-pro-14/image-7.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ew700kqd6rgb4492hta",
+              "url": "/images/products/real/macbook-pro-14/image-8.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ew900ksd6rggzuyasbl",
+              "url": "/images/products/real/macbook-pro-14/image-9.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ewb00kud6rgb6k6myzg",
+              "url": "/images/products/real/macbook-pro-14/image-18.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Space Black - Angle 7",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 56633,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2441
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 28317,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2476
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 14158,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2549
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 7079,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2701
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 5522,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 198792,
+              "netEffectiveCost": 191292,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2867
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 4350,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 208800,
+              "netEffectiveCost": 201300,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 3045
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3652,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 219120,
+              "netEffectiveCost": 211620,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 3238
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5ewo00lad6rgp36o7yca",
+          "sku": "MBP14-512-SILVER",
+          "variantName": "512GB SSD / 16GB RAM - Silver",
+          "colorName": "Silver",
+          "colorHex": "#E1E2E4",
+          "storage": "512GB",
+          "mrp": 179900,
+          "price": 169900,
+          "discountPercentage": 6,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5ewq00lcd6rg8uun9o3b",
+              "url": "/images/products/real/macbook-pro-14/image-1.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ewr00led6rg6kwy02kr",
+              "url": "/images/products/real/macbook-pro-14/image-2.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ewt00lgd6rgu9x831cv",
+              "url": "/images/products/real/macbook-pro-14/image-5.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ewu00lid6rgiy57177j",
+              "url": "/images/products/real/macbook-pro-14/image-6.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ewv00lkd6rgazsdgqq3",
+              "url": "/images/products/real/macbook-pro-14/image-7.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5eww00lmd6rgzk7ygx9x",
+              "url": "/images/products/real/macbook-pro-14/image-8.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ewx00lod6rgdceum5ru",
+              "url": "/images/products/real/macbook-pro-14/image-9.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 512GB SSD / 16GB RAM - Silver - Angle 7",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 56633,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2441
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 28317,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2476
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 14158,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2549
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 7079,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 169900,
+              "netEffectiveCost": 162400,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2701
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 5522,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 198792,
+              "netEffectiveCost": 191292,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 2867
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 4350,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 208800,
+              "netEffectiveCost": 201300,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 3045
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 3652,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 219120,
+              "netEffectiveCost": 211620,
+              "requiredMfPledge": 254850,
+              "monthlyMutualFundGrowthEstimated": 3238
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5ex900m4d6rgq26536nm",
+          "sku": "MBP14-1TB-SPACEBLACK",
+          "variantName": "1TB SSD / 24GB RAM - Space Black",
+          "colorName": "Space Black",
+          "colorHex": "#222327",
+          "storage": "1TB",
+          "mrp": 199900,
+          "price": 189900,
+          "discountPercentage": 5,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5exb00m6d6rg2aqhjxhe",
+              "url": "/images/products/real/macbook-pro-14/image-4.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5exc00m8d6rgip3zlp7h",
+              "url": "/images/products/real/macbook-pro-14/image-5.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5exd00mad6rglmqg1anz",
+              "url": "/images/products/real/macbook-pro-14/image-6.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5exf00mcd6rg2cgqbflg",
+              "url": "/images/products/real/macbook-pro-14/image-7.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5exg00med6rgo4x6c926",
+              "url": "/images/products/real/macbook-pro-14/image-8.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5exi00mgd6rgy8nyyk1x",
+              "url": "/images/products/real/macbook-pro-14/image-9.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5exl00mid6rgl2f4okvr",
+              "url": "/images/products/real/macbook-pro-14/image-18.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Space Black - Angle 7",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 63300,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 2729
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 31650,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 2768
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 15825,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 2849
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 7913,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3019
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 6172,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 222192,
+              "netEffectiveCost": 214692,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3204
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 4862,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 233376,
+              "netEffectiveCost": 225876,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3403
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 4082,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 244920,
+              "netEffectiveCost": 237420,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3619
+            }
+          ]
+        },
+        {
+          "id": "cmtnf5exy00myd6rgi66ut99b",
+          "sku": "MBP14-1TB-SILVER",
+          "variantName": "1TB SSD / 24GB RAM - Silver",
+          "colorName": "Silver",
+          "colorHex": "#E1E2E4",
+          "storage": "1TB",
+          "mrp": 199900,
+          "price": 189900,
+          "discountPercentage": 5,
+          "inventoryCount": 25,
+          "isDefault": false,
+          "images": [
+            {
+              "id": "cmtnf5ey000n0d6rg1ditlnzq",
+              "url": "/images/products/real/macbook-pro-14/image-1.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 1",
+              "isPrimary": true
+            },
+            {
+              "id": "cmtnf5ey100n2d6rgegcix25a",
+              "url": "/images/products/real/macbook-pro-14/image-2.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 2",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ey300n4d6rgstj3im6w",
+              "url": "/images/products/real/macbook-pro-14/image-5.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 3",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ey400n6d6rg6dysct7k",
+              "url": "/images/products/real/macbook-pro-14/image-6.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 4",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ey500n8d6rg73lnjj5e",
+              "url": "/images/products/real/macbook-pro-14/image-7.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 5",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ey700nad6rg5i7rd72i",
+              "url": "/images/products/real/macbook-pro-14/image-8.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 6",
+              "isPrimary": false
+            },
+            {
+              "id": "cmtnf5ey900ncd6rgo2ciz99k",
+              "url": "/images/products/real/macbook-pro-14/image-9.jpg",
+              "altText": "Apple MacBook Pro 14 (M4) 1TB SSD / 24GB RAM - Silver - Angle 7",
+              "isPrimary": false
+            }
+          ],
+          "emiPlans": [
+            {
+              "id": "cmtnf5eg90002d6rg092vhpcl",
+              "tenureMonths": 3,
+              "monthlyEmi": 63300,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 2729
+            },
+            {
+              "id": "cmtnf5egb0003d6rg8jybmcua",
+              "tenureMonths": 6,
+              "monthlyEmi": 31650,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 2768
+            },
+            {
+              "id": "cmtnf5egd0004d6rgyvm6b9a2",
+              "tenureMonths": 12,
+              "monthlyEmi": 15825,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 2849
+            },
+            {
+              "id": "cmtnf5ege0005d6rgda05oeot",
+              "tenureMonths": 24,
+              "monthlyEmi": 7913,
+              "annualInterestRate": 0,
+              "isNoCost": true,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 189900,
+              "netEffectiveCost": 182400,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3019
+            },
+            {
+              "id": "cmtnf5egg0006d6rgfvmwb12d",
+              "tenureMonths": 36,
+              "monthlyEmi": 6172,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 222192,
+              "netEffectiveCost": 214692,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3204
+            },
+            {
+              "id": "cmtnf5egh0007d6rg3b3d8sph",
+              "tenureMonths": 48,
+              "monthlyEmi": 4862,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 233376,
+              "netEffectiveCost": 225876,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3403
+            },
+            {
+              "id": "cmtnf5egj0008d6rgak8lu4qn",
+              "tenureMonths": 60,
+              "monthlyEmi": 4082,
+              "annualInterestRate": 10.5,
+              "isNoCost": false,
+              "cashbackAmount": 7500,
+              "cashbackDescription": "Additional cashback of ₹7,500",
+              "totalPayable": 244920,
+              "netEffectiveCost": 237420,
+              "requiredMfPledge": 284850,
+              "monthlyMutualFundGrowthEstimated": 3619
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

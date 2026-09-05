@@ -17,10 +17,10 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     return (
       <button
         type="button"
-        className={`p-2 rounded-xl border border-transparent text-[#8D95A0] opacity-50 cursor-pointer ${className}`}
+        className={`relative p-2 rounded-xl border transition-all duration-200 cursor-pointer group flex items-center justify-center bg-[var(--bg-surface)] text-[var(--brand-primary)] border-[var(--border-subtle)] shadow-premium-xs ${className}`}
         aria-label="Toggle theme mode"
       >
-        <span className="w-4 h-4 block" />
+        <Moon className="w-4 h-4" />
       </button>
     );
   }

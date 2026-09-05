@@ -31,8 +31,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "1Fi" }],
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [
+      { url: "/favicon.png?v=1fi-purple", type: "image/png" },
+      { url: "/1fi-icon.svg?v=1fi-purple", type: "image/svg+xml" },
+      { url: "/icon.png?v=1fi-purple", type: "image/png" },
+    ],
+    shortcut: "/favicon.png?v=1fi-purple",
+    apple: "/apple-touch-icon.png?v=1fi-purple",
   },
 };
 
@@ -41,8 +46,7 @@ const themeInitScript = `
     try {
       var key = '1fi_theme_preference';
       var saved = localStorage.getItem(key);
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (saved === 'dark' || (!saved && prefersDark)) {
+      if (saved === 'dark') {
         document.documentElement.classList.add('dark');
         document.documentElement.setAttribute('data-theme', 'dark');
         document.documentElement.style.colorScheme = 'dark';
@@ -63,11 +67,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
       suppressHydrationWarning
       className={`${geist.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link rel="icon" type="image/png" href="/favicon.png?v=1fi-purple" />
+        <link rel="icon" type="image/svg+xml" href="/1fi-icon.svg?v=1fi-purple" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1fi-purple" />
+        <link rel="shortcut icon" href="/favicon.ico?v=1fi-purple" />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-[var(--bg-page)] text-[var(--text-primary)] transition-colors duration-200">
         <ThemeProvider>

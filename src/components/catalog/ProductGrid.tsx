@@ -45,8 +45,44 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
     sort: (searchParams.get("sort") as CatalogFilterState["sort"]) ?? "recommended",
   }));
 
+  // Compute initial facets directly from initialProducts
+  const initialFacets = useMemo<CatalogFacetsDto>(() => {
+    const categoriesMap = new Map<string, { name: string; slug: string; count: number }>();
+    const brandsMap = new Map<string, number>();
+    const storagesMap = new Map<string, number>();
+    let minPrice = Infinity;
+    let maxPrice = -Infinity;
+
+    for (const p of initialProducts) {
+      if (p.categoryName) {
+        const slug = p.categorySlug || p.categoryName.toLowerCase().replace(/\s+/g, "-");
+        const existing = categoriesMap.get(slug) || { name: p.categoryName, slug, count: 0 };
+        existing.count += 1;
+        categoriesMap.set(slug, existing);
+      }
+      brandsMap.set(p.brand, (brandsMap.get(p.brand) || 0) + 1);
+      if (p.startingPrice < minPrice) minPrice = p.startingPrice;
+      if (p.startingPrice > maxPrice) maxPrice = p.startingPrice;
+
+      const storages = p.availableStorages || (p.defaultVariant?.storage ? [p.defaultVariant.storage] : []);
+      for (const st of storages) {
+        storagesMap.set(st, (storagesMap.get(st) || 0) + 1);
+      }
+    }
+
+    return {
+      categories: Array.from(categoriesMap.values()),
+      brands: Array.from(brandsMap.entries()).map(([name, count]) => ({ name, count })),
+      storages: Array.from(storagesMap.entries()).map(([value, count]) => ({ value, count })),
+      priceRange: {
+        min: minPrice === Infinity ? 50000 : minPrice,
+        max: maxPrice === -Infinity ? 200000 : maxPrice,
+      },
+    };
+  }, [initialProducts]);
+
   const [productsList, setProductsList] = useState<ProductListItemDto[]>(initialProducts);
-  const [facets, setFacets] = useState<CatalogFacetsDto | null>(null);
+  const [facets, setFacets] = useState<CatalogFacetsDto | null>(initialFacets);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
@@ -62,9 +98,10 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
     return count;
   }, [filters]);
 
-  // 2. Synchronize URL query parameters with filter state
+  // 2. Synchronize URL query parameters with filter state safely without page navigation
   const syncUrlParams = useCallback(
     (newFilters: CatalogFilterState) => {
+      if (typeof window === "undefined") return;
       const params = new URLSearchParams();
 
       if (newFilters.search && newFilters.search.trim()) {
@@ -90,74 +127,81 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
       }
 
       const queryString = params.toString();
-      const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
-      router.replace(newUrl, { scroll: false });
-    },
-    [pathname, router]
-  );
-
-  // 3. Fetch products and facets from backend API
-  const fetchProducts = useCallback(
-    async (currentFilters: CatalogFilterState) => {
-      setIsLoading(true);
-      setErrorMessage(null);
-
-      try {
-        const params = new URLSearchParams();
-        if (currentFilters.search && currentFilters.search.trim()) {
-          params.set("search", currentFilters.search.trim());
-        }
-        if (currentFilters.category && currentFilters.category !== "ALL") {
-          params.set("category", currentFilters.category);
-        }
-        if (currentFilters.brand && currentFilters.brand !== "ALL") {
-          params.set("brand", currentFilters.brand);
-        }
-        if (currentFilters.storage && currentFilters.storage !== "ALL") {
-          params.set("storage", currentFilters.storage);
-        }
-        if (currentFilters.minPrice !== undefined) {
-          params.set("minPrice", currentFilters.minPrice.toString());
-        }
-        if (currentFilters.maxPrice !== undefined) {
-          params.set("maxPrice", currentFilters.maxPrice.toString());
-        }
-        if (currentFilters.sort) {
-          params.set("sort", currentFilters.sort);
-        }
-
-        const res = await fetch(`/api/products?${params.toString()}`);
-        if (!res.ok) throw new Error(`API returned HTTP ${res.status}`);
-
-        const json: ApiResponse<ProductListItemDto[]> = await res.json();
-        if (json.success && json.data) {
-          setProductsList(json.data);
-          if (json.facets) {
-            setFacets(json.facets);
-          }
-        } else {
-          throw new Error(json.error || "Failed to load products");
-        }
-      } catch (err: unknown) {
-        const errorText = err instanceof Error ? err.message : "Network error occurred";
-        console.error("Error fetching catalog products:", errorText);
-        setErrorMessage(errorText);
-      } finally {
-        setIsLoading(false);
+      const currentQuery = window.location.search.replace(/^\?/, "");
+      if (queryString !== currentQuery) {
+        const newUrl = queryString ? `${window.location.pathname}?${queryString}` : window.location.pathname;
+        window.history.replaceState(null, "", newUrl);
       }
     },
     []
   );
 
-  // 4. Debounced fetch when filters change
+  // 3. Filter products smoothly client-side with zero latency
+  const filterProducts = useCallback(
+    (currentFilters: CatalogFilterState) => {
+      setIsLoading(true);
+      setErrorMessage(null);
+
+      // In-memory instant client-side filter
+      let filtered = [...initialProducts];
+      if (currentFilters.category && currentFilters.category !== "ALL") {
+        const catQuery = currentFilters.category.toLowerCase();
+        filtered = filtered.filter(
+          (p) =>
+            (p.categorySlug && p.categorySlug.toLowerCase() === catQuery) ||
+            p.categoryName.toLowerCase().includes(catQuery) ||
+            catQuery.includes(p.categoryName.toLowerCase())
+        );
+      }
+      if (currentFilters.brand && currentFilters.brand !== "ALL") {
+        filtered = filtered.filter(
+          (p) => p.brand.toLowerCase() === currentFilters.brand?.toLowerCase()
+        );
+      }
+      if (currentFilters.search && currentFilters.search.trim()) {
+        const q = currentFilters.search.toLowerCase().trim();
+        filtered = filtered.filter(
+          (p) =>
+            p.name.toLowerCase().includes(q) ||
+            p.brand.toLowerCase().includes(q) ||
+            (p.tagline && p.tagline.toLowerCase().includes(q))
+        );
+      }
+      if (currentFilters.storage && currentFilters.storage !== "ALL") {
+        filtered = filtered.filter((p) => {
+          const storages = p.availableStorages || (p.defaultVariant?.storage ? [p.defaultVariant.storage] : []);
+          return storages.some(
+            (s) => s.toLowerCase() === currentFilters.storage?.toLowerCase()
+          );
+        });
+      }
+      if (currentFilters.maxPrice !== undefined) {
+        filtered = filtered.filter((p) => p.startingPrice <= currentFilters.maxPrice!);
+      }
+      if (currentFilters.minPrice !== undefined) {
+        filtered = filtered.filter((p) => p.startingPrice >= currentFilters.minPrice!);
+      }
+      if (currentFilters.sort === "price_asc") {
+        filtered.sort((a, b) => a.startingPrice - b.startingPrice);
+      } else if (currentFilters.sort === "price_desc") {
+        filtered.sort((a, b) => b.startingPrice - a.startingPrice);
+      }
+
+      setProductsList(filtered);
+      setIsLoading(false);
+    },
+    [initialProducts]
+  );
+
+  // 4. Debounced filter when filters change
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
-      fetchProducts(filters);
+      filterProducts(filters);
       syncUrlParams(filters);
-    }, 250);
+    }, 150);
 
     return () => clearTimeout(debounceTimer);
-  }, [filters, fetchProducts, syncUrlParams]);
+  }, [filters, filterProducts, syncUrlParams]);
 
   // Handler for individual filter change
   const handleFilterChange = (
@@ -186,8 +230,8 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
   return (
     <div className="space-y-6">
       {/* Category Tabs & Quick Switcher (Requirement #9) */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-subtle)] dark:border-[#1E2D27] pb-4">
-        <div className="flex items-center gap-1.5 bg-[var(--bg-surface-subtle)] dark:bg-[#131E1A] p-1.5 rounded-xl border border-[var(--border-subtle)] dark:border-[#1E2D27]">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border-subtle)] pb-4">
+        <div className="flex items-center gap-1.5 bg-[var(--bg-surface-subtle)] p-1.5 rounded-xl border border-[var(--border-subtle)]">
           <button
             type="button"
             onClick={() => handleFilterChange("category", undefined)}
@@ -195,7 +239,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
               "px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer",
               !filters.category || filters.category === "ALL"
                 ? "bg-[var(--brand-primary)] text-white shadow-premium-xs"
-                : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3]"
+                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             )}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -209,7 +253,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
               "px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer",
               filters.category === "Smartphones"
                 ? "bg-[var(--brand-primary)] text-white shadow-premium-xs"
-                : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3]"
+                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             )}
           >
             <Smartphone className="w-3.5 h-3.5" />
@@ -223,7 +267,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
               "px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer",
               filters.category === "Laptops & Computing"
                 ? "bg-[var(--brand-primary)] text-white shadow-premium-xs"
-                : "text-[var(--text-secondary)] dark:text-[#9DA7A2] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3]"
+                : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
             )}
           >
             <Laptop className="w-3.5 h-3.5" />
@@ -232,30 +276,30 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
         </div>
 
         {/* Device Counter Badge */}
-        <div className="text-xs font-semibold text-[var(--text-secondary)] dark:text-[#9DA7A2]">
-          Showing <strong className="text-[var(--text-primary)] dark:text-[#F2F5F3]">{productsList.length}</strong> available devices
+        <div className="text-xs font-semibold text-[var(--text-secondary)]">
+          Showing <strong className="text-[var(--text-primary)]">{productsList.length}</strong> available devices
         </div>
       </div>
 
       {/* Search & Sort Controls Bar */}
-      <div className="bg-[var(--bg-surface-subtle)] dark:bg-[#131E1A] rounded-2xl border border-[var(--border-subtle)] dark:border-[#1E2D27] p-3.5 sm:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-premium-xs">
+      <div className="bg-[var(--bg-surface-subtle)] rounded-2xl border border-[var(--border-subtle)] p-3.5 sm:p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-premium-xs">
         {/* Search Input */}
         <div className="relative flex-1 max-w-xl">
-          <Search className="w-4 h-4 text-[var(--text-muted)] dark:text-[#6B7670] absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-[var(--text-muted)] absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={filters.search ?? ""}
             onChange={(e) => handleFilterChange("search", e.target.value)}
             placeholder="Search iPhone 17 Pro, Galaxy S25, M4, 256GB..."
-            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[var(--bg-surface)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] text-xs sm:text-sm text-[var(--text-primary)] dark:text-[#F2F5F3] placeholder:text-[var(--text-muted)] dark:placeholder:text-[#6B7670] focus:outline-none focus:ring-1 focus:ring-[var(--brand-primary)] focus:border-[var(--brand-primary)] transition-colors"
+            className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-xs sm:text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-1 focus:ring-[var(--brand-primary)] focus:border-[var(--brand-primary)] transition-colors"
           />
           {isLoading ? (
-            <Loader2 className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A] absolute right-3 top-1/2 -translate-y-1/2 animate-spin" />
+            <Loader2 className="w-4 h-4 text-[var(--brand-primary)] absolute right-3 top-1/2 -translate-y-1/2 animate-spin" />
           ) : filters.search ? (
             <button
               type="button"
               onClick={() => handleFilterChange("search", "")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[var(--text-muted)] hover:text-[var(--text-primary)] dark:hover:text-[#F2F5F3] cursor-pointer"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
               aria-label="Clear Search"
             >
               <X className="w-4 h-4" />
@@ -269,9 +313,9 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           <button
             type="button"
             onClick={() => setIsMobileDrawerOpen(true)}
-            className="lg:hidden flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[var(--bg-surface)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] text-xs font-bold text-[var(--text-primary)] dark:text-[#F2F5F3] transition-colors cursor-pointer"
+            className="lg:hidden flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-xs font-bold text-[var(--text-primary)] transition-colors cursor-pointer"
           >
-            <SlidersHorizontal className="w-3.5 h-3.5 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[var(--brand-primary)]" />
             <span>Filters</span>
             {activeFilterCount > 0 && (
               <span className="w-4 h-4 rounded-full bg-[var(--brand-primary)] text-white text-[10px] font-bold flex items-center justify-center">
@@ -282,7 +326,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
 
           {/* Sort Dropdown */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] font-semibold hidden sm:inline-block">
+            <span className="text-xs text-[var(--text-secondary)] font-semibold hidden sm:inline-block">
               Sort by:
             </span>
             <div className="relative">
@@ -294,7 +338,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
                     e.target.value as CatalogFilterState["sort"]
                   )
                 }
-                className="appearance-none pl-3 pr-8 py-2 rounded-xl bg-[var(--bg-surface)] dark:bg-[#192722] border border-[var(--border-subtle)] dark:border-[#1E2D27] text-xs font-semibold text-[var(--text-primary)] dark:text-[#F2F5F3] focus:outline-none focus:ring-1 focus:ring-[var(--brand-primary)] focus:border-[var(--brand-primary)] transition-colors cursor-pointer"
+                className="appearance-none pl-3 pr-8 py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-xs font-semibold text-[var(--text-primary)] focus:outline-none focus:ring-1 focus:ring-[var(--brand-primary)] focus:border-[var(--brand-primary)] transition-colors cursor-pointer"
               >
                 <option value="recommended">Featured & Recommended</option>
                 <option value="price_asc">Price: Low to High</option>
@@ -310,10 +354,10 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
       {/* Active Filter Chips */}
       {activeFilterCount > 0 && (
         <div className="flex flex-wrap items-center gap-2 text-xs">
-          <span className="text-[var(--text-secondary)] dark:text-[#9DA7A2] font-semibold">Active filters:</span>
+          <span className="text-[var(--text-secondary)] font-semibold">Active filters:</span>
 
           {filters.search && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 font-semibold">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/20 font-semibold">
               Search: &quot;{filters.search}&quot;
               <button
                 type="button"
@@ -326,7 +370,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           )}
 
           {filters.category && filters.category !== "ALL" && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 font-semibold">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/20 font-semibold">
               Category: {filters.category}
               <button
                 type="button"
@@ -339,7 +383,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           )}
 
           {filters.brand && filters.brand !== "ALL" && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 font-semibold">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/20 font-semibold">
               Brand: {filters.brand}
               <button
                 type="button"
@@ -352,7 +396,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           )}
 
           {filters.storage && filters.storage !== "ALL" && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 font-semibold">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/20 font-semibold">
               Storage: {filters.storage}
               <button
                 type="button"
@@ -365,7 +409,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           )}
 
           {filters.maxPrice !== undefined && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] dark:bg-[rgba(183,243,74,0.1)] text-[var(--brand-primary)] dark:text-[#B7F34A] border border-[var(--brand-primary)]/20 dark:border-[#B7F34A]/20 font-semibold">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-subtle)] text-[var(--brand-primary)] border border-[var(--brand-primary)]/20 font-semibold">
               Price ≤ {formatINR(filters.maxPrice)}
               <button
                 type="button"
@@ -380,7 +424,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           <button
             type="button"
             onClick={handleClearAll}
-            className="text-xs text-[var(--brand-primary)] dark:text-[#B7F34A] hover:underline font-bold ml-1 cursor-pointer"
+            className="text-xs text-[var(--brand-primary)] hover:underline font-bold ml-1 cursor-pointer"
           >
             Clear all
           </button>
@@ -390,7 +434,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
       {/* Main Catalog Layout (Sidebar Left + Grid Right) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Desktop Sidebar (3 Cols) */}
-        <aside className="hidden lg:block lg:col-span-3 bg-[var(--bg-surface-subtle)] dark:bg-[#131E1A] rounded-2xl border border-[var(--border-subtle)] dark:border-[#1E2D27] p-5 sticky top-24 shadow-premium-xs">
+        <aside className="hidden lg:block lg:col-span-3 bg-[var(--bg-surface-subtle)] rounded-2xl border border-[var(--border-subtle)] p-5 sticky top-24 shadow-premium-xs">
           <ProductFilterSidebar
             facets={facets}
             filters={filters}
@@ -408,32 +452,32 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
               {[1, 2, 3, 4, 5, 6].map((idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-[var(--border-subtle)] dark:border-[#1E2D27] bg-[var(--bg-surface)] dark:bg-[#131E1A] p-5 space-y-4"
+                  className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 space-y-4"
                 >
-                  <div className="aspect-square rounded-xl bg-[var(--bg-surface-subtle)] dark:bg-[#192722]" />
+                  <div className="aspect-square rounded-xl bg-[var(--bg-surface-subtle)]" />
                   <div className="space-y-2">
-                    <div className="h-4 bg-gray-200 dark:bg-[#1E2D27] rounded-md w-3/4" />
-                    <div className="h-3 bg-gray-100 dark:bg-[#1E2D27]/60 rounded-md w-1/2" />
+                    <div className="h-4 bg-gray-200 rounded-md w-3/4" />
+                    <div className="h-3 bg-gray-100 rounded-md w-1/2" />
                   </div>
-                  <div className="h-8 bg-gray-100 dark:bg-[#1E2D27]/60 rounded-lg" />
+                  <div className="h-8 bg-gray-100 rounded-lg" />
                 </div>
               ))}
             </div>
           ) : errorMessage ? (
             /* Error State */
-            <div className="py-16 text-center rounded-2xl bg-[var(--bg-surface)] dark:bg-[#131E1A] border border-red-200 dark:border-red-900/40 p-8 space-y-4 max-w-lg mx-auto shadow-sm">
-              <div className="w-12 h-12 rounded-lg bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 flex items-center justify-center mx-auto">
+            <div className="py-16 text-center rounded-2xl bg-[var(--bg-surface)] border border-red-200 p-8 space-y-4 max-w-lg mx-auto shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-red-50 text-red-600 flex items-center justify-center mx-auto">
                 <AlertCircle className="w-6 h-6" />
               </div>
-              <h4 className="text-base font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+              <h4 className="text-base font-bold text-[var(--text-primary)]">
                 Failed to Load Products
               </h4>
-              <p className="text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] max-w-xs mx-auto leading-relaxed">
+              <p className="text-xs text-[var(--text-secondary)] max-w-xs mx-auto leading-relaxed">
                 {errorMessage}
               </p>
               <button
                 type="button"
-                onClick={() => fetchProducts(filters)}
+                onClick={() => filterProducts(filters)}
                 className="px-4 py-2 rounded-xl bg-[var(--brand-primary)] hover:bg-[var(--brand-primary-hover)] text-white text-xs font-semibold transition-colors cursor-pointer"
               >
                 Try Again
@@ -441,14 +485,14 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
             </div>
           ) : productsList.length === 0 ? (
             /* Empty State */
-            <div className="py-16 text-center rounded-2xl bg-[var(--bg-surface)] dark:bg-[#131E1A] border border-dashed border-[var(--border-subtle)] dark:border-[#1E2D27] p-8 space-y-4 max-w-lg mx-auto shadow-premium-xs">
-              <div className="w-12 h-12 rounded-xl bg-[var(--bg-surface-subtle)] dark:bg-[#192722] text-[var(--text-secondary)] dark:text-[#9DA7A2] flex items-center justify-center mx-auto">
+            <div className="py-16 text-center rounded-2xl bg-[var(--bg-surface)] border border-dashed border-[var(--border-subtle)] p-8 space-y-4 max-w-lg mx-auto shadow-premium-xs">
+              <div className="w-12 h-12 rounded-xl bg-[var(--bg-surface-subtle)] text-[var(--text-secondary)] flex items-center justify-center mx-auto">
                 <Search className="w-6 h-6" />
               </div>
-              <h4 className="text-base font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">
+              <h4 className="text-base font-bold text-[var(--text-primary)]">
                 No products match your criteria
               </h4>
-              <p className="text-xs text-[var(--text-secondary)] dark:text-[#9DA7A2] max-w-xs mx-auto leading-relaxed">
+              <p className="text-xs text-[var(--text-secondary)] max-w-xs mx-auto leading-relaxed">
                 Try loosening your filters, adjusting the maximum price, or searching with broader keywords.
               </p>
               <button
@@ -480,17 +524,17 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
           />
 
           {/* Slide-out Drawer Panel */}
-          <div className="relative ml-auto w-full max-w-xs sm:max-w-sm bg-[var(--bg-surface)] dark:bg-[#131E1A] text-[var(--text-primary)] dark:text-[#F2F5F3] h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between border-l border-[var(--border-subtle)] dark:border-[#1E2D27]">
+          <div className="relative ml-auto w-full max-w-xs sm:max-w-sm bg-[var(--bg-surface)] text-[var(--text-primary)] h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between border-l border-[var(--border-subtle)]">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)] dark:border-[#1E2D27] mb-6">
+              <div className="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)] mb-6">
                 <div className="flex items-center gap-2">
-                  <SlidersHorizontal className="w-4 h-4 text-[var(--brand-primary)] dark:text-[#B7F34A]" />
-                  <h3 className="text-base font-bold text-[var(--text-primary)] dark:text-[#F2F5F3]">Filter Catalog</h3>
+                  <SlidersHorizontal className="w-4 h-4 text-[var(--brand-primary)]" />
+                  <h3 className="text-base font-bold text-[var(--text-primary)]">Filter Catalog</h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setIsMobileDrawerOpen(false)}
-                  className="p-1.5 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-subtle)] dark:hover:bg-[#192722] cursor-pointer"
+                  className="p-1.5 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-surface-subtle)] cursor-pointer"
                   aria-label="Close filters"
                 >
                   <X className="w-5 h-5" />
@@ -506,7 +550,7 @@ export function ProductGrid({ products: initialProducts }: ProductGridProps) {
               />
             </div>
 
-            <div className="pt-6 border-t border-[var(--border-subtle)] dark:border-[#1E2D27] mt-6">
+            <div className="pt-6 border-t border-[var(--border-subtle)] mt-6">
               <button
                 type="button"
                 onClick={() => setIsMobileDrawerOpen(false)}

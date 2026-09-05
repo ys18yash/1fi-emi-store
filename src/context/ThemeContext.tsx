@@ -18,11 +18,11 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 const STORAGE_KEY = "1fi_theme_preference";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeMode>("system");
+  const [theme, setThemeState] = useState<ThemeMode>("light");
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>("light");
   const [mounted, setMounted] = useState(false);
 
-  // Helper to determine system preference
+  // Helper to determine system preference if needed
   const getSystemTheme = (): ResolvedTheme => {
     if (typeof window === "undefined") return "light";
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -42,25 +42,23 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Initialize theme on mount
+  // Initialize theme on mount - default to clean Light Mode
   useEffect(() => {
     try {
       const savedTheme = localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
-      if (savedTheme && (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system")) {
-        setThemeState(savedTheme);
-        const resolved = savedTheme === "system" ? getSystemTheme() : savedTheme;
-        setResolvedTheme(resolved);
-        applyTheme(resolved);
+      if (savedTheme === "dark") {
+        setThemeState("dark");
+        setResolvedTheme("dark");
+        applyTheme("dark");
       } else {
-        const sys = getSystemTheme();
-        setResolvedTheme(sys);
-        applyTheme(sys);
+        setThemeState("light");
+        setResolvedTheme("light");
+        applyTheme("light");
       }
     } catch {
-      // Fallback if localStorage is inaccessible
-      const sys = getSystemTheme();
-      setResolvedTheme(sys);
-      applyTheme(sys);
+      setThemeState("light");
+      setResolvedTheme("light");
+      applyTheme("light");
     }
     setMounted(true);
   }, [applyTheme]);
